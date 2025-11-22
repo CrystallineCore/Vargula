@@ -1,6 +1,12 @@
 
 #  Vargula
 
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/vargula?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/vargula)
+![PyPI - Version](https://img.shields.io/pypi/v/vargula)
+[![Documentation Status](https://readthedocs.org/projects/vargula/badge/?version=latest)](https://vargula.readthedocs.io/en/latest/?badge=latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 **Simple cross-platform terminal text styling library with advanced color palette generation**
 
 Vargula is a powerful Python library for terminal styling that combines better functionality with comprehensive color theory tools. Style your terminal output with colors, create beautiful tables, show progress bars, and generate harmonious color palettes - all with a simple, intuitive API.

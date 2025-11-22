@@ -34,3 +34,10 @@ exclude_patterns = []
 
 html_theme = "sphinx_rtd_theme"
 html_static_path = ['_static']
+
+extensions.append("sphinx_sitemap")
+html_baseurl = "https://vargula.readthedocs.io/"
+
+html_meta = {
+    "google-site-verification": "RA1p_5zP4s9LacW9qE1QYQ6WYLiUcYgPb1DoO91Vl4Q"
+}

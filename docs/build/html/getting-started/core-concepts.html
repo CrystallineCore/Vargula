@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Core Concepts &mdash; Vargula 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=71272d9f"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Vargula
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Core Concepts</a><ul>
+<li><a class="reference internal" href="#three-styling-approaches">Three Styling Approaches</a><ul>
+<li><a class="reference internal" href="#direct-styling-with-style">1. Direct Styling with <code class="docutils literal notranslate"><span class="pre">style()</span></code></a></li>
+<li><a class="reference internal" href="#markup-tags-with-format">2. Markup Tags with <code class="docutils literal notranslate"><span class="pre">format()</span></code></a></li>
+<li><a class="reference internal" href="#custom-styles-with-create">3. Custom Styles with <code class="docutils literal notranslate"><span class="pre">create()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#color-specification">Color Specification</a><ul>
+<li><a class="reference internal" href="#named-colors">Named Colors</a></li>
+<li><a class="reference internal" href="#hex-colors">Hex Colors</a></li>
+<li><a class="reference internal" href="#rgb-tuples">RGB Tuples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#text-decorations-looks">Text Decorations (Looks)</a></li>
+<li><a class="reference internal" href="#tags-and-markup">Tags and Markup</a><ul>
+<li><a class="reference internal" href="#predefined-tags">Predefined Tags</a></li>
+<li><a class="reference internal" href="#custom-tags">Custom Tags</a></li>
+<li><a class="reference internal" href="#tag-nesting">Tag Nesting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#themes">Themes</a><ul>
+<li><a class="reference internal" href="#built-in-themes">Built-in Themes</a></li>
+<li><a class="reference internal" href="#custom-themes">Custom Themes</a></li>
+<li><a class="reference internal" href="#generated-themes">Generated Themes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#global-control">Global Control</a><ul>
+<li><a class="reference internal" href="#enable-disable">Enable/Disable</a></li>
+<li><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#text-manipulation">Text Manipulation</a><ul>
+<li><a class="reference internal" href="#strip-markup">Strip Markup</a></li>
+<li><a class="reference internal" href="#clean-ansi-codes">Clean ANSI Codes</a></li>
+<li><a class="reference internal" href="#calculate-visible-length">Calculate Visible Length</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#best-practices">Best Practices</a></li>
+<li><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vargula</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Core Concepts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/getting-started/core-concepts.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="core-concepts">
+<h1>Core Concepts<a class="headerlink" href="#core-concepts" title="Link to this heading"></a></h1>
+<p>Understanding Vargula’s fundamental concepts.</p>
+<section id="three-styling-approaches">
+<h2>Three Styling Approaches<a class="headerlink" href="#three-styling-approaches" title="Link to this heading"></a></h2>
+<section id="direct-styling-with-style">
+<h3>1. Direct Styling with <code class="docutils literal notranslate"><span class="pre">style()</span></code><a class="headerlink" href="#direct-styling-with-style" title="Link to this heading"></a></h3>
+<p>Best for one-off styling and dynamic colors:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="n">styled</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">styled</span><span class="p">)</span>
+
+<span class="c1"># Dynamic styling</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span> <span class="k">if</span> <span class="n">success</span> <span class="k">else</span> <span class="s2">&quot;red&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Status&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="markup-tags-with-format">
+<h3>2. Markup Tags with <code class="docutils literal notranslate"><span class="pre">format()</span></code><a class="headerlink" href="#markup-tags-with-format" title="Link to this heading"></a></h3>
+<p>Best for inline styling and mixed styles:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;This is &lt;red&gt;red&lt;/red&gt; and &lt;blue&gt;blue&lt;/blue&gt;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># Nested</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;Bold with &lt;red&gt;red text&lt;/red&gt;&lt;/bold&gt;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="custom-styles-with-create">
+<h3>3. Custom Styles with <code class="docutils literal notranslate"><span class="pre">create()</span></code><a class="headerlink" href="#custom-styles-with-create" title="Link to this heading"></a></h3>
+<p>Best for reusable, semantic styles:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;e&gt;Error occurred&lt;/e&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;success&gt;Task completed&lt;/success&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="color-specification">
+<h2>Color Specification<a class="headerlink" href="#color-specification" title="Link to this heading"></a></h2>
+<section id="named-colors">
+<h3>Named Colors<a class="headerlink" href="#named-colors" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;bright_green&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Available: <code class="docutils literal notranslate"><span class="pre">black</span></code>, <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code>, <code class="docutils literal notranslate"><span class="pre">yellow</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code>, <code class="docutils literal notranslate"><span class="pre">magenta</span></code>, <code class="docutils literal notranslate"><span class="pre">cyan</span></code>, <code class="docutils literal notranslate"><span class="pre">white</span></code>, and <code class="docutils literal notranslate"><span class="pre">bright_*</span></code> variants.</p>
+</section>
+<section id="hex-colors">
+<h3>Hex Colors<a class="headerlink" href="#hex-colors" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF5733&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#F73&quot;</span><span class="p">)</span>  <span class="c1"># Short form</span>
+</pre></div>
+</div>
+</section>
+<section id="rgb-tuples">
+<h3>RGB Tuples<a class="headerlink" href="#rgb-tuples" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">51</span><span class="p">))</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">26</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="text-decorations-looks">
+<h2>Text Decorations (Looks)<a class="headerlink" href="#text-decorations-looks" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Bold&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Italic&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;italic&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Underline&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;underline&quot;</span><span class="p">)</span>
+
+<span class="c1"># Multiple</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Fancy&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Available: <code class="docutils literal notranslate"><span class="pre">bold</span></code>, <code class="docutils literal notranslate"><span class="pre">dim</span></code>, <code class="docutils literal notranslate"><span class="pre">italic</span></code>, <code class="docutils literal notranslate"><span class="pre">underline</span></code>, <code class="docutils literal notranslate"><span class="pre">blink</span></code>, <code class="docutils literal notranslate"><span class="pre">reverse</span></code>, <code class="docutils literal notranslate"><span class="pre">hidden</span></code>, <code class="docutils literal notranslate"><span class="pre">strikethrough</span></code></p>
+</section>
+<section id="tags-and-markup">
+<h2>Tags and Markup<a class="headerlink" href="#tags-and-markup" title="Link to this heading"></a></h2>
+<section id="predefined-tags">
+<h3>Predefined Tags<a class="headerlink" href="#predefined-tags" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Color tags</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;red&gt;Red text&lt;/red&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bright_blue&gt;Bright blue&lt;/bright_blue&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Background tags</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@yellow&gt;Yellow background&lt;/@yellow&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@red&gt;Red background&lt;/@red&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Hex tags</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;#FF5733&gt;Custom color&lt;/#FF5733&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@#000080&gt;Navy background&lt;/@#000080&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Look tags</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;Bold text&lt;/bold&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;italic&gt;Italic text&lt;/italic&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="custom-tags">
+<h3>Custom Tags<a class="headerlink" href="#custom-tags" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;An &lt;e&gt;error&lt;/e&gt; occurred&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;highlight&gt;Important&lt;/highlight&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="tag-nesting">
+<h3>Tag Nesting<a class="headerlink" href="#tag-nesting" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;Bold with &lt;red&gt;red text&lt;/red&gt;&lt;/bold&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;green&gt;&lt;bold&gt;&lt;underline&gt;Triple&lt;/underline&gt;&lt;/bold&gt;&lt;/green&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="themes">
+<h2>Themes<a class="headerlink" href="#themes" title="Link to this heading"></a></h2>
+<section id="built-in-themes">
+<h3>Built-in Themes<a class="headerlink" href="#built-in-themes" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;e&gt;Error&lt;/e&gt; &lt;success&gt;Success&lt;/success&gt;&quot;</span><span class="p">)</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;warning&gt;Warning&lt;/warning&gt; &lt;info&gt;Info&lt;/info&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Theme styles: <code class="docutils literal notranslate"><span class="pre">error</span></code>, <code class="docutils literal notranslate"><span class="pre">success</span></code>, <code class="docutils literal notranslate"><span class="pre">warning</span></code>, <code class="docutils literal notranslate"><span class="pre">info</span></code>, <code class="docutils literal notranslate"><span class="pre">debug</span></code>, <code class="docutils literal notranslate"><span class="pre">critical</span></code></p>
+</section>
+<section id="custom-themes">
+<h3>Custom Themes<a class="headerlink" href="#custom-themes" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_theme</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;look&quot;</span><span class="p">:</span> <span class="s2">&quot;bold&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;look&quot;</span><span class="p">:</span> <span class="s2">&quot;bold&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="s2">&quot;look&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">]}</span>
+<span class="p">}</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">my_theme</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="generated-themes">
+<h3>Generated Themes<a class="headerlink" href="#generated-themes" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_theme_palette</span><span class="p">(</span><span class="s2">&quot;complementary&quot;</span><span class="p">,</span> <span class="s2">&quot;#3498db&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">apply_palette_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">)</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;primary&gt;Primary&lt;/primary&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;e&gt;Error&lt;/e&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="global-control">
+<h2>Global Control<a class="headerlink" href="#global-control" title="Link to this heading"></a></h2>
+<section id="enable-disable">
+<h3>Enable/Disable<a class="headerlink" href="#enable-disable" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;No color&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">))</span>  <span class="c1"># Plain text</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">enable</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Has color&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">))</span>  <span class="c1"># Colored</span>
+</pre></div>
+</div>
+</section>
+<section id="environment-variables">
+<h3>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NO_COLOR</span></code> - Respects standard NO_COLOR</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FORCE_COLOR</span></code> - Force colors even when not TTY</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">NO_COLOR</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>script.py
+<span class="nv">FORCE_COLOR</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>script.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>less<span class="w"> </span>-R
+</pre></div>
+</div>
+</section>
+</section>
+<section id="text-manipulation">
+<h2>Text Manipulation<a class="headerlink" href="#text-manipulation" title="Link to this heading"></a></h2>
+<section id="strip-markup">
+<h3>Strip Markup<a class="headerlink" href="#strip-markup" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&lt;red&gt;Hello&lt;/red&gt; &lt;blue&gt;World&lt;/blue&gt;&quot;</span>
+<span class="n">plain</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># &quot;Hello World&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="clean-ansi-codes">
+<h3>Clean ANSI Codes<a class="headerlink" href="#clean-ansi-codes" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">styled</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">plain</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">styled</span><span class="p">)</span>  <span class="c1"># &quot;Hello&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="calculate-visible-length">
+<h3>Calculate Visible Length<a class="headerlink" href="#calculate-visible-length" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">styled</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">styled</span><span class="p">))</span>        <span class="c1"># 18 (with ANSI)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">styled</span><span class="p">))</span>  <span class="c1"># 5 (visible)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>Use Semantic Naming</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>  <span class="c1"># Good</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;red_bold&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>  <span class="c1"># Avoid</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Consistent Theming</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
+<span class="c1"># Or</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_theme_palette</span><span class="p">(</span><span class="s2">&quot;analogous&quot;</span><span class="p">,</span> <span class="s2">&quot;#e74c3c&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">apply_palette_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Respect User Preferences</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NO_COLOR&quot;</span><span class="p">):</span>
+    <span class="n">vg</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Test Accessibility</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">vg</span><span class="o">.</span><span class="n">meets_wcag</span><span class="p">(</span><span class="n">text_color</span><span class="p">,</span> <span class="n">bg_color</span><span class="p">,</span> <span class="s2">&quot;AA&quot;</span><span class="p">):</span>
+    <span class="n">text_color</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">ensure_contrast</span><span class="p">(</span><span class="n">text_color</span><span class="p">,</span> <span class="n">bg_color</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#tag-syntax.md"><span class="xref myst">Tag Syntax Guide</span></a></p></li>
+<li><p><a class="reference internal" href="#../user-guide/text-styling.md"><span class="xref myst">User Guide</span></a></p></li>
+<li><p><a class="reference internal" href="#../api/index.md"><span class="xref myst">API Reference</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sivaprasad Murali.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

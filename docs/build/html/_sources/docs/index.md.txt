@@ -1,0 +1,103 @@
+# Vargula Documentation
+
+**Simple cross-platform terminal text styling library with advanced color palette generation**
+
+Vargula is a powerful Python library for terminal styling that combines rich functionality with comprehensive color theory tools. Style your terminal output with colors, create beautiful tables, show progress bars, and generate harmonious color palettes - all with a simple, intuitive API.
+
+## Quick Links
+
+- [Installation](getting-started/installation.md)
+- [Quick Start Guide](getting-started/quick-start.md)
+- [API Reference](api/index.md)
+- [Examples](examples/index.md)
+
+## Features at a Glance
+
+- **Text Styling** - Colors, backgrounds, and text decorations (bold, italic, underline, etc.)  
+- **Markup Syntax** - HTML-like tags for inline styling (`<red>error</red>`)  
+- **Tables** - Rich-style tables with customizable borders and styling  
+- **Progress Bars** - Customizable progress indicators with ETA and rate display  
+- **Color Palettes** - Generate harmonious color schemes based on color theory  
+- **Accessibility** - WCAG contrast checking and colorblind simulation  
+- **Themes** - Built-in themes and custom theme support  
+- **Cross-platform** - Works on Windows, macOS, and Linux
+
+## Quick Example
+
+```python
+import vargula as vg
+
+# Create custom styles
+vg.create("error", color="red", look="bold")
+vg.create("success", color="green", look="bold")
+
+# Use markup syntax
+vg.write("<error>Error:</error> Connection failed")
+vg.write("<success>Success:</success> Task completed")
+
+# Generate color palettes
+palette = vg.generate_palette("#3498db", "complementary", 5)
+print(vg.preview_palette(palette))
+
+# Create styled tables
+table = vg.Table(title="Sales Report")
+table.add_column("Region", style="cyan")
+table.add_column("Revenue", style="green")
+table.add_row("North", "$1.2M")
+print(table)
+```
+
+## Getting Started
+
+1. **[Install Vargula](getting-started/installation.md)** - Get up and running
+2. **[Quick Start Tutorial](getting-started/quick-start.md)** - Learn the basics
+3. **[Core Concepts](getting-started/core-concepts.md)** - Understand key concepts
+4. **[Browse Examples](examples/index.md)** - See real-world usage
+
+## Documentation Sections
+
+### Getting Started
+- [Installation](getting-started/installation.md)
+- [Quick Start](getting-started/quick-start.md)
+- [Core Concepts](getting-started/core-concepts.md)
+- [Tag Syntax Guide](getting-started/tag-syntax.md)
+
+### User Guide
+- [Text Styling](user-guide/text-styling.md)
+- [Tables](user-guide/tables.md)
+- [Progress Bars](user-guide/progress-bars.md)
+- [Color Palettes](user-guide/color-palettes.md)
+- [Themes](user-guide/themes.md)
+- [Accessibility](user-guide/accessibility.md)
+
+### API Reference
+- [Core Functions](api/core-functions.md)
+- [Table API](api/tables.md)
+- [Progress API](api/progress.md)
+- [Palette Generation](api/palette-generation.md)
+- [Color Manipulation](api/color-manipulation.md)
+- [Accessibility Functions](api/accessibility.md)
+
+### Examples
+- [Basic Styling](examples/basic-styling.md)
+- [Color Palettes](examples/color-palettes.md)
+- [Tables & Reports](examples/tables.md)
+- [Progress Bars](examples/progress-bars.md)
+- [Themed Applications](examples/themed-apps.md)
+- [Accessibility](examples/accessibility.md)
+
+### Reference
+- [Color Schemes](reference/color-schemes.md)
+- [WCAG Guidelines](reference/wcag-guidelines.md)
+- [Built-in Palettes](reference/built-in-palettes.md)
+- [Built-in Themes](reference/built-in-themes.md)
+- [Environment Variables](reference/environment-variables.md)
+
+## About
+
+**Version:** 1.0.4  
+**License:** MIT  
+**Author:** Sivaprasad Murali  
+**Repository:** [github.com/crystallinecore/vargula](https://github.com/crystallinecore/vargula)
+
+Made with 🎨 by Sivaprasad Murali

@@ -1,0 +1,835 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vargula Quick Reference &mdash; Vargula 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=71272d9f"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Appendix" href="appendix.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Vargula
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Vargula API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inbuilt.html">In-built Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_scheme.html">Color Scheme Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wcag.html">WCAG Contrast Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="env_var.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips &amp; Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vargula Quick Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#core-styling-functions">Core Styling Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#theme-functions">Theme Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#table-functions">Table Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#progress-bar-functions">Progress Bar Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#color-palette-generation">Color Palette Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#color-manipulation-functions">Color Manipulation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessibility-functions">Accessibility Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#color-blindness-functions">Color Blindness Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#persistence-functions">Persistence Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#function-categories">Function Categories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#by-use-case">By Use Case</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#alphabetical-index">Alphabetical Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-workflows">Common Workflows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-text-styling">Basic Text Styling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-style-system">Custom Style System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#theme-creation">Theme Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accessible-design">Accessible Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-visualization">Data Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#progress-tracking">Progress Tracking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start-examples">Quick Start Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#styling-text">Styling Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-tables">Creating Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#progress-bars">Progress Bars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#color-palettes">Color Palettes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#parameter-quick-reference">Parameter Quick Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#common-parameters">Common Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#return-type-quick-reference">Return Type Quick Reference</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vargula</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Vargula Quick Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/reference.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vargula-quick-reference">
+<h1>Vargula Quick Reference<a class="headerlink" href="#vargula-quick-reference" title="Link to this heading"></a></h1>
+<p>A comprehensive index of all functions, methods, and classes in the Vargula library. Click any item to jump to its full documentation in the API reference.</p>
+<hr class="docutils" />
+<section id="core-styling-functions">
+<h2>Core Styling Functions<a class="headerlink" href="#core-styling-functions" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#style"><span class="std std-ref">style()</span></a></p></td>
+<td><p>Apply styling to text directly with colors and text decorations</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#format"><span class="std std-ref">format()</span></a></p></td>
+<td><p>Format text using HTML-like markup tags for inline styling</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#create"><span class="std std-ref">create()</span></a></p></td>
+<td><p>Create a custom reusable style tag for use with format()</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#delete"><span class="std std-ref">delete()</span></a></p></td>
+<td><p>Delete a previously created custom style tag</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#write"><span class="std std-ref">write()</span></a></p></td>
+<td><p>Format and print text with markup in one call</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#strip"><span class="std std-ref">strip()</span></a></p></td>
+<td><p>Remove all markup tags from text, leaving only plain text</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#clean"><span class="std std-ref">clean()</span></a></p></td>
+<td><p>Remove all ANSI escape codes from text</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#length"><span class="std std-ref">length()</span></a></p></td>
+<td><p>Calculate the visible length of text, ignoring ANSI escape codes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#enable--disable"><span class="std std-ref">enable()</span></a></p></td>
+<td><p>Globally enable all styling output</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#enable--disable"><span class="std std-ref">disable()</span></a></p></td>
+<td><p>Globally disable all styling output</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#temporary"><span class="std std-ref">temporary()</span></a></p></td>
+<td><p>Context manager for temporary custom styles</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="theme-functions">
+<h2>Theme Functions<a class="headerlink" href="#theme-functions" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#set_theme"><span class="std std-ref">set_theme()</span></a></p></td>
+<td><p>Set a predefined or custom theme for consistent styling</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="table-functions">
+<h2>Table Functions<a class="headerlink" href="#table-functions" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class/Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#table"><span class="std std-ref">Table()</span></a></p></td>
+<td><p>Create a Rich-style table with extensive customization options</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#tableadd_column"><span class="std std-ref">Table.add_column()</span></a></p></td>
+<td><p>Add a column definition to the table</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#tableadd_row"><span class="std std-ref">Table.add_row()</span></a></p></td>
+<td><p>Add a row of data to the table</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="progress-bar-functions">
+<h2>Progress Bar Functions<a class="headerlink" href="#progress-bar-functions" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class/Method/Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#progressbar"><span class="std std-ref">ProgressBar()</span></a></p></td>
+<td><p>Create a customizable progress bar for tracking operations</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#progressbarupdate"><span class="std std-ref">ProgressBar.update()</span></a></p></td>
+<td><p>Update the progress bar by advancing it n steps</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#progressbarclose"><span class="std std-ref">ProgressBar.close()</span></a></p></td>
+<td><p>Complete and close the progress bar</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#progress_bar"><span class="std std-ref">progress_bar()</span></a></p></td>
+<td><p>Wrap an iterable with a progress bar for automatic tracking</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#multiprogress"><span class="std std-ref">MultiProgress()</span></a></p></td>
+<td><p>Manage multiple progress bars simultaneously</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#multiprogressadd_task"><span class="std std-ref">MultiProgress.add_task()</span></a></p></td>
+<td><p>Add a new progress task to the multi-progress display</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#multiprogressupdate"><span class="std std-ref">MultiProgress.update()</span></a></p></td>
+<td><p>Update a specific task in the multi-progress display</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="color-palette-generation">
+<h2>Color Palette Generation<a class="headerlink" href="#color-palette-generation" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#generate_palette"><span class="std std-ref">generate_palette()</span></a></p></td>
+<td><p>Generate a color palette based on color theory principles</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#generate_theme_palette"><span class="std std-ref">generate_theme_palette()</span></a></p></td>
+<td><p>Generate a complete theme with semantic color names</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#generate_accessible_theme"><span class="std std-ref">generate_accessible_theme()</span></a></p></td>
+<td><p>Generate a theme with colors validated for WCAG contrast</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#preview_palette"><span class="std std-ref">preview_palette()</span></a></p></td>
+<td><p>Generate a visual text preview of a color palette</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#apply_palette_theme"><span class="std std-ref">apply_palette_theme()</span></a></p></td>
+<td><p>Apply a generated palette as the active theme</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="color-manipulation-functions">
+<h2>Color Manipulation Functions<a class="headerlink" href="#color-manipulation-functions" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#lighten"><span class="std std-ref">lighten()</span></a></p></td>
+<td><p>Increase the brightness (value in HSV) of a color</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#darken"><span class="std std-ref">darken()</span></a></p></td>
+<td><p>Decrease the brightness (value in HSV) of a color</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#saturate"><span class="std std-ref">saturate()</span></a></p></td>
+<td><p>Increase the saturation of a color, making it more vivid</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#desaturate"><span class="std std-ref">desaturate()</span></a></p></td>
+<td><p>Decrease the saturation of a color, making it more gray</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#shift_hue"><span class="std std-ref">shift_hue()</span></a></p></td>
+<td><p>Rotate the hue of a color by specified degrees on the color wheel</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#invert"><span class="std std-ref">invert()</span></a></p></td>
+<td><p>Invert a color by flipping its RGB values</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#mix"><span class="std std-ref">mix()</span></a></p></td>
+<td><p>Mix two colors together with a specified weight</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="accessibility-functions">
+<h2>Accessibility Functions<a class="headerlink" href="#accessibility-functions" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#calculate_contrast_ratio"><span class="std std-ref">calculate_contrast_ratio()</span></a></p></td>
+<td><p>Calculate WCAG 2.1 contrast ratio between two colors</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#meets_wcag"><span class="std std-ref">meets_wcag()</span></a></p></td>
+<td><p>Check if two colors meet WCAG contrast requirements</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#ensure_contrast"><span class="std std-ref">ensure_contrast()</span></a></p></td>
+<td><p>Automatically adjust a foreground color to meet minimum contrast</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="color-blindness-functions">
+<h2>Color Blindness Functions<a class="headerlink" href="#color-blindness-functions" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#simulate_colorblindness"><span class="std std-ref">simulate_colorblindness()</span></a></p></td>
+<td><p>Simulate how a color appears to individuals with color blindness</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#validate_colorblind_safety"><span class="std std-ref">validate_colorblind_safety()</span></a></p></td>
+<td><p>Check if colors in a palette remain distinguishable</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="persistence-functions">
+<h2>Persistence Functions<a class="headerlink" href="#persistence-functions" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#save_palette"><span class="std std-ref">save_palette()</span></a></p></td>
+<td><p>Save a color palette to a JSON file</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#load_palette"><span class="std std-ref">load_palette()</span></a></p></td>
+<td><p>Load a color palette from a JSON file</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#save_theme"><span class="std std-ref">save_theme()</span></a></p></td>
+<td><p>Save a theme palette to a JSON file</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#load_theme"><span class="std std-ref">load_theme()</span></a></p></td>
+<td><p>Load a theme palette from a JSON file</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="function-categories">
+<h2>Function Categories<a class="headerlink" href="#function-categories" title="Link to this heading"></a></h2>
+<section id="by-use-case">
+<h3>By Use Case<a class="headerlink" href="#by-use-case" title="Link to this heading"></a></h3>
+<p><strong>Text Styling:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="api.html#style"><span class="std std-ref">style()</span></a> - Direct styling</p></li>
+<li><p><a class="reference internal" href="api.html#format"><span class="std std-ref">format()</span></a> - Markup-based styling</p></li>
+<li><p><a class="reference internal" href="api.html#write"><span class="std std-ref">write()</span></a> - Print with styling</p></li>
+</ul>
+<p><strong>Style Management:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="api.html#create"><span class="std std-ref">create()</span></a> - Create custom styles</p></li>
+<li><p><a class="reference internal" href="api.html#delete"><span class="std std-ref">delete()</span></a> - Remove custom styles</p></li>
+<li><p><a class="reference internal" href="api.html#temporary"><span class="std std-ref">temporary()</span></a> - Temporary styles</p></li>
+<li><p><a class="reference internal" href="api.html#set_theme"><span class="std std-ref">set_theme()</span></a> - Apply themes</p></li>
+</ul>
+<p><strong>Text Processing:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="api.html#strip"><span class="std std-ref">strip()</span></a> - Remove markup</p></li>
+<li><p><a class="reference internal" href="api.html#clean"><span class="std std-ref">clean()</span></a> - Remove ANSI codes</p></li>
+<li><p><a class="reference internal" href="api.html#length"><span class="std std-ref">length()</span></a> - Get visible length</p></li>
+</ul>
+<p><strong>UI Components:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="api.html#table"><span class="std std-ref">Table()</span></a> - Data tables</p></li>
+<li><p><a class="reference internal" href="api.html#progressbar"><span class="std std-ref">ProgressBar()</span></a> - Single progress bar</p></li>
+<li><p><a class="reference internal" href="api.html#multiprogress"><span class="std std-ref">MultiProgress()</span></a> - Multiple progress bars</p></li>
+</ul>
+<p><strong>Color Generation:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="api.html#generate_palette"><span class="std std-ref">generate_palette()</span></a> - Basic palettes</p></li>
+<li><p><a class="reference internal" href="api.html#generate_theme_palette"><span class="std std-ref">generate_theme_palette()</span></a> - Semantic themes</p></li>
+<li><p><a class="reference internal" href="api.html#generate_accessible_theme"><span class="std std-ref">generate_accessible_theme()</span></a> - WCAG-compliant themes</p></li>
+</ul>
+<p><strong>Color Editing:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="api.html#lighten"><span class="std std-ref">lighten()</span></a>, <a class="reference internal" href="api.html#darken"><span class="std std-ref">darken()</span></a> - Brightness</p></li>
+<li><p><a class="reference internal" href="api.html#saturate"><span class="std std-ref">saturate()</span></a>, <a class="reference internal" href="api.html#desaturate"><span class="std std-ref">desaturate()</span></a> - Saturation</p></li>
+<li><p><a class="reference internal" href="api.html#shift_hue"><span class="std std-ref">shift_hue()</span></a> - Hue rotation</p></li>
+<li><p><a class="reference internal" href="api.html#invert"><span class="std std-ref">invert()</span></a> - Color inversion</p></li>
+<li><p><a class="reference internal" href="api.html#mix"><span class="std std-ref">mix()</span></a> - Color mixing</p></li>
+</ul>
+<p><strong>Accessibility:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="api.html#calculate_contrast_ratio"><span class="std std-ref">calculate_contrast_ratio()</span></a> - Measure contrast</p></li>
+<li><p><a class="reference internal" href="api.html#meets_wcag"><span class="std std-ref">meets_wcag()</span></a> - Validate compliance</p></li>
+<li><p><a class="reference internal" href="api.html#ensure_contrast"><span class="std std-ref">ensure_contrast()</span></a> - Auto-adjust colors</p></li>
+<li><p><a class="reference internal" href="api.html#simulate_colorblindness"><span class="std std-ref">simulate_colorblindness()</span></a> - Simulate vision</p></li>
+<li><p><a class="reference internal" href="api.html#validate_colorblind_safety"><span class="std std-ref">validate_colorblind_safety()</span></a> - Check palette</p></li>
+</ul>
+<p><strong>Data Persistence:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="api.html#save_palette"><span class="std std-ref">save_palette()</span></a>, <a class="reference internal" href="api.html#load_palette"><span class="std std-ref">load_palette()</span></a> - Palettes</p></li>
+<li><p><a class="reference internal" href="api.html#save_theme"><span class="std std-ref">save_theme()</span></a>, <a class="reference internal" href="api.html#load_theme"><span class="std std-ref">load_theme()</span></a> - Themes</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="alphabetical-index">
+<h2>Alphabetical Index<a class="headerlink" href="#alphabetical-index" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>A-D</p></th>
+<th class="head"><p>E-L</p></th>
+<th class="head"><p>M-S</p></th>
+<th class="head"><p>T-Z</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#apply_palette_theme"><span class="std std-ref">apply_palette_theme()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#enable--disable"><span class="std std-ref">enable()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#meets_wcag"><span class="std std-ref">meets_wcag()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#table"><span class="std std-ref">Table()</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#calculate_contrast_ratio"><span class="std std-ref">calculate_contrast_ratio()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#ensure_contrast"><span class="std std-ref">ensure_contrast()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#mix"><span class="std std-ref">mix()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#tableadd_column"><span class="std std-ref">Table.add_column()</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#clean"><span class="std std-ref">clean()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#format"><span class="std std-ref">format()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#multiprogress"><span class="std std-ref">MultiProgress()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#tableadd_row"><span class="std std-ref">Table.add_row()</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#create"><span class="std std-ref">create()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#generate_accessible_theme"><span class="std std-ref">generate_accessible_theme()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#multiprogressadd_task"><span class="std std-ref">MultiProgress.add_task()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#temporary"><span class="std std-ref">temporary()</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#darken"><span class="std std-ref">darken()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#generate_palette"><span class="std std-ref">generate_palette()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#multiprogressupdate"><span class="std std-ref">MultiProgress.update()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#validate_colorblind_safety"><span class="std std-ref">validate_colorblind_safety()</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#delete"><span class="std std-ref">delete()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#generate_theme_palette"><span class="std std-ref">generate_theme_palette()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#preview_palette"><span class="std std-ref">preview_palette()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#write"><span class="std std-ref">write()</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#desaturate"><span class="std std-ref">desaturate()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#invert"><span class="std std-ref">invert()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#progress_bar"><span class="std std-ref">progress_bar()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#enable--disable"><span class="std std-ref">disable()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#length"><span class="std std-ref">length()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#progressbar"><span class="std std-ref">ProgressBar()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><a class="reference internal" href="api.html#lighten"><span class="std std-ref">lighten()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#progressbarclose"><span class="std std-ref">ProgressBar.close()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><a class="reference internal" href="api.html#load_palette"><span class="std std-ref">load_palette()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#progressbarupdate"><span class="std std-ref">ProgressBar.update()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><a class="reference internal" href="api.html#load_theme"><span class="std std-ref">load_theme()</span></a></p></td>
+<td><p><a class="reference internal" href="api.html#saturate"><span class="std std-ref">saturate()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="api.html#save_palette"><span class="std std-ref">save_palette()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="api.html#save_theme"><span class="std std-ref">save_theme()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="api.html#set_theme"><span class="std std-ref">set_theme()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="api.html#shift_hue"><span class="std std-ref">shift_hue()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="api.html#simulate_colorblindness"><span class="std std-ref">simulate_colorblindness()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="api.html#strip"><span class="std std-ref">strip()</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="api.html#style"><span class="std std-ref">style()</span></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="common-workflows">
+<h2>Common Workflows<a class="headerlink" href="#common-workflows" title="Link to this heading"></a></h2>
+<section id="basic-text-styling">
+<h3>Basic Text Styling<a class="headerlink" href="#basic-text-styling" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="api.html#style"><span class="std std-ref">style()</span></a> - For simple, direct styling</p></li>
+<li><p><a class="reference internal" href="api.html#format"><span class="std std-ref">format()</span></a> - For markup-based styling</p></li>
+<li><p><a class="reference internal" href="api.html#write"><span class="std std-ref">write()</span></a> - For styled printing</p></li>
+</ol>
+</section>
+<section id="custom-style-system">
+<h3>Custom Style System<a class="headerlink" href="#custom-style-system" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="api.html#create"><span class="std std-ref">create()</span></a> - Define custom styles</p></li>
+<li><p><a class="reference internal" href="api.html#format"><span class="std std-ref">format()</span></a> - Use custom styles</p></li>
+<li><p><a class="reference internal" href="api.html#delete"><span class="std std-ref">delete()</span></a> - Clean up when done</p></li>
+</ol>
+</section>
+<section id="theme-creation">
+<h3>Theme Creation<a class="headerlink" href="#theme-creation" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="api.html#generate_theme_palette"><span class="std std-ref">generate_theme_palette()</span></a> - Generate theme</p></li>
+<li><p><a class="reference internal" href="api.html#preview_palette"><span class="std std-ref">preview_palette()</span></a> - Preview colors</p></li>
+<li><p><a class="reference internal" href="api.html#apply_palette_theme"><span class="std std-ref">apply_palette_theme()</span></a> - Apply theme</p></li>
+<li><p><a class="reference internal" href="api.html#save_theme"><span class="std std-ref">save_theme()</span></a> - Save for later</p></li>
+</ol>
+</section>
+<section id="accessible-design">
+<h3>Accessible Design<a class="headerlink" href="#accessible-design" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="api.html#generate_accessible_theme"><span class="std std-ref">generate_accessible_theme()</span></a> - Create compliant theme</p></li>
+<li><p><a class="reference internal" href="api.html#calculate_contrast_ratio"><span class="std std-ref">calculate_contrast_ratio()</span></a> - Verify contrast</p></li>
+<li><p><a class="reference internal" href="api.html#meets_wcag"><span class="std std-ref">meets_wcag()</span></a> - Check compliance</p></li>
+<li><p><a class="reference internal" href="api.html#simulate_colorblindness"><span class="std std-ref">simulate_colorblindness()</span></a> - Test visibility</p></li>
+</ol>
+</section>
+<section id="data-visualization">
+<h3>Data Visualization<a class="headerlink" href="#data-visualization" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="api.html#table"><span class="std std-ref">Table()</span></a> - Create table</p></li>
+<li><p><a class="reference internal" href="api.html#tableadd_column"><span class="std std-ref">Table.add_column()</span></a> - Define columns</p></li>
+<li><p><a class="reference internal" href="api.html#tableadd_row"><span class="std std-ref">Table.add_row()</span></a> - Add data</p></li>
+</ol>
+</section>
+<section id="progress-tracking">
+<h3>Progress Tracking<a class="headerlink" href="#progress-tracking" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="api.html#progressbar"><span class="std std-ref">ProgressBar()</span></a> - Create progress bar</p></li>
+<li><p><a class="reference internal" href="api.html#progressbarupdate"><span class="std std-ref">ProgressBar.update()</span></a> - Update progress</p></li>
+<li><p><a class="reference internal" href="api.html#progressbarclose"><span class="std std-ref">ProgressBar.close()</span></a> - Finish</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="quick-start-examples">
+<h2>Quick Start Examples<a class="headerlink" href="#quick-start-examples" title="Link to this heading"></a></h2>
+<section id="styling-text">
+<h3>Styling Text<a class="headerlink" href="#styling-text" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="c1"># Direct styling</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">))</span>
+
+<span class="c1"># Markup styling</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;This is &lt;red&gt;red&lt;/red&gt; and &lt;bold&gt;bold&lt;/bold&gt;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Custom styles</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;error&gt;Error!&lt;/error&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-tables">
+<h3>Creating Tables<a class="headerlink" href="#creating-tables" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Report&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Score&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;95&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;87&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="progress-bars">
+<h3>Progress Bars<a class="headerlink" href="#progress-bars" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1"># Simple progress bar</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vg</span><span class="o">.</span><span class="n">progress_bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Processing&quot;</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="c1"># Multiple progress bars</span>
+<span class="k">with</span> <span class="n">vg</span><span class="o">.</span><span class="n">MultiProgress</span><span class="p">()</span> <span class="k">as</span> <span class="n">mp</span><span class="p">:</span>
+    <span class="n">task1</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="s2">&quot;Download&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">task2</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="s2">&quot;Extract&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="c1"># ... update tasks</span>
+</pre></div>
+</div>
+</section>
+<section id="color-palettes">
+<h3>Color Palettes<a class="headerlink" href="#color-palettes" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate palette</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="s2">&quot;complementary&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Preview colors</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">preview_palette</span><span class="p">(</span><span class="n">colors</span><span class="p">))</span>
+
+<span class="c1"># Create theme</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_theme_palette</span><span class="p">(</span><span class="s2">&quot;analogous&quot;</span><span class="p">,</span> <span class="s2">&quot;#e74c3c&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">apply_palette_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="parameter-quick-reference">
+<h2>Parameter Quick Reference<a class="headerlink" href="#parameter-quick-reference" title="Link to this heading"></a></h2>
+<section id="common-parameters">
+<h3>Common Parameters<a class="headerlink" href="#common-parameters" title="Link to this heading"></a></h3>
+<p><strong>Color Parameters:</strong> (used in style(), create(), etc.)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> - Foreground color (name, hex, or RGB tuple)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bg</span></code> - Background color (name, hex, or RGB tuple)</p></li>
+</ul>
+<p><strong>Look Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">look</span></code> - Text decoration(s) (string or list)</p>
+<ul>
+<li><p>Options: <code class="docutils literal notranslate"><span class="pre">bold</span></code>, <code class="docutils literal notranslate"><span class="pre">dim</span></code>, <code class="docutils literal notranslate"><span class="pre">italic</span></code>, <code class="docutils literal notranslate"><span class="pre">underline</span></code>, <code class="docutils literal notranslate"><span class="pre">blink</span></code>, <code class="docutils literal notranslate"><span class="pre">reverse</span></code>, <code class="docutils literal notranslate"><span class="pre">hidden</span></code>, <code class="docutils literal notranslate"><span class="pre">strikethrough</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Table Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code> - Table title</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">caption</span></code> - Table caption</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code> - Default cell style</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">box</span></code> - Border style: <code class="docutils literal notranslate"><span class="pre">&quot;rounded&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;square&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;double&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;heavy&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;minimal&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_header</span></code> - Display header row (bool)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_lines</span></code> - Show lines between rows (bool)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code> - Cell padding as (vertical, horizontal)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">expand</span></code> - Expand to full width (bool)</p></li>
+</ul>
+<p><strong>Progress Bar Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">total</span></code> - Total iterations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">desc</span></code> - Description text</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unit</span></code> - Unit name (e.g., “files”, “items”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bar_width</span></code> - Width in characters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_percentage</span></code> - Display percentage (bool)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_count</span></code> - Display count (bool)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_rate</span></code> - Display rate (bool)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_eta</span></code> - Display ETA (bool)</p></li>
+</ul>
+<p><strong>Palette Generation Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base_color</span></code> - Starting hex color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scheme</span></code> - Color harmony scheme</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code> - Number of colors to generate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">saturation_range</span></code> - Min/max saturation (0-1)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value_range</span></code> - Min/max brightness (0-1)</p></li>
+</ul>
+<p><strong>WCAG Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">level</span></code> - Compliance level: <code class="docutils literal notranslate"><span class="pre">&quot;AA&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;AAA&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">large_text</span></code> - Text is 18pt+ or 14pt+ bold (bool)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_contrast</span></code> - Minimum contrast ratio (float)</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="return-type-quick-reference">
+<h2>Return Type Quick Reference<a class="headerlink" href="#return-type-quick-reference" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Returns</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#style"><span class="std std-ref">style()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Styled string with ANSI codes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#format"><span class="std std-ref">format()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Formatted string with ANSI codes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#create"><span class="std std-ref">create()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#delete"><span class="std std-ref">delete()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> - True if deleted, False if not found</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#write"><span class="std std-ref">write()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code> - Prints to stdout</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#strip"><span class="std std-ref">strip()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Plain text without markup</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#clean"><span class="std std-ref">clean()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Plain text without ANSI codes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#length"><span class="std std-ref">length()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code> - Visible character count</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#generate_palette"><span class="std std-ref">generate_palette()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">list[str]</span></code> - List of hex colors</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#generate_theme_palette"><span class="std std-ref">generate_theme_palette()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dict</span></code> - Theme dictionary</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#generate_accessible_theme"><span class="std std-ref">generate_accessible_theme()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dict</span></code> - Theme dictionary</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#preview_palette"><span class="std std-ref">preview_palette()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Formatted preview string</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#lighten"><span class="std std-ref">lighten()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Hex color</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#darken"><span class="std std-ref">darken()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Hex color</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#saturate"><span class="std std-ref">saturate()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Hex color</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#desaturate"><span class="std std-ref">desaturate()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Hex color</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#shift_hue"><span class="std std-ref">shift_hue()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Hex color</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#invert"><span class="std std-ref">invert()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Hex color</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#mix"><span class="std std-ref">mix()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Hex color</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#calculate_contrast_ratio"><span class="std std-ref">calculate_contrast_ratio()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code> - Contrast ratio (1-21)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#meets_wcag"><span class="std std-ref">meets_wcag()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> - Compliance status</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#ensure_contrast"><span class="std std-ref">ensure_contrast()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Adjusted hex color</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#simulate_colorblindness"><span class="std std-ref">simulate_colorblindness()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code> - Simulated hex color</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#validate_colorblind_safety"><span class="std std-ref">validate_colorblind_safety()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code> - (bool, list of problems)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#load_palette"><span class="std std-ref">load_palette()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code> - (colors list, metadata dict)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#load_theme"><span class="std std-ref">load_theme()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code> - (theme dict, metadata dict)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#multiprogressadd_task"><span class="std std-ref">MultiProgress.add_task()</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code> - Task ID</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>Note:</strong> All function links in this document point to their corresponding sections in the main API reference document (api.md). Make sure both documents are in the same directory or adjust the links accordingly.</p>
+<hr class="docutils" />
+<p><strong>Last Updated:</strong> 2025-11-23<br />
+<strong>Library Version:</strong> 1.0.4</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="appendix.html" class="btn btn-neutral float-left" title="Appendix" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sivaprasad Murali.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

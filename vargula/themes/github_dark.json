@@ -1,0 +1,24 @@
+{
+  "theme": {
+    "primary": "#58a6ff",
+    "secondary": "#bc8cff",
+    "accent": "#56d364",
+    "success": "#3fb950",
+    "warning": "#d29922",
+    "error": "#f85149",
+    "info": "#58a6ff",
+    "background": "#0d1117",
+    "foreground": "#c9d1d9",
+    "muted": "#8b949e",
+    "border": "#30363d"
+  },
+  "metadata": {
+    "name": "GitHub Dark",
+    "description": "GitHub's dark theme for comfortable code reading",
+    "author": "vargula",
+    "version": "1.0.0",
+    "inspiration": "GitHub Dark Theme",
+    "tags": ["dark", "modern", "github", "professional"],
+    "best_for": ["coding", "git interfaces", "development"]
+  }
+}

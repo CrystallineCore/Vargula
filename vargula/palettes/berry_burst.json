@@ -1,0 +1,19 @@
+{
+  "colors": [
+    "#7209b7",
+    "#b5179e",
+    "#f72585",
+    "#4361ee",
+    "#4cc9f0",
+    "#560bad"
+  ],
+  "metadata": {
+    "name": "Berry Burst",
+    "description": "Bold purple and pink palette with electric blue accents",
+    "scheme": "triadic",
+    "base_color": "#7209b7",
+    "author": "vargula",
+    "tags": ["bold", "vibrant", "modern", "creative"],
+    "use_cases": ["creative projects", "branding", "modern interfaces"]
+  }
+}

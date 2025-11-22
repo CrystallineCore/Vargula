@@ -1,0 +1,13 @@
+Vargula Documentation
+=====================
+
+Welcome to the official documentation for Vargula.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   installation
+   usage
+   api
+

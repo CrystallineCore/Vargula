@@ -1,0 +1,19 @@
+{
+  "colors": [
+    "#ffc8dd",
+    "#ffafcc",
+    "#bde0fe",
+    "#a2d2ff",
+    "#cdb4db",
+    "#ffc8dd"
+  ],
+  "metadata": {
+    "name": "Pastel Dream",
+    "description": "Soft, muted pastel colors for gentle interfaces",
+    "scheme": "analogous",
+    "base_color": "#ffc8dd",
+    "author": "vargula",
+    "tags": ["soft", "pastel", "gentle", "friendly"],
+    "use_cases": ["user-friendly apps", "educational software", "light themes"]
+  }
+}

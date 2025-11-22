@@ -1,0 +1,24 @@
+{
+  "theme": {
+    "primary": "#3498db",
+    "secondary": "#9b59b6",
+    "accent": "#1abc9c",
+    "success": "#2ecc71",
+    "warning": "#f39c12",
+    "error": "#e74c3c",
+    "info": "#3498db",
+    "background": "#1a1a1a",
+    "foreground": "#e0e0e0",
+    "muted": "#666666",
+    "border": "#333333"
+  },
+  "metadata": {
+    "name": "Dark Professional",
+    "description": "Classic dark theme optimized for long coding sessions",
+    "author": "vargula",
+    "version": "1.0.0",
+    "tags": ["dark", "professional", "coding", "low-eye-strain"],
+    "contrast_ratio": "WCAG AA compliant",
+    "best_for": ["IDEs", "terminals", "development tools"]
+  }
+}

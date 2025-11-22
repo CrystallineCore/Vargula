@@ -1,0 +1,50 @@
+# Installation
+
+## Requirements
+
+- Python 3.7 or higher
+- pip (Python package installer)
+
+## Install from PyPI
+
+```bash
+pip install vargula
+```
+
+### Upgrade
+
+```bash
+pip install --upgrade vargula
+```
+
+## Install from Source
+
+```bash
+git clone https://github.com/crystallinecore/vargula.git
+cd vargula
+pip install -e .
+```
+
+## Verify Installation
+
+```python
+import vargula as vg
+print(vg.__version__)
+print(vg.style("Test", color="green", look="bold"))
+```
+
+## Platform Notes
+
+- **Windows**: Auto-enables ANSI support on Windows 10+
+- **macOS**: Works out of the box
+- **Linux**: Works in all modern terminals
+
+## Dependencies
+
+Zero external dependencies - uses only Python standard library.
+
+## Next Steps
+
+- [Quick Start](quick-start.md)
+- [Core Concepts](core-concepts.md)
+- [API Reference](../api/index.md)

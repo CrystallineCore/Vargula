@@ -1,0 +1,85 @@
+site_name: Vargula Documentation
+site_description: Simple cross-platform terminal text styling library
+site_author: Sivaprasad Murali
+repo_name: crystallinecore/vargula
+repo_url: https://github.com/crystallinecore/vargula
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quick-start.md
+      - Core Concepts: getting-started/core-concepts.md
+      - Tag Syntax: getting-started/tag-syntax.md
+  - User Guide:
+      - Text Styling: user-guide/text-styling.md
+      - Tables: user-guide/tables.md
+      - Progress Bars: user-guide/progress-bars.md
+      - Color Palettes: user-guide/color-palettes.md
+      - Themes: user-guide/themes.md
+      - Accessibility: user-guide/accessibility.md
+  - API Reference:
+      - Overview: api/index.md
+      - Core Functions: api/core-functions.md
+      - Tables: api/tables.md
+      - Progress: api/progress.md
+      - Palette Generation: api/palette-generation.md
+      - Color Manipulation: api/color-manipulation.md
+      - Accessibility: api/accessibility.md
+  - Examples:
+      - Overview: examples/index.md
+      - Basic Styling: examples/basic-styling.md
+      - Color Palettes: examples/color-palettes.md
+      - Tables: examples/tables.md
+      - Progress Bars: examples/progress-bars.md
+      - Themed Apps: examples/themed-apps.md
+      - Accessibility: examples/accessibility.md
+  - Reference:
+      - Color Schemes: reference/color-schemes.md
+      - WCAG Guidelines: reference/wcag-guidelines.md
+      - Built-in Palettes: reference/built-in-palettes.md
+      - Built-in Themes: reference/built-in-themes.md
+      - Environment Variables: reference/environment-variables.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.details
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/crystallinecore/vargula

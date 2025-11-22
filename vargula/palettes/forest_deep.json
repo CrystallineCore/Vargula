@@ -1,0 +1,19 @@
+{
+  "colors": [
+    "#2d6a4f",
+    "#40916c",
+    "#52b788",
+    "#74c69d",
+    "#95d5b2",
+    "#b7e4c7"
+  ],
+  "metadata": {
+    "name": "Forest Deep",
+    "description": "Natural green palette evoking dense forest canopies",
+    "scheme": "monochromatic",
+    "base_color": "#2d6a4f",
+    "author": "vargula",
+    "tags": ["nature", "calm", "success", "growth"],
+    "use_cases": ["success messages", "progress indicators", "environmental apps"]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "colors": [
+    "#ff006e",
+    "#fb5607",
+    "#ffbe0b",
+    "#8338ec",
+    "#3a86ff",
+    "#06ffa5"
+  ],
+  "metadata": {
+    "name": "Cyberpunk Neon",
+    "description": "High-contrast neon colors for futuristic interfaces",
+    "scheme": "random",
+    "base_color": "#ff006e",
+    "author": "vargula",
+    "tags": ["neon", "futuristic", "high-contrast", "tech"],
+    "use_cases": ["gaming", "tech interfaces", "modern CLIs", "attention-grabbing"]
+  }
+}

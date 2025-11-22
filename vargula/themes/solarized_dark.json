@@ -1,0 +1,25 @@
+{
+  "theme": {
+    "primary": "#268bd2",
+    "secondary": "#6c71c4",
+    "accent": "#2aa198",
+    "success": "#859900",
+    "warning": "#b58900",
+    "error": "#dc322f",
+    "info": "#268bd2",
+    "background": "#002b36",
+    "foreground": "#839496",
+    "muted": "#586e75",
+    "border": "#073642"
+  },
+  "metadata": {
+    "name": "Solarized Dark",
+    "description": "Scientifically designed dark theme with balanced contrast",
+    "author": "vargula",
+    "version": "1.0.0",
+    "inspiration": "Solarized by Ethan Schoonover",
+    "tags": ["dark", "scientific", "balanced", "precise"],
+    "contrast_ratio": "Carefully calibrated",
+    "best_for": ["coding", "terminals", "precision work"]
+  }
+}

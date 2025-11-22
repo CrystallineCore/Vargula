@@ -1,0 +1,19 @@
+{
+  "colors": [
+    "#ff6b35",
+    "#f7931e",
+    "#fdc830",
+    "#c9485b",
+    "#8b2635",
+    "#4a1a2c"
+  ],
+  "metadata": {
+    "name": "Sunset Vibes",
+    "description": "Warm, energetic palette inspired by golden hour sunsets",
+    "scheme": "analogous",
+    "base_color": "#ff6b35",
+    "author": "vargula",
+    "tags": ["warm", "energetic", "creative", "vibrant"],
+    "use_cases": ["marketing", "creative projects", "alerts", "highlights"]
+  }
+}

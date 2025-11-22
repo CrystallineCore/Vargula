@@ -1,0 +1,23 @@
+{
+  "theme": {
+    "primary": "#7aa2f7",
+    "secondary": "#bb9af7",
+    "accent": "#7dcfff",
+    "success": "#9ece6a",
+    "warning": "#e0af68",
+    "error": "#f7768e",
+    "info": "#7aa2f7",
+    "background": "#1a1b26",
+    "foreground": "#c0caf5",
+    "muted": "#565f89",
+    "border": "#24283b"
+  },
+  "metadata": {
+    "name": "Tokyo Night",
+    "description": "Modern dark theme inspired by Tokyo's night skyline",
+    "author": "vargula",
+    "version": "1.0.0",
+    "tags": ["dark", "modern", "vibrant", "purple-blue"],
+    "best_for": ["coding", "modern editors", "VSCode users"]
+  }
+}

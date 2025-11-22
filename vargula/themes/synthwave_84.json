@@ -1,0 +1,23 @@
+{
+  "theme": {
+    "primary": "#ff7edb",
+    "secondary": "#b893ce",
+    "accent": "#72f1b8",
+    "success": "#72f1b8",
+    "warning": "#fede5d",
+    "error": "#fe4450",
+    "info": "#36f9f6",
+    "background": "#262335",
+    "foreground": "#f2f2f2",
+    "muted": "#848bbd",
+    "border": "#2a2139"
+  },
+  "metadata": {
+    "name": "Synthwave '84",
+    "description": "Retro-futuristic theme inspired by 1980s aesthetics",
+    "author": "vargula",
+    "version": "1.0.0",
+    "tags": ["dark", "neon", "retro", "80s", "vibrant"],
+    "best_for": ["creative coding", "fun projects", "nostalgic vibes"]
+  }
+}

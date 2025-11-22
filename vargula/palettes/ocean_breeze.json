@@ -1,0 +1,19 @@
+{
+  "colors": [
+    "#006d77",
+    "#83c5be",
+    "#edf6f9",
+    "#ffddd2",
+    "#e29578",
+    "#006d77"
+  ],
+  "metadata": {
+    "name": "Ocean Breeze",
+    "description": "Calming ocean-inspired palette with teal and coral accents",
+    "scheme": "analogous",
+    "base_color": "#006d77",
+    "author": "vargula",
+    "tags": ["ocean", "calm", "professional", "natural"],
+    "use_cases": ["dashboards", "data visualization", "documentation"]
+  }
+}

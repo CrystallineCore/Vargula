@@ -1,0 +1,24 @@
+{
+  "theme": {
+    "primary": "#66d9ef",
+    "secondary": "#ae81ff",
+    "accent": "#a6e22e",
+    "success": "#a6e22e",
+    "warning": "#e6db74",
+    "error": "#f92672",
+    "info": "#66d9ef",
+    "background": "#272822",
+    "foreground": "#f8f8f2",
+    "muted": "#75715e",
+    "border": "#3e3d32"
+  },
+  "metadata": {
+    "name": "Monokai Inspired",
+    "description": "High-contrast dark theme with vibrant syntax colors",
+    "author": "vargula",
+    "version": "1.0.0",
+    "inspiration": "Monokai Theme",
+    "tags": ["dark", "vibrant", "high-contrast", "coding"],
+    "best_for": ["code editors", "syntax highlighting", "development"]
+  }
+}

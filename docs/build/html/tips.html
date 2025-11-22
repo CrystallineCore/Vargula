@@ -1,0 +1,155 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tips &amp; Best Practices &mdash; Vargula 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=71272d9f"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Color Scheme Reference" href="references.html" />
+    <link rel="prev" title="Environment Variables" href="env_var.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Vargula
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Vargula API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wcag.html">WCAG Contrast Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="env_var.html">Environment Variables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tips &amp; Best Practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#use-themes-for-consistency">1. Use Themes for Consistency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-accessibility-early">2. Test Accessibility Early</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#validate-for-colorblindness">3. Validate for Colorblindness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#save-and-reuse-palettes">4. Save and Reuse Palettes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nest-styles-for-complex-formatting">5. Nest Styles for Complex Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Color Scheme Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vargula</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tips &amp; Best Practices</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tips.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tips-best-practices">
+<h1>Tips &amp; Best Practices<a class="headerlink" href="#tips-best-practices" title="Link to this heading"></a></h1>
+<section id="use-themes-for-consistency">
+<h2>1. Use Themes for Consistency<a class="headerlink" href="#use-themes-for-consistency" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>  <span class="c1"># or generate custom theme</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;error&gt;Error&lt;/error&gt; vs &lt;success&gt;Success&lt;/success&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="test-accessibility-early">
+<h2>2. Test Accessibility Early<a class="headerlink" href="#test-accessibility-early" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_accessible_theme</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="n">wcag_level</span><span class="o">=</span><span class="s2">&quot;AA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="validate-for-colorblindness">
+<h2>3. Validate for Colorblindness<a class="headerlink" href="#validate-for-colorblindness" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_safe</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">validate_colorblind_safety</span><span class="p">(</span><span class="n">my_colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="save-and-reuse-palettes">
+<h2>4. Save and Reuse Palettes<a class="headerlink" href="#save-and-reuse-palettes" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">save_palette</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="s2">&quot;brand_colors.json&quot;</span><span class="p">)</span>
+<span class="c1"># Later...</span>
+<span class="n">colors</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">load_palette</span><span class="p">(</span><span class="s2">&quot;brand_colors.json&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="nest-styles-for-complex-formatting">
+<h2>5. Nest Styles for Complex Formatting<a class="headerlink" href="#nest-styles-for-complex-formatting" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;Bold with &lt;red&gt;red&lt;/red&gt; and &lt;blue&gt;blue&lt;/blue&gt;&lt;/bold&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="env_var.html" class="btn btn-neutral float-left" title="Environment Variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="references.html" class="btn btn-neutral float-right" title="Color Scheme Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sivaprasad Murali.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

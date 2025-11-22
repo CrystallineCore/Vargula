@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examples &mdash; Vargula 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=71272d9f"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="WCAG Contrast Guidelines" href="wcag.html" />
+    <link rel="prev" title="Vargula API Reference" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Vargula
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Vargula API Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-1-color-palette-explorer">Example 1: Color Palette Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-2-themed-cli-application">Example 2: Themed CLI Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-3-accessible-theme-generator">Example 3: Accessible Theme Generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-4-data-table-with-styling">Example 4: Data Table with Styling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-5-multi-progress-task-manager">Example 5: Multi-Progress Task Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-6-color-manipulation">Example 6: Color Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-7-colorblind-simulation">Example 7: Colorblind Simulation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wcag.html">WCAG Contrast Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="env_var.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Color Scheme Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html#tips-best-practices">Tips &amp; Best Practices</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vargula</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/examples.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h1>
+<section id="example-1-color-palette-explorer">
+<h2>Example 1: Color Palette Explorer<a class="headerlink" href="#example-1-color-palette-explorer" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="c1"># Generate and preview different color schemes</span>
+<span class="n">schemes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;analogous&quot;</span><span class="p">,</span> <span class="s2">&quot;complementary&quot;</span><span class="p">,</span> <span class="s2">&quot;triadic&quot;</span><span class="p">,</span> <span class="s2">&quot;tetradic&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">scheme</span> <span class="ow">in</span> <span class="n">schemes</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;bold&gt;&lt;cyan&gt;</span><span class="si">{</span><span class="n">scheme</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> Palette&lt;/cyan&gt;&lt;/bold&gt;&quot;</span><span class="p">))</span>
+    <span class="n">palette</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">preview_palette</span><span class="p">(</span><span class="n">palette</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
+    
+    <span class="c1"># Check accessibility</span>
+    <span class="n">is_safe</span><span class="p">,</span> <span class="n">problems</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">validate_colorblind_safety</span><span class="p">(</span><span class="n">palette</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">is_safe</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;green&gt;✓ Colorblind-safe&lt;/green&gt;&quot;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;yellow&gt;⚠ </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">problems</span><span class="p">)</span><span class="si">}</span><span class="s2"> similar color pairs&lt;/yellow&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-09-58.png?raw=true"><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-09-58.png?raw=true" /></a></p>
+</section>
+<section id="example-2-themed-cli-application">
+<h2>Example 2: Themed CLI Application<a class="headerlink" href="#example-2-themed-cli-application" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1"># Generate and apply theme</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_theme_palette</span><span class="p">(</span><span class="s2">&quot;analogous&quot;</span><span class="p">,</span> <span class="s2">&quot;#e74c3c&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">apply_palette_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">)</span>
+
+<span class="c1"># Create custom log styles</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#666666&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+<span class="c1"># Styled output</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;timestamp&gt;[12:34:56]&lt;/timestamp&gt; &lt;user&gt;admin&lt;/user&gt; logged in&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;success&gt;✓ Database connection established&lt;/success&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;warning&gt;⚠ Cache expiring soon&lt;/warning&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;error&gt;✗ Failed to connect to API&lt;/error&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Progress with theme colors</span>
+<span class="k">with</span> <span class="n">vg</span><span class="o">.</span><span class="n">ProgressBar</span><span class="p">(</span>
+    <span class="n">total</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Syncing&quot;</span><span class="p">,</span>
+    <span class="n">complete_style</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="p">,</span>
+    <span class="n">percentage_style</span><span class="o">=</span><span class="s2">&quot;accent&quot;</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">pbar</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/CrystallineCore/assets/blob/main/vargula/update.gif?raw=true"><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/update.gif?raw=true" /></a></p>
+</section>
+<section id="example-3-accessible-theme-generator">
+<h2>Example 3: Accessible Theme Generator<a class="headerlink" href="#example-3-accessible-theme-generator" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="c1"># Generate accessible theme for light background</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_accessible_theme</span><span class="p">(</span>
+    <span class="n">base_color</span><span class="o">=</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span>
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;complementary&quot;</span><span class="p">,</span>
+    <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#ffffff&quot;</span><span class="p">,</span>
+    <span class="n">wcag_level</span><span class="o">=</span><span class="s2">&quot;AAA&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Verify contrast ratios</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;Theme Accessibility Report&lt;/bold&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">theme</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;primary&quot;</span><span class="p">,</span> <span class="s2">&quot;secondary&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span><span class="p">]:</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">calculate_contrast_ratio</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">theme</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">])</span>
+        <span class="n">meets_aa</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">meets_wcag</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">theme</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">],</span> <span class="s2">&quot;AA&quot;</span><span class="p">)</span>
+        <span class="n">meets_aaa</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">meets_wcag</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">theme</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">],</span> <span class="s2">&quot;AAA&quot;</span><span class="p">)</span>
+        
+        <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;AAA ✓&quot;</span> <span class="k">if</span> <span class="n">meets_aaa</span> <span class="k">else</span> <span class="p">(</span><span class="s2">&quot;AA ✓&quot;</span> <span class="k">if</span> <span class="n">meets_aa</span> <span class="k">else</span> <span class="s2">&quot;✗&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">12s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">  Ratio: </span><span class="si">{</span><span class="n">ratio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Theme Accessibility Report
+
+primary      #2a7cb4  Ratio: 4.53  AA ✓
+secondary    #a75a27  Ratio: 5.08  AA ✓
+success      #277f26  Ratio: 5.06  AA ✓
+error        #d82b2b  Ratio: 4.88  AA ✓
+</pre></div>
+</div>
+</section>
+<section id="example-4-data-table-with-styling">
+<h2>Example 4: Data Table with Styling<a class="headerlink" href="#example-4-data-table-with-styling" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="c1"># Create styled table</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Q4 2024 Sales Report&quot;</span><span class="p">,</span>
+    <span class="n">caption</span><span class="o">=</span><span class="s2">&quot;All figures in USD&quot;</span><span class="p">,</span>
+    <span class="n">title_style</span><span class="o">=</span><span class="s2">&quot;bold cyan&quot;</span><span class="p">,</span>
+    <span class="n">border_style</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="n">box</span><span class="o">=</span><span class="s2">&quot;double&quot;</span><span class="p">,</span>
+    <span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Region&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Revenue&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Growth&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Status&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Add data with conditional styling</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;North America&quot;</span><span class="p">,</span> <span class="s2">&quot;$1,250,000&quot;</span><span class="p">,</span> <span class="s2">&quot;+15.3%&quot;</span><span class="p">,</span> <span class="s2">&quot;🟢&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="s2">&quot;$890,000&quot;</span><span class="p">,</span> <span class="s2">&quot;+8.7%&quot;</span><span class="p">,</span> <span class="s2">&quot;🟢&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Asia Pacific&quot;</span><span class="p">,</span> <span class="s2">&quot;$1,500,000&quot;</span><span class="p">,</span> <span class="s2">&quot;+22.1%&quot;</span><span class="p">,</span> <span class="s2">&quot;🟢&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Latin America&quot;</span><span class="p">,</span> <span class="s2">&quot;$450,000&quot;</span><span class="p">,</span> <span class="s2">&quot;-2.4%&quot;</span><span class="p">,</span> <span class="s2">&quot;🔴&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;dim&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-14-56.png?raw=true"><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-14-56.png?raw=true" /></a></p>
+</section>
+<section id="example-5-multi-progress-task-manager">
+<h2>Example 5: Multi-Progress Task Manager<a class="headerlink" href="#example-5-multi-progress-task-manager" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Downloading files&quot;</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Processing data&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Uploading results&quot;</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Cleaning up&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="k">with</span> <span class="n">vg</span><span class="o">.</span><span class="n">MultiProgress</span><span class="p">()</span> <span class="k">as</span> <span class="n">mp</span><span class="p">:</span>
+    <span class="c1"># Create all tasks</span>
+    <span class="n">task_ids</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">mp</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="n">total</span><span class="p">,</span> <span class="n">complete_style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">desc</span><span class="p">,</span> <span class="n">total</span> <span class="ow">in</span> <span class="n">tasks</span>
+    <span class="p">]</span>
+    
+    <span class="c1"># Simulate concurrent progress</span>
+    <span class="k">while</span> <span class="nb">any</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">tasks</span><span class="p">[</span><span class="n">tid</span><span class="p">][</span><span class="s2">&quot;progress&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">current</span> <span class="o">&lt;</span> <span class="n">mp</span><span class="o">.</span><span class="n">tasks</span><span class="p">[</span><span class="n">tid</span><span class="p">][</span><span class="s2">&quot;progress&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">total</span> 
+              <span class="k">for</span> <span class="n">tid</span> <span class="ow">in</span> <span class="n">task_ids</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">tid</span> <span class="ow">in</span> <span class="n">task_ids</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mp</span><span class="o">.</span><span class="n">tasks</span><span class="p">[</span><span class="n">tid</span><span class="p">][</span><span class="s2">&quot;progress&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">current</span> <span class="o">&lt;</span> <span class="n">mp</span><span class="o">.</span><span class="n">tasks</span><span class="p">[</span><span class="n">tid</span><span class="p">][</span><span class="s2">&quot;progress&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">total</span><span class="p">:</span>
+                <span class="n">mp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">tid</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2008-16-06.gif?raw=true"><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2008-16-06.gif?raw=true" /></a></p>
+</section>
+<section id="example-6-color-manipulation">
+<h2>Example 6: Color Manipulation<a class="headerlink" href="#example-6-color-manipulation" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;#3498db&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;bold&gt;Base Color:&lt;/bold&gt; </span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;█&quot;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">base</span><span class="p">))</span>
+
+<span class="c1"># Lightness variations</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;bold&gt;Lightness:&lt;/bold&gt;&quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">amount</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.2</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">lighten</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span> <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">vg</span><span class="o">.</span><span class="n">darken</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="o">-</span><span class="n">amount</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">amount</span><span class="si">:</span><span class="s2">+.1f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="o">+</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;█&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+
+<span class="c1"># Saturation variations</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;bold&gt;Saturation:&lt;/bold&gt;&quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">amount</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">0.2</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">desaturate</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-</span><span class="si">{</span><span class="n">amount</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="o">+</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;█&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+
+<span class="c1"># Hue rotation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;bold&gt;Hue Rotation:&lt;/bold&gt;&quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">degrees</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">300</span><span class="p">]:</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">shift_hue</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">degrees</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">degrees</span><span class="si">:</span><span class="s2">3d</span><span class="si">}</span><span class="s2">°  </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="o">+</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;█&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+
+<span class="c1"># Color mixing</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;bold&gt;Mixing with Red:&lt;/bold&gt;&quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">weight</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]:</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">weight</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="o">+</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;█&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-18-34.png?raw=true"><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-18-34.png?raw=true" /></a></p>
+</section>
+<section id="example-7-colorblind-simulation">
+<h2>Example 7: Colorblind Simulation<a class="headerlink" href="#example-7-colorblind-simulation" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="s2">&quot;#00FF00&quot;</span><span class="p">,</span> <span class="s2">&quot;#0000FF&quot;</span><span class="p">,</span> <span class="s2">&quot;#FFFF00&quot;</span><span class="p">,</span> <span class="s2">&quot;#FF00FF&quot;</span><span class="p">]</span>
+<span class="n">cb_types</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;protanopia&quot;</span><span class="p">,</span> <span class="s2">&quot;deuteranopia&quot;</span><span class="p">,</span> <span class="s2">&quot;tritanopia&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;Original Palette:&lt;/bold&gt;&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">preview_palette</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">show_info</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">cb_type</span> <span class="ow">in</span> <span class="n">cb_types</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;bold&gt;</span><span class="si">{</span><span class="n">cb_type</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> Simulation:&lt;/bold&gt;&quot;</span><span class="p">))</span>
+    <span class="n">simulated</span> <span class="o">=</span> <span class="p">[</span><span class="n">vg</span><span class="o">.</span><span class="n">simulate_colorblindness</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">cb_type</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">preview_palette</span><span class="p">(</span><span class="n">simulated</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">show_info</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+    
+    <span class="n">is_safe</span><span class="p">,</span> <span class="n">problems</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">validate_colorblind_safety</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">cb_type</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_safe</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;yellow&gt;⚠ </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">problems</span><span class="p">)</span><span class="si">}</span><span class="s2"> problematic pairs&lt;/yellow&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-18-59.png?raw=true"><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-18-59.png?raw=true" /></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-left" title="Vargula API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="wcag.html" class="btn btn-neutral float-right" title="WCAG Contrast Guidelines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sivaprasad Murali.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

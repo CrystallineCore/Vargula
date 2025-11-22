@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conventions &mdash; Vargula 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=71272d9f"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Vargula
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tag-format-rules">Tag Format Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#available-named-colors">Available Named Colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_scheme.html">Color Scheme Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wcag.html">WCAG Contrast Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="env_var.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips &amp; Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vargula</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Conventions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/conventions.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="conventions">
+<h1>Conventions<a class="headerlink" href="#conventions" title="Link to this heading"></a></h1>
+<p>Vargula supports inline color styling using intuitive tag syntax:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;#hexcode&gt;</span></code></strong> - Set foreground (text) color using hex codes</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;&#64;#hexcode&gt;</span></code></strong> - Set background color using hex codes</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;colorname&gt;</span></code></strong> - Apply named foreground color (e.g., <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_green</span></code>)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;&#64;colorname&gt;</span></code></strong> - Apply named background color (e.g., <code class="docutils literal notranslate"><span class="pre">&lt;&#64;red&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&#64;yellow&gt;</span></code>)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;lookname&gt;</span></code></strong> - Apply text style (e.g., <code class="docutils literal notranslate"><span class="pre">bold</span></code>, <code class="docutils literal notranslate"><span class="pre">italic</span></code>, <code class="docutils literal notranslate"><span class="pre">underline</span></code>)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;customname&gt;</span></code></strong> - Apply custom styles created with <code class="docutils literal notranslate"><span class="pre">create()</span></code></p></li>
+</ul>
+<section id="tag-format-rules">
+<h2>Tag Format Rules<a class="headerlink" href="#tag-format-rules" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Hex codes</strong> can be 3 or 6 characters: <code class="docutils literal notranslate"><span class="pre">&lt;#F00&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;#FF0000&gt;</span></code></p></li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">#</span></code> prefix</strong> is for foreground hex colors: <code class="docutils literal notranslate"><span class="pre">&lt;#FF5733&gt;</span></code></p></li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> prefix</strong> is required for all background colors (named or hex): <code class="docutils literal notranslate"><span class="pre">&lt;&#64;yellow&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&#64;FF0000&gt;</span></code></p></li>
+<li><p><strong>Tags are case-insensitive</strong> for named colors: <code class="docutils literal notranslate"><span class="pre">&lt;red&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;RED&gt;</span></code> work the same</p></li>
+<li><p><strong>Closing tags</strong> must match opening tags exactly: <code class="docutils literal notranslate"><span class="pre">&lt;&#64;yellow&gt;...&lt;/&#64;yellow&gt;</span></code></p></li>
+<li><p><strong>Tags can be nested</strong> arbitrarily deep for complex styling</p></li>
+</ul>
+</section>
+<section id="available-named-colors">
+<h2>Available Named Colors<a class="headerlink" href="#available-named-colors" title="Link to this heading"></a></h2>
+<p><strong>Standard colors:</strong> <code class="docutils literal notranslate"><span class="pre">black</span></code>, <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code>, <code class="docutils literal notranslate"><span class="pre">yellow</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code>, <code class="docutils literal notranslate"><span class="pre">magenta</span></code>, <code class="docutils literal notranslate"><span class="pre">cyan</span></code>, <code class="docutils literal notranslate"><span class="pre">white</span></code></p>
+<p><strong>Bright variants:</strong> <code class="docutils literal notranslate"><span class="pre">bright_black</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_red</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_green</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_yellow</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_blue</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_magenta</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_cyan</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_white</span></code></p>
+<p><strong>Text styles:</strong> <code class="docutils literal notranslate"><span class="pre">bold</span></code>, <code class="docutils literal notranslate"><span class="pre">dim</span></code>, <code class="docutils literal notranslate"><span class="pre">italic</span></code>, <code class="docutils literal notranslate"><span class="pre">underline</span></code>, <code class="docutils literal notranslate"><span class="pre">blink</span></code>, <code class="docutils literal notranslate"><span class="pre">reverse</span></code>, <code class="docutils literal notranslate"><span class="pre">hidden</span></code>, <code class="docutils literal notranslate"><span class="pre">strikethrough</span></code></p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="kn">import</span> <span class="n">write</span>
+
+<span class="c1"># Named foreground colors</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;red&gt;Red text&lt;/red&gt;&quot;</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bright_blue&gt;Bright blue text&lt;/bright_blue&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Named background colors</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@yellow&gt;Yellow background&lt;/@yellow&gt;&quot;</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@red&gt;Red background&lt;/@red&gt;&quot;</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@bright_black&gt;Dark background&lt;/@bright_black&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Hex foreground color</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;#FF5733&gt;Orange text&lt;/#FF5733&gt;&quot;</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;#3498db&gt;Blue text&lt;/#3498db&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Hex background color</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@#FF0000&gt;Red background&lt;/@#FF0000&gt;&quot;</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@#F00&gt;Short hex red background&lt;/@#F00&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Foreground + background combination</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;#FFFFFF&gt;&lt;@#000000&gt;White text on black&lt;/@#000000&gt;&lt;/#FFFFFF&gt;&quot;</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;green&gt;&lt;@black&gt;Green on black&lt;/@black&gt;&lt;/green&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mix with text styles</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;&lt;#00FF00&gt;&lt;@#000080&gt;Bold green on navy&lt;/@#000080&gt;&lt;/#00FF00&gt;&lt;/bold&gt;&quot;</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;italic&gt;&lt;@yellow&gt;Italic on yellow&lt;/@yellow&gt;&lt;/italic&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Nested backgrounds</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@yellow&gt;Yellow &lt;@red&gt;then red&lt;/@red&gt; back to yellow&lt;/@yellow&gt;&quot;</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@#FF0000&gt;Hex red &lt;@yellow&gt;named yellow&lt;/@yellow&gt; back to hex&lt;/@#FF0000&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Complex nesting</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;&lt;red&gt;Bold &lt;italic&gt;and italic&lt;/italic&gt; red text&lt;/red&gt;&lt;/bold&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<p><a class="reference external" href="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2022-53-32.png?raw=true"><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2022-53-32.png?raw=true" /></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sivaprasad Murali.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

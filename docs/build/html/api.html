@@ -1,0 +1,1226 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vargula API &mdash; Vargula 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=71272d9f"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="In-built resources" href="inbuilt.html" />
+    <link rel="prev" title="Conventions" href="conventions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Vargula
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vargula API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#core-styling-functions">Core Styling Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#style">style()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#format">format()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create">create()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete">delete()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write">write()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#strip">strip()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean">clean()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#length">length()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-disable">enable() / disable()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#temporary">temporary()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#theme-functions">Theme Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-theme">set_theme()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tables">Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#table">Table()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table-add-column">Table.add_column()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table-add-row">Table.add_row()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#progress-bars">Progress Bars</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#progressbar">ProgressBar()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#progressbar-update">ProgressBar.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#progressbar-close">ProgressBar.close()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#progress-bar">progress_bar()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiprogress">MultiProgress()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiprogress-add-task">MultiProgress.add_task()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiprogress-update">MultiProgress.update()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#color-palette-generation">Color Palette Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generate-palette">generate_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-theme-palette">generate_theme_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-accessible-theme">generate_accessible_theme()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preview-palette">preview_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apply-palette-theme">apply_palette_theme()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#color-manipulation">Color Manipulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lighten">lighten()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darken">darken()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saturate">saturate()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desaturate">desaturate()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shift-hue">shift_hue()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#invert">invert()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mix">mix()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#accessibility-functions">Accessibility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#calculate-contrast-ratio">calculate_contrast_ratio()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#meets-wcag">meets_wcag()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ensure-contrast">ensure_contrast()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#color-blindness-functions">Color Blindness Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simulate-colorblindness">simulate_colorblindness()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#validate-colorblind-safety">validate_colorblind_safety()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#persistence-functions">Persistence Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#save-palette">save_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-palette">load_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-theme">save_theme()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-theme">load_theme()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inbuilt.html">In-built resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_scheme.html">Color Scheme Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wcag.html">WCAG Contrast Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="env_var.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips &amp; Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vargula</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Vargula API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vargula-api">
+<h1>Vargula API<a class="headerlink" href="#vargula-api" title="Link to this heading"></a></h1>
+<p>A comprehensive Python library for terminal text styling, formatting, and UI components.</p>
+<hr class="docutils" />
+<section id="core-styling-functions">
+<h2>Core Styling Functions<a class="headerlink" href="#core-styling-functions" title="Link to this heading"></a></h2>
+<section id="style">
+<h3>style()<a class="headerlink" href="#style" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">style(text,</span> <span class="pre">color=None,</span> <span class="pre">bg=None,</span> <span class="pre">look=None)</span></code></p>
+<p>Apply styling to text directly with colors and text decorations.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> (str): Text to style</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> (str|tuple): Foreground color - accepts color name, hex string (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;#FF5733&quot;</span></code>), or RGB tuple (e.g., <code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">87,</span> <span class="pre">51)</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bg</span></code> (str|tuple): Background color - same format options as <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">look</span></code> (str|list): Text decoration(s) - single string or list of decorations</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Styled string with ANSI escape codes</p>
+<p><strong>Available Colors:</strong></p>
+<ul class="simple">
+<li><p><strong>Basic:</strong> <code class="docutils literal notranslate"><span class="pre">black</span></code>, <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code>, <code class="docutils literal notranslate"><span class="pre">yellow</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code>, <code class="docutils literal notranslate"><span class="pre">magenta</span></code>, <code class="docutils literal notranslate"><span class="pre">cyan</span></code>, <code class="docutils literal notranslate"><span class="pre">white</span></code></p></li>
+<li><p><strong>Bright:</strong> <code class="docutils literal notranslate"><span class="pre">bright_black</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_red</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_green</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_yellow</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_blue</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_magenta</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_cyan</span></code>, <code class="docutils literal notranslate"><span class="pre">bright_white</span></code></p></li>
+</ul>
+<p><strong>Available Looks:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bold</span></code>, <code class="docutils literal notranslate"><span class="pre">dim</span></code>, <code class="docutils literal notranslate"><span class="pre">italic</span></code>, <code class="docutils literal notranslate"><span class="pre">underline</span></code>, <code class="docutils literal notranslate"><span class="pre">blink</span></code>, <code class="docutils literal notranslate"><span class="pre">reverse</span></code>, <code class="docutils literal notranslate"><span class="pre">hidden</span></code>, <code class="docutils literal notranslate"><span class="pre">strikethrough</span></code></p></li>
+</ul>
+<p><strong>Examples:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="c1"># Named colors</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">))</span>
+
+<span class="c1"># Hex colors</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Custom&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF5733&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;#1a1a1a&quot;</span><span class="p">))</span>
+
+<span class="c1"># RGB tuples</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">51</span><span class="p">)))</span>
+
+<span class="c1"># Multiple looks</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Fancy&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-43-36.png?raw=true" /></p>
+</section>
+<hr class="docutils" />
+<section id="format">
+<h3>format()<a class="headerlink" href="#format" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">format(text)</span></code></p>
+<p>Format text using HTML-like markup tags for inline styling.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> (str): Text containing markup tags (e.g., <code class="docutils literal notranslate"><span class="pre">&lt;red&gt;text&lt;/red&gt;</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Formatted string with ANSI codes applied</p>
+<p><strong>Examples:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using predefined color tags</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;This is &lt;red&gt;red&lt;/red&gt; and &lt;blue&gt;blue&lt;/blue&gt;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Using custom styles (see create())</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;An &lt;error&gt;error&lt;/error&gt; occurred&quot;</span><span class="p">))</span>
+
+<span class="c1"># Nested tags</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;Bold with &lt;red&gt;red text&lt;/red&gt;&lt;/bold&gt;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Hex colors directly</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Hex &lt;#FF5733&gt;color&lt;/#FF5733&gt;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Combined styles</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;&lt;underline&gt;&lt;cyan&gt;Triple style&lt;/cyan&gt;&lt;/underline&gt;&lt;/bold&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-46-26.png?raw=true" /></p>
+</section>
+<hr class="docutils" />
+<section id="create">
+<h3>create()<a class="headerlink" href="#create" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">create(name,</span> <span class="pre">color=None,</span> <span class="pre">bg=None,</span> <span class="pre">look=None)</span></code></p>
+<p>Create a custom reusable style tag for use with <code class="docutils literal notranslate"><span class="pre">format()</span></code>.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (str): Name of the custom style tag</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> (str|tuple): Foreground color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bg</span></code> (str|tuple): Background color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">look</span></code> (str|list): Text decoration(s)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p><strong>Examples:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create custom styles</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="c1"># Use them with format()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;error&gt;Error!&lt;/error&gt;&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;success&gt;Success!&lt;/success&gt;&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;highlight&gt;Important&lt;/highlight&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-48-45.png?raw=true" /></p>
+</section>
+<hr class="docutils" />
+<section id="delete">
+<h3>delete()<a class="headerlink" href="#delete" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">delete(name)</span></code></p>
+<p>Delete a previously created custom style tag.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (str): Name of the style to delete</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">bool</span></code> - <code class="docutils literal notranslate"><span class="pre">True</span></code> if style was found and deleted, <code class="docutils literal notranslate"><span class="pre">False</span></code> if style didn’t exist</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">)</span>  <span class="c1"># Returns True</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">)</span>  <span class="c1"># Returns False (already deleted)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="write">
+<h3>write()<a class="headerlink" href="#write" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">write(*args,</span> <span class="pre">sep=&quot;</span> <span class="pre">&quot;,</span> <span class="pre">end=&quot;\n&quot;,</span> <span class="pre">file=None,</span> <span class="pre">flush=False)</span></code></p>
+<p>Format and print text with markup in one call. Works exactly like Python’s built-in <code class="docutils literal notranslate"><span class="pre">print()</span></code> but automatically formats markup tags.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*args</span></code>: Values to print (will be converted to strings and formatted)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sep</span></code> (str): String inserted between values (default: <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">end</span></code> (str): String appended after the last value (default: <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file</span></code>: File object where output is written (default: <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flush</span></code> (bool): Whether to forcibly flush the stream (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code> (prints to stdout or specified file)</p>
+<p><strong>Examples:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic usage</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is &lt;red&gt;red&lt;/red&gt; and &lt;bold&gt;bold&lt;/bold&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Multiple arguments with custom separator</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;red&gt;World&lt;/red&gt;&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; → &quot;</span><span class="p">)</span>
+<span class="c1"># Output: Hello → World (with &quot;World&quot; in red)</span>
+
+<span class="c1"># Formatted separator</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;cyan&gt;@&lt;/cyan&gt;&quot;</span><span class="p">))</span>
+<span class="c1"># Output: user@localhost (with @ in cyan)</span>
+
+<span class="c1"># Custom end character</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;Processing&lt;/bold&gt;&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;... &quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;green&gt;Done!&lt;/green&gt;&quot;</span><span class="p">)</span>
+<span class="c1"># Output: Processing... Done! (on same line)</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2016-35-49.png?raw=true" /></p>
+</section>
+<hr class="docutils" />
+<section id="strip">
+<h3>strip()<a class="headerlink" href="#strip" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">strip(text)</span></code></p>
+<p>Remove all markup tags from text, leaving only plain text.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> (str): Text containing markup tags</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Plain text without any markup tags</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello &lt;red&gt;world&lt;/red&gt;!&quot;</span>
+<span class="n">plain</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># Returns: &quot;Hello world!&quot;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="clean">
+<h3>clean()<a class="headerlink" href="#clean" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">clean(text)</span></code></p>
+<p>Remove all ANSI escape codes from text.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> (str): Text containing ANSI escape codes</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Plain text without ANSI codes</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">styled</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Colored&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">plain</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">styled</span><span class="p">)</span>  <span class="c1"># Returns: &quot;Colored&quot; (no ANSI codes)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="length">
+<h3>length()<a class="headerlink" href="#length" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">length(text)</span></code></p>
+<p>Calculate the visible length of text, ignoring ANSI escape codes.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> (str): Text with ANSI codes</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">int</span></code> - Visible character count</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">styled</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">styled</span><span class="p">))</span>        <span class="c1"># 18 (includes ANSI codes)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">styled</span><span class="p">))</span>  <span class="c1"># 5 (visible length only)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="enable-disable">
+<h3>enable() / disable()<a class="headerlink" href="#enable-disable" title="Link to this heading"></a></h3>
+<p><strong>Functions:</strong> <code class="docutils literal notranslate"><span class="pre">enable()</span></code> and <code class="docutils literal notranslate"><span class="pre">disable()</span></code></p>
+<p>Globally enable or disable all styling output. When disabled, all styling functions return plain text.</p>
+<p><strong>Parameters:</strong> None</p>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;No color&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">))</span>  <span class="c1"># Prints plain text without color</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">enable</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Has color&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">))</span>  <span class="c1"># Prints colored text</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="temporary">
+<h3>temporary()<a class="headerlink" href="#temporary" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">temporary(name,</span> <span class="pre">color=None,</span> <span class="pre">bg=None,</span> <span class="pre">look=None)</span></code></p>
+<p>Context manager for temporary custom styles that are automatically deleted when exiting the context.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (str): Name of the temporary style</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> (str|tuple): Foreground color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bg</span></code> (str|tuple): Background color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">look</span></code> (str|list): Text decoration(s)</p></li>
+</ul>
+<p><strong>Returns:</strong> Context manager object</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">vg</span><span class="o">.</span><span class="n">temporary</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;temp&gt;Temporary style&lt;/temp&gt;&quot;</span><span class="p">))</span>
+<span class="c1"># &quot;temp&quot; style is automatically deleted after the block</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-51-49.png?raw=true" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="theme-functions">
+<h2>Theme Functions<a class="headerlink" href="#theme-functions" title="Link to this heading"></a></h2>
+<section id="set-theme">
+<h3>set_theme()<a class="headerlink" href="#set-theme" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">set_theme(theme)</span></code></p>
+<p>Set a predefined or custom theme for consistent styling across your application.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">theme</span></code> (str|dict): Either a built-in theme name (<code class="docutils literal notranslate"><span class="pre">&quot;dark&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;light&quot;</span></code>) or a custom theme dictionary</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p><strong>Built-in Theme Styles:</strong></p>
+<p>When using built-in themes, the following style tags become available:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> - Error messages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">success</span></code> - Success messages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">warning</span></code> - Warning messages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">info</span></code> - Informational messages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debug</span></code> - Debug output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">critical</span></code> - Critical alerts</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Built-in dark theme</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;error&gt;Error!&lt;/error&gt; &lt;success&gt;OK&lt;/success&gt;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Built-in light theme</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;warning&gt;Warning&lt;/warning&gt;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Custom theme</span>
+<span class="n">custom</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;look&quot;</span><span class="p">:</span> <span class="s2">&quot;bold&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;info&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;highlight&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;bg&quot;</span><span class="p">:</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;black&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">custom</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;error&gt;Custom error style&lt;/error&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-53-57.png?raw=true" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Link to this heading"></a></h2>
+<section id="table">
+<h3>Table()<a class="headerlink" href="#table" title="Link to this heading"></a></h3>
+<p><strong>Class:</strong> <code class="docutils literal notranslate"><span class="pre">Table(title=None,</span> <span class="pre">caption=None,</span> <span class="pre">**kwargs)</span></code></p>
+<p>Create a Rich-style table with extensive customization options.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code> (str, optional): Title displayed above the table</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">caption</span></code> (str, optional): Caption displayed below the table</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code> (str, optional): Default style applied to all cells</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title_style</span></code> (str): Style for title text (default: <code class="docutils literal notranslate"><span class="pre">&quot;bold&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">caption_style</span></code> (str): Style for caption text (default: <code class="docutils literal notranslate"><span class="pre">&quot;dim&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">header_style</span></code> (str): Style for header row (default: <code class="docutils literal notranslate"><span class="pre">&quot;bold&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border_style</span></code> (str, optional): Style for border characters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_header</span></code> (bool): Whether to display the header row (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_lines</span></code> (bool): Whether to show lines between rows (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code> (tuple): Vertical and horizontal padding as <code class="docutils literal notranslate"><span class="pre">(vertical,</span> <span class="pre">horizontal)</span></code> (default: <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1)</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">expand</span></code> (bool): Expand table to full terminal width (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_width</span></code> (int, optional): Minimum table width in characters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">box</span></code> (str): Border style (default: <code class="docutils literal notranslate"><span class="pre">&quot;rounded&quot;</span></code>)</p></li>
+</ul>
+<p><strong>Box Styles:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;rounded&quot;</span></code> - Rounded corners (╭─╮)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;square&quot;</span></code> - Square corners (┌─┐)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;double&quot;</span></code> - Double-line borders (╔═╗)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;heavy&quot;</span></code> - Heavy-line borders (┏━┓)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;minimal&quot;</span></code> - Minimal borders</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code> - No borders</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Sales Report&quot;</span><span class="p">,</span>
+    <span class="n">caption</span><span class="o">=</span><span class="s2">&quot;Q4 2024&quot;</span><span class="p">,</span>
+    <span class="n">title_style</span><span class="o">=</span><span class="s2">&quot;bold cyan&quot;</span><span class="p">,</span>
+    <span class="n">border_style</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">box</span><span class="o">=</span><span class="s2">&quot;double&quot;</span>
+<span class="p">)</span>
+
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Region&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Revenue&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Growth&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;North&quot;</span><span class="p">,</span> <span class="s2">&quot;$1.2M&quot;</span><span class="p">,</span> <span class="s2">&quot;+15%&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;South&quot;</span><span class="p">,</span> <span class="s2">&quot;$890K&quot;</span><span class="p">,</span> <span class="s2">&quot;+8%&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;dim&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;East&quot;</span><span class="p">,</span> <span class="s2">&quot;$1.5M&quot;</span><span class="p">,</span> <span class="s2">&quot;+22%&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-54-28.png?raw=true" /></p>
+</section>
+<hr class="docutils" />
+<section id="table-add-column">
+<h3>Table.add_column()<a class="headerlink" href="#table-add-column" title="Link to this heading"></a></h3>
+<p><strong>Method:</strong> <code class="docutils literal notranslate"><span class="pre">add_column(header,</span> <span class="pre">style=None,</span> <span class="pre">justify=&quot;left&quot;,</span> <span class="pre">**kwargs)</span></code></p>
+<p>Add a column definition to the table. Must be called before adding rows.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">header</span></code> (str): Column header text</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code> (str, optional): Style applied to all cells in this column</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">justify</span></code> (str): Text alignment - <code class="docutils literal notranslate"><span class="pre">&quot;left&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;center&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;right&quot;</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;left&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_wrap</span></code> (bool): Disable text wrapping in this column (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overflow</span></code> (str): How to handle overflow - <code class="docutils literal notranslate"><span class="pre">&quot;ellipsis&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;crop&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;fold&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code> (int, optional): Fixed column width in characters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_width</span></code> (int, optional): Minimum column width</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_width</span></code> (int, optional): Maximum column width</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Score&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Status&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-54-47.png?raw=true" /></p>
+</section>
+<hr class="docutils" />
+<section id="table-add-row">
+<h3>Table.add_row()<a class="headerlink" href="#table-add-row" title="Link to this heading"></a></h3>
+<p><strong>Method:</strong> <code class="docutils literal notranslate"><span class="pre">add_row(*cells,</span> <span class="pre">style=None)</span></code></p>
+<p>Add a row of data to the table.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*cells</span></code>: Cell values as separate arguments (one per column, in column order)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code> (str, optional): Style for this entire row (overrides column styles)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;95&quot;</span><span class="p">,</span> <span class="s2">&quot;Active&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;87&quot;</span><span class="p">,</span> <span class="s2">&quot;Active&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;dim&quot;</span><span class="p">)</span>  <span class="c1"># Entire row dimmed</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-55-08.png?raw=true" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="progress-bars">
+<h2>Progress Bars<a class="headerlink" href="#progress-bars" title="Link to this heading"></a></h2>
+<section id="progressbar">
+<h3>ProgressBar()<a class="headerlink" href="#progressbar" title="Link to this heading"></a></h3>
+<p><strong>Class:</strong> <code class="docutils literal notranslate"><span class="pre">ProgressBar(total=100,</span> <span class="pre">desc=&quot;&quot;,</span> <span class="pre">**kwargs)</span></code></p>
+<p>Create a customizable progress bar for tracking long-running operations.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">total</span></code> (int): Total number of iterations (default: <code class="docutils literal notranslate"><span class="pre">100</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">desc</span></code> (str): Description text displayed before the progress bar (default: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unit</span></code> (str): Unit name for items being processed (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;files&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;items&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;it&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bar_width</span></code> (int): Width of the progress bar in characters (default: <code class="docutils literal notranslate"><span class="pre">40</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complete_style</span></code> (str): Style for completed portion of bar (default: <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">incomplete_style</span></code> (str): Style for incomplete portion (default: <code class="docutils literal notranslate"><span class="pre">&quot;bright_black&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">percentage_style</span></code> (str): Style for percentage display (default: <code class="docutils literal notranslate"><span class="pre">&quot;cyan&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">desc_style</span></code> (str): Style for description text (default: <code class="docutils literal notranslate"><span class="pre">&quot;bold&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_percentage</span></code> (bool): Display percentage complete (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_count</span></code> (bool): Display current/total count (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_rate</span></code> (bool): Display processing rate (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_eta</span></code> (bool): Display estimated time remaining (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">refresh_rate</span></code> (float): Minimum seconds between display updates (default: <code class="docutils literal notranslate"><span class="pre">0.1</span></code>)</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">progress</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">ProgressBar</span><span class="p">(</span>
+    <span class="n">total</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+    <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Downloading&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;files&quot;</span><span class="p">,</span>
+    <span class="n">bar_width</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">complete_style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>
+    <span class="n">desc_style</span><span class="o">=</span><span class="s2">&quot;bold cyan&quot;</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
+    <span class="c1"># Do work</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">progress</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">progress</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2007-57-51.gif?raw=true" /></p>
+</section>
+<hr class="docutils" />
+<section id="progressbar-update">
+<h3>ProgressBar.update()<a class="headerlink" href="#progressbar-update" title="Link to this heading"></a></h3>
+<p><strong>Method:</strong> <code class="docutils literal notranslate"><span class="pre">update(n=1)</span></code></p>
+<p>Update the progress bar by advancing it n steps.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> (int): Number of steps to advance (default: <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pbar</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">ProgressBar</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># Advance by 1 step</span>
+<span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Advance by 10 steps</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="progressbar-close">
+<h3>ProgressBar.close()<a class="headerlink" href="#progressbar-close" title="Link to this heading"></a></h3>
+<p><strong>Method:</strong> <code class="docutils literal notranslate"><span class="pre">close()</span></code></p>
+<p>Complete and close the progress bar, ensuring the final state is displayed.</p>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pbar</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">ProgressBar</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1"># ... perform work ...</span>
+<span class="n">pbar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Ensures final 100% state is displayed</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="progress-bar">
+<h3>progress_bar()<a class="headerlink" href="#progress-bar" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">progress_bar(iterable,</span> <span class="pre">total=None,</span> <span class="pre">desc=&quot;&quot;,</span> <span class="pre">**kwargs)</span></code></p>
+<p>Wrap an iterable with a progress bar for automatic tracking.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">iterable</span></code>: Any iterable object (list, range, generator, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">total</span></code> (int, optional): Total count (auto-detected if the iterable has <code class="docutils literal notranslate"><span class="pre">__len__</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">desc</span></code> (str): Description text</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: Additional arguments passed to <code class="docutils literal notranslate"><span class="pre">ProgressBar()</span></code></p></li>
+</ul>
+<p><strong>Returns:</strong> Iterator that yields items from the iterable</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1"># Progress bar automatically updates as you iterate</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">vg</span><span class="o">.</span><span class="n">progress_bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Processing&quot;</span><span class="p">):</span>
+    <span class="c1"># Process item</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2008-00-53.gif?raw=true" /></p>
+</section>
+<hr class="docutils" />
+<section id="multiprogress">
+<h3>MultiProgress()<a class="headerlink" href="#multiprogress" title="Link to this heading"></a></h3>
+<p><strong>Class:</strong> <code class="docutils literal notranslate"><span class="pre">MultiProgress()</span></code></p>
+<p>Manage multiple progress bars simultaneously with automatic layout management.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">with</span> <span class="n">vg</span><span class="o">.</span><span class="n">MultiProgress</span><span class="p">()</span> <span class="k">as</span> <span class="n">mp</span><span class="p">:</span>
+    <span class="n">task1</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="s2">&quot;Download&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">task2</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="s2">&quot;Extract&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">task3</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="s2">&quot;Process&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">mp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">task1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">mp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">task2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">mp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">task3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2008-03-51.gif?raw=true" /></p>
+</section>
+<hr class="docutils" />
+<section id="multiprogress-add-task">
+<h3>MultiProgress.add_task()<a class="headerlink" href="#multiprogress-add-task" title="Link to this heading"></a></h3>
+<p><strong>Method:</strong> <code class="docutils literal notranslate"><span class="pre">add_task(desc,</span> <span class="pre">total=100,</span> <span class="pre">**kwargs)</span></code></p>
+<p>Add a new progress task to the multi-progress display.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">desc</span></code> (str): Task description</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">total</span></code> (int): Total number of iterations (default: <code class="docutils literal notranslate"><span class="pre">100</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: Additional arguments passed to <code class="docutils literal notranslate"><span class="pre">ProgressBar()</span></code></p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">int</span></code> - Task ID for use with <code class="docutils literal notranslate"><span class="pre">update()</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="multiprogress-update">
+<h3>MultiProgress.update()<a class="headerlink" href="#multiprogress-update" title="Link to this heading"></a></h3>
+<p><strong>Method:</strong> <code class="docutils literal notranslate"><span class="pre">update(task_id,</span> <span class="pre">n=1)</span></code></p>
+<p>Update a specific task in the multi-progress display.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">task_id</span></code> (int): ID returned from <code class="docutils literal notranslate"><span class="pre">add_task()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> (int): Number of steps to advance (default: <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="color-palette-generation">
+<h2>Color Palette Generation<a class="headerlink" href="#color-palette-generation" title="Link to this heading"></a></h2>
+<section id="generate-palette">
+<h3>generate_palette()<a class="headerlink" href="#generate-palette" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">generate_palette(base_color=None,</span> <span class="pre">scheme=&quot;random&quot;,</span> <span class="pre">count=5,</span> <span class="pre">**kwargs)</span></code></p>
+<p>Generate a color palette based on color theory principles.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base_color</span></code> (str, optional): Starting hex color (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;#FF5733&quot;</span></code>). If <code class="docutils literal notranslate"><span class="pre">None</span></code>, a random color is chosen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scheme</span></code> (str): Color harmony scheme (default: <code class="docutils literal notranslate"><span class="pre">&quot;random&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code> (int): Number of colors to generate (default: <code class="docutils literal notranslate"><span class="pre">5</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">saturation_range</span></code> (tuple): Min and max saturation as <code class="docutils literal notranslate"><span class="pre">(min,</span> <span class="pre">max)</span></code> where values are 0-1 (default: <code class="docutils literal notranslate"><span class="pre">(0.4,</span> <span class="pre">1.0)</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value_range</span></code> (tuple): Min and max brightness as <code class="docutils literal notranslate"><span class="pre">(min,</span> <span class="pre">max)</span></code> where values are 0-1 (default: <code class="docutils literal notranslate"><span class="pre">(0.4,</span> <span class="pre">1.0)</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">randomize</span></code> (bool): Add slight random variations to colors (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">list[str]</span></code> - List of hex color strings</p>
+<p><strong>Color Harmony Schemes:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;monochromatic&quot;</span></code> - Variations of a single hue</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;analogous&quot;</span></code> - Adjacent hues on color wheel (±30°)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;complementary&quot;</span></code> - Opposite hues (180°)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;triadic&quot;</span></code> - Three evenly spaced hues (120° apart)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;tetradic&quot;</span></code> - Four hues at 60°, 180°, 240°</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;split_complementary&quot;</span></code> - Base color plus two adjacent to its complement</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;square&quot;</span></code> - Four evenly spaced hues (90° apart)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;random&quot;</span></code> - Randomly selected colors</p></li>
+</ul>
+<p><strong>Examples:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Complementary palette from blue</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="s2">&quot;complementary&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c1"># Returns: [&#39;#3498db&#39;, &#39;#db7834&#39;, &#39;#34a4db&#39;, &#39;#db3449&#39;, &#39;#4ddb34&#39;]</span>
+
+<span class="c1"># Random palette</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;random&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Analogous palette with custom ranges</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span>
+    <span class="n">base_color</span><span class="o">=</span><span class="s2">&quot;#e74c3c&quot;</span><span class="p">,</span>
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;analogous&quot;</span><span class="p">,</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+    <span class="n">saturation_range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span>
+    <span class="n">value_range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="generate-theme-palette">
+<h3>generate_theme_palette()<a class="headerlink" href="#generate-theme-palette" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">generate_theme_palette(scheme=&quot;random&quot;,</span> <span class="pre">base_color=None,</span> <span class="pre">**kwargs)</span></code></p>
+<p>Generate a complete theme with semantic color names suitable for UI applications.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scheme</span></code> (str): Color harmony scheme (default: <code class="docutils literal notranslate"><span class="pre">&quot;random&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base_color</span></code> (str, optional): Optional base hex color to start from</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">include_neutrals</span></code> (bool): Add grayscale background/foreground colors (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">force_semantic_colors</span></code> (bool): Use standard colors for success/warning/error regardless of scheme (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">dict</span></code> - Dictionary mapping theme names to hex colors</p>
+<p><strong>Theme Keys:</strong></p>
+<p>The returned dictionary contains these keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">primary</span></code> - Primary brand color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">secondary</span></code> - Secondary brand color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">accent</span></code> - Accent color for highlights</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">success</span></code> - Success state color (usually green)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">warning</span></code> - Warning state color (usually yellow/orange)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> - Error state color (usually red)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">info</span></code> - Information color (usually blue)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">background</span></code> - Background color (when <code class="docutils literal notranslate"><span class="pre">include_neutrals=True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">foreground</span></code> - Foreground/text color (when <code class="docutils literal notranslate"><span class="pre">include_neutrals=True</span></code>)</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_theme_palette</span><span class="p">(</span><span class="s2">&quot;complementary&quot;</span><span class="p">,</span> <span class="s2">&quot;#3498db&quot;</span><span class="p">)</span>
+<span class="c1"># Returns:</span>
+<span class="c1"># {</span>
+<span class="c1">#     &#39;primary&#39;: &#39;#3498db&#39;,</span>
+<span class="c1">#     &#39;secondary&#39;: &#39;#db7834&#39;,</span>
+<span class="c1">#     &#39;accent&#39;: &#39;#34dbb4&#39;,</span>
+<span class="c1">#     &#39;success&#39;: &#39;#2ecc71&#39;,</span>
+<span class="c1">#     &#39;warning&#39;: &#39;#f39c12&#39;,</span>
+<span class="c1">#     &#39;error&#39;: &#39;#e74c3c&#39;,</span>
+<span class="c1">#     &#39;info&#39;: &#39;#3498db&#39;,</span>
+<span class="c1">#     &#39;background&#39;: &#39;#1a1a1a&#39;,</span>
+<span class="c1">#     &#39;foreground&#39;: &#39;#e0e0e0&#39;</span>
+<span class="c1"># }</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">apply_palette_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;primary&gt;Primary&lt;/primary&gt; &lt;error&gt;Error&lt;/error&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="generate-accessible-theme">
+<h3>generate_accessible_theme()<a class="headerlink" href="#generate-accessible-theme" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">generate_accessible_theme(base_color,</span> <span class="pre">scheme=&quot;complementary&quot;,</span> <span class="pre">**kwargs)</span></code></p>
+<p>Generate a theme with colors validated for WCAG contrast requirements.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base_color</span></code> (str): Base hex color to build theme from</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scheme</span></code> (str): Color harmony scheme (default: <code class="docutils literal notranslate"><span class="pre">&quot;complementary&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">background</span></code> (str): Background hex color to test contrast against (default: <code class="docutils literal notranslate"><span class="pre">&quot;#1a1a1a&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_contrast</span></code> (float): Minimum contrast ratio (default: <code class="docutils literal notranslate"><span class="pre">4.5</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wcag_level</span></code> (str): WCAG conformance level - <code class="docutils literal notranslate"><span class="pre">&quot;AA&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;AAA&quot;</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;AA&quot;</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">dict</span></code> - Dictionary with accessible colors that meet contrast requirements</p>
+<p><strong>WCAG Contrast Requirements:</strong></p>
+<ul class="simple">
+<li><p><strong>AA Normal Text:</strong> 4.5:1 minimum</p></li>
+<li><p><strong>AA Large Text:</strong> 3:1 minimum</p></li>
+<li><p><strong>AAA Normal Text:</strong> 7:1 minimum</p></li>
+<li><p><strong>AAA Large Text:</strong> 4.5:1 minimum</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># All colors will meet WCAG AA contrast on white background</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_accessible_theme</span><span class="p">(</span>
+    <span class="s2">&quot;#3498db&quot;</span><span class="p">,</span>
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;triadic&quot;</span><span class="p">,</span>
+    <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#ffffff&quot;</span><span class="p">,</span>
+    <span class="n">wcag_level</span><span class="o">=</span><span class="s2">&quot;AA&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Verify colors meet requirements</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">theme</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">ratio</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">calculate_contrast_ratio</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="s2">&quot;#ffffff&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">ratio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">:1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="preview-palette">
+<h3>preview_palette()<a class="headerlink" href="#preview-palette" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">preview_palette(colors,</span> <span class="pre">width=40,</span> <span class="pre">show_info=True)</span></code></p>
+<p>Generate a visual text preview of a color palette.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">colors</span></code> (list): List of hex color strings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code> (int): Width of each color block in characters (default: <code class="docutils literal notranslate"><span class="pre">40</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_info</span></code> (bool): Show HSV values below each color (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Formatted string with colored blocks</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="s2">&quot;analogous&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">preview_palette</span><span class="p">(</span><span class="n">colors</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-06-53.png?raw=true" /></p>
+</section>
+<hr class="docutils" />
+<section id="apply-palette-theme">
+<h3>apply_palette_theme()<a class="headerlink" href="#apply-palette-theme" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">apply_palette_theme(palette,</span> <span class="pre">register_styles=True)</span></code></p>
+<p>Apply a generated palette as the active theme and optionally register each color as a custom style.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">palette</span></code> (dict): Dictionary from <code class="docutils literal notranslate"><span class="pre">generate_theme_palette()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">register_styles</span></code> (bool): Register each color name as a custom style tag (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_theme_palette</span><span class="p">(</span><span class="s2">&quot;analogous&quot;</span><span class="p">,</span> <span class="s2">&quot;#e74c3c&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">apply_palette_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">)</span>
+
+<span class="c1"># Use theme colors as style tags</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;primary&gt;Primary text&lt;/primary&gt;&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;success&gt;Success message&lt;/success&gt;&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;error&gt;Error message&lt;/error&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-07-44.png?raw=true" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="color-manipulation">
+<h2>Color Manipulation<a class="headerlink" href="#color-manipulation" title="Link to this heading"></a></h2>
+<section id="lighten">
+<h3>lighten()<a class="headerlink" href="#lighten" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">lighten(color,</span> <span class="pre">amount=0.1)</span></code></p>
+<p>Increase the brightness (value in HSV) of a color.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> (str): Hex color string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code> (float): Brightness increase amount between 0 and 1 (default: <code class="docutils literal notranslate"><span class="pre">0.1</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Lightened hex color</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lighter</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">lighten</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#3cb0ff&#39;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="darken">
+<h3>darken()<a class="headerlink" href="#darken" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">darken(color,</span> <span class="pre">amount=0.1)</span></code></p>
+<p>Decrease the brightness (value in HSV) of a color.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> (str): Hex color string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code> (float): Brightness decrease amount between 0 and 1 (default: <code class="docutils literal notranslate"><span class="pre">0.1</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Darkened hex color</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">darker</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">darken</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#2774a7&#39;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="saturate">
+<h3>saturate()<a class="headerlink" href="#saturate" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">saturate(color,</span> <span class="pre">amount=0.1)</span></code></p>
+<p>Increase the saturation of a color, making it more vivid.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> (str): Hex color string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code> (float): Saturation increase amount between 0 and 1 (default: <code class="docutils literal notranslate"><span class="pre">0.1</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - More saturated hex color</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">more_saturated</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">saturate</span><span class="p">(</span><span class="s2">&quot;#80a0c0&quot;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#5a9ad8&#39;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="desaturate">
+<h3>desaturate()<a class="headerlink" href="#desaturate" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">desaturate(color,</span> <span class="pre">amount=0.1)</span></code></p>
+<p>Decrease the saturation of a color, making it more gray.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> (str): Hex color string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code> (float): Saturation decrease amount between 0 and 1 (default: <code class="docutils literal notranslate"><span class="pre">0.1</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Less saturated hex color</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">less_saturated</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">desaturate</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#4683c0&#39;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="shift-hue">
+<h3>shift_hue()<a class="headerlink" href="#shift-hue" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">shift_hue(color,</span> <span class="pre">degrees)</span></code></p>
+<p>Rotate the hue of a color by a specified number of degrees on the color wheel.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> (str): Hex color string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">degrees</span></code> (float): Degrees to rotate, can be negative or positive (-360 to 360)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Color with shifted hue</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rotate red 120 degrees to get green</span>
+<span class="n">shifted</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">shift_hue</span><span class="p">(</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#00ff00&#39;</span>
+
+<span class="c1"># Negative rotation</span>
+<span class="n">shifted</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">shift_hue</span><span class="p">(</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">120</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#0000ff&#39;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="invert">
+<h3>invert()<a class="headerlink" href="#invert" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">invert(color)</span></code></p>
+<p>Invert a color by flipping its RGB values.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> (str): Hex color string</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Inverted hex color</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">inverted</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#00ffff&#39; (Red → Cyan)</span>
+<span class="n">inverted</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#cb6724&#39;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="mix">
+<h3>mix()<a class="headerlink" href="#mix" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">mix(color1,</span> <span class="pre">color2,</span> <span class="pre">weight=0.5)</span></code></p>
+<p>Mix two colors together with a specified weight.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color1</span></code> (str): First hex color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color2</span></code> (str): Second hex color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weight</span></code> (float): Weight of first color between 0 and 1 (default: <code class="docutils literal notranslate"><span class="pre">0.5</span></code> for 50/50 mix)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Mixed hex color</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Equal mix (50/50)</span>
+<span class="n">mixed</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="s2">&quot;#0000FF&quot;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#7f007f&#39; (Purple)</span>
+
+<span class="c1"># More of the first color (80% red, 20% blue)</span>
+<span class="n">mixed</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="s2">&quot;#0000FF&quot;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#cc0033&#39;</span>
+
+<span class="c1"># More of the second color (20% red, 80% blue)</span>
+<span class="n">mixed</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="s2">&quot;#0000FF&quot;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># Returns: &#39;#3300cc&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="accessibility-functions">
+<h2>Accessibility Functions<a class="headerlink" href="#accessibility-functions" title="Link to this heading"></a></h2>
+<section id="calculate-contrast-ratio">
+<h3>calculate_contrast_ratio()<a class="headerlink" href="#calculate-contrast-ratio" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">calculate_contrast_ratio(color1,</span> <span class="pre">color2)</span></code></p>
+<p>Calculate WCAG 2.1 contrast ratio between two colors.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color1</span></code> (str): First hex color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color2</span></code> (str): Second hex color</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">float</span></code> - Contrast ratio (1-21, where 21 is maximum contrast)</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ratio</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">calculate_contrast_ratio</span><span class="p">(</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="s2">&quot;#000000&quot;</span><span class="p">)</span>  <span class="c1"># 21.0</span>
+<span class="n">ratio</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">calculate_contrast_ratio</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="s2">&quot;#1a1a1a&quot;</span><span class="p">)</span>  <span class="c1"># ~5.2</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="meets-wcag">
+<h3>meets_wcag()<a class="headerlink" href="#meets-wcag" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">meets_wcag(color1,</span> <span class="pre">color2,</span> <span class="pre">level=&quot;AA&quot;,</span> <span class="pre">large_text=False)</span></code></p>
+<p>Check if two colors meet WCAG contrast requirements.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color1</span></code> (str): Foreground hex color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color2</span></code> (str): Background hex color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">level</span></code> (str): WCAG conformance level - <code class="docutils literal notranslate"><span class="pre">&quot;AA&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;AAA&quot;</span></code> (default: <code class="docutils literal notranslate"><span class="pre">&quot;AA&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">large_text</span></code> (bool): <code class="docutils literal notranslate"><span class="pre">True</span></code> if text is 18pt+ or 14pt+ bold (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">bool</span></code> - <code class="docutils literal notranslate"><span class="pre">True</span></code> if colors meet the specified WCAG level</p>
+<p><strong>WCAG Requirements:</strong></p>
+<ul class="simple">
+<li><p><strong>AA Normal Text:</strong> 4.5:1 minimum</p></li>
+<li><p><strong>AA Large Text:</strong> 3:1 minimum</p></li>
+<li><p><strong>AAA Normal Text:</strong> 7:1 minimum</p></li>
+<li><p><strong>AAA Large Text:</strong> 4.5:1 minimum</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">vg</span><span class="o">.</span><span class="n">meets_wcag</span><span class="p">(</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="s2">&quot;#000000&quot;</span><span class="p">,</span> <span class="s2">&quot;AAA&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Perfect contrast!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">vg</span><span class="o">.</span><span class="n">meets_wcag</span><span class="p">(</span><span class="s2">&quot;#777777&quot;</span><span class="p">,</span> <span class="s2">&quot;#888888&quot;</span><span class="p">,</span> <span class="s2">&quot;AA&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Insufficient contrast for normal text&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="ensure-contrast">
+<h3>ensure_contrast()<a class="headerlink" href="#ensure-contrast" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">ensure_contrast(foreground,</span> <span class="pre">background,</span> <span class="pre">min_ratio=4.5,</span> <span class="pre">max_iterations=20)</span></code></p>
+<p>Automatically adjust a foreground color to meet minimum contrast requirements against a background.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">foreground</span></code> (str): Foreground hex color to adjust</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">background</span></code> (str): Background hex color (not modified)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_ratio</span></code> (float): Minimum contrast ratio to achieve (default: <code class="docutils literal notranslate"><span class="pre">4.5</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_iterations</span></code> (int): Maximum adjustment attempts (default: <code class="docutils literal notranslate"><span class="pre">20</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Adjusted hex color that meets contrast requirement</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure text is readable on gray background</span>
+<span class="n">adjusted</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">ensure_contrast</span><span class="p">(</span><span class="s2">&quot;#888888&quot;</span><span class="p">,</span> <span class="s2">&quot;#999999&quot;</span><span class="p">,</span> <span class="n">min_ratio</span><span class="o">=</span><span class="mf">4.5</span><span class="p">)</span>
+<span class="c1"># Returns darkened/lightened color that meets contrast requirement</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="color-blindness-functions">
+<h2>Color Blindness Functions<a class="headerlink" href="#color-blindness-functions" title="Link to this heading"></a></h2>
+<section id="simulate-colorblindness">
+<h3>simulate_colorblindness()<a class="headerlink" href="#simulate-colorblindness" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">simulate_colorblindness(hex_color,</span> <span class="pre">cb_type)</span></code></p>
+<p>Simulate how a color appears to individuals with various types of color blindness.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hex_color</span></code> (str): Input hex color</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cb_type</span></code> (str): Type of color blindness to simulate</p></li>
+</ul>
+<p><strong>Color Blindness Types:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;protanopia&quot;</span></code> - Red-blind (no red cones)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;deuteranopia&quot;</span></code> - Green-blind (no green cones)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;tritanopia&quot;</span></code> - Blue-blind (no blue cones)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;protanomaly&quot;</span></code> - Red-weak (defective red cones)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;deuteranomaly&quot;</span></code> - Green-weak (defective green cones)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;tritanomaly&quot;</span></code> - Blue-weak (defective blue cones)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> - Hex color as perceived by someone with the specified color blindness</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># How red appears to someone with deuteranopia</span>
+<span class="n">simulated</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">simulate_colorblindness</span><span class="p">(</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="s2">&quot;deuteranopia&quot;</span><span class="p">)</span>
+<span class="c1"># Returns: &#39;#b89000&#39; (brownish-yellow)</span>
+
+<span class="c1"># Test all your colors</span>
+<span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">palette</span><span class="p">:</span>
+    <span class="n">sim</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">simulate_colorblindness</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="s2">&quot;deuteranopia&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2"> → </span><span class="si">{</span><span class="n">sim</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="validate-colorblind-safety">
+<h3>validate_colorblind_safety()<a class="headerlink" href="#validate-colorblind-safety" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">validate_colorblind_safety(colors,</span> <span class="pre">cb_type=&quot;deuteranopia&quot;,</span> <span class="pre">min_difference=30)</span></code></p>
+<p>Check if colors in a palette remain distinguishable for people with color blindness.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">colors</span></code> (list): List of hex color strings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cb_type</span></code> (str): Type of color blindness to test (default: <code class="docutils literal notranslate"><span class="pre">&quot;deuteranopia&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_difference</span></code> (float): Minimum perceptual difference required (default: <code class="docutils literal notranslate"><span class="pre">30</span></code>)</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">tuple</span></code> - <code class="docutils literal notranslate"><span class="pre">(is_safe:</span> <span class="pre">bool,</span> <span class="pre">problems:</span> <span class="pre">list)</span></code> where problems is a list of <code class="docutils literal notranslate"><span class="pre">(index,</span> <span class="pre">index)</span></code> tuples indicating indistinguishable color pairs</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="s2">&quot;#00FF00&quot;</span><span class="p">,</span> <span class="s2">&quot;#0000FF&quot;</span><span class="p">]</span>
+<span class="n">is_safe</span><span class="p">,</span> <span class="n">problems</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">validate_colorblind_safety</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="s2">&quot;deuteranopia&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">is_safe</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">problems</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Colors </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2"> are too similar: </span><span class="si">{</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="n">colors</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="persistence-functions">
+<h2>Persistence Functions<a class="headerlink" href="#persistence-functions" title="Link to this heading"></a></h2>
+<section id="save-palette">
+<h3>save_palette()<a class="headerlink" href="#save-palette" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">save_palette(colors,</span> <span class="pre">filename,</span> <span class="pre">metadata=None)</span></code></p>
+<p>Save a color palette to a JSON file for later use.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">colors</span></code> (list): List of hex color strings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code> (str): Output file path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metadata</span></code> (dict, optional): Optional metadata dictionary to include</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">palette</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="s2">&quot;complementary&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">save_palette</span><span class="p">(</span>
+    <span class="n">palette</span><span class="p">,</span>
+    <span class="s2">&quot;my_theme.json&quot;</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Ocean Blue&quot;</span><span class="p">,</span> <span class="s2">&quot;scheme&quot;</span><span class="p">:</span> <span class="s2">&quot;complementary&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="load-palette">
+<h3>load_palette()<a class="headerlink" href="#load-palette" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">load_palette(filename)</span></code></p>
+<p>Load a color palette from a JSON file.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code> (str): Input file path</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">tuple</span></code> - <code class="docutils literal notranslate"><span class="pre">(colors:</span> <span class="pre">list,</span> <span class="pre">metadata:</span> <span class="pre">dict)</span></code> containing the color list and metadata</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">load_palette</span><span class="p">(</span><span class="s2">&quot;my_theme.json&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loaded: </span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">preview_palette</span><span class="p">(</span><span class="n">colors</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="save-theme">
+<h3>save_theme()<a class="headerlink" href="#save-theme" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">save_theme(theme,</span> <span class="pre">filename,</span> <span class="pre">metadata=None)</span></code></p>
+<p>Save a theme palette to a JSON file.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">theme</span></code> (dict): Theme dictionary from <code class="docutils literal notranslate"><span class="pre">generate_theme_palette()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code> (str): Output file path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metadata</span></code> (dict, optional): Optional metadata dictionary to include</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_theme_palette</span><span class="p">(</span><span class="s2">&quot;triadic&quot;</span><span class="p">,</span> <span class="s2">&quot;#9b59b6&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">save_theme</span><span class="p">(</span>
+    <span class="n">theme</span><span class="p">,</span>
+    <span class="s2">&quot;purple_theme.json&quot;</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Purple Rain&quot;</span><span class="p">,</span> <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Me&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="load-theme">
+<h3>load_theme()<a class="headerlink" href="#load-theme" title="Link to this heading"></a></h3>
+<p><strong>Function:</strong> <code class="docutils literal notranslate"><span class="pre">load_theme(filename)</span></code></p>
+<p>Load a theme palette from a JSON file.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code> (str): Input file path</p></li>
+</ul>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">tuple</span></code> - <code class="docutils literal notranslate"><span class="pre">(theme:</span> <span class="pre">dict,</span> <span class="pre">metadata:</span> <span class="pre">dict)</span></code> containing the theme dictionary and metadata</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">theme</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">load_theme</span><span class="p">(</span><span class="s2">&quot;purple_theme.json&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">apply_palette_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;primary&gt;Using loaded theme!&lt;/primary&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="conventions.html" class="btn btn-neutral float-left" title="Conventions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="inbuilt.html" class="btn btn-neutral float-right" title="In-built resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sivaprasad Murali.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

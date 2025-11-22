@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Start Guide &mdash; Vargula 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=71272d9f"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Vargula
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#basic-text-styling">Basic Text Styling</a><ul>
+<li><a class="reference internal" href="#using-style">Using <code class="docutils literal notranslate"><span class="pre">style()</span></code></a></li>
+<li><a class="reference internal" href="#using-markup-tags">Using Markup Tags</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#custom-styles">Custom Styles</a></li>
+<li><a class="reference internal" href="#simple-table">Simple Table</a></li>
+<li><a class="reference internal" href="#progress-bar">Progress Bar</a></li>
+<li><a class="reference internal" href="#color-palette">Color Palette</a></li>
+<li><a class="reference internal" href="#complete-example">Complete Example</a></li>
+<li><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vargula</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quick Start Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/getting-started/quick-start.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-start-guide">
+<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h1>
+<p>Get started with Vargula in 5 minutes!</p>
+<section id="basic-text-styling">
+<h2>Basic Text Styling<a class="headerlink" href="#basic-text-styling" title="Link to this heading"></a></h2>
+<section id="using-style">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">style()</span></code><a class="headerlink" href="#using-style" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="c1"># Colors</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Success!&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Error!&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">))</span>
+
+<span class="c1"># Backgrounds</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Highlighted&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">))</span>
+
+<span class="c1"># Hex colors</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Custom&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF5733&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="using-markup-tags">
+<h3>Using Markup Tags<a class="headerlink" href="#using-markup-tags" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># HTML-like tags</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is &lt;red&gt;red&lt;/red&gt; and &lt;blue&gt;blue&lt;/blue&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;Bold text&lt;/bold&gt; with &lt;italic&gt;italic&lt;/italic&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Nested tags</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;&lt;red&gt;Bold and red!&lt;/red&gt;&lt;/bold&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="custom-styles">
+<h2>Custom Styles<a class="headerlink" href="#custom-styles" title="Link to this heading"></a></h2>
+<p>Create reusable styles:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define once</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+<span class="c1"># Use everywhere</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;e&gt;Error occurred&lt;/e&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;success&gt;Task completed&lt;/success&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="simple-table">
+<h2>Simple Table<a class="headerlink" href="#simple-table" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Task Status&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Task&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Status&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Compile code&quot;</span><span class="p">,</span> <span class="s2">&quot;✓ Done&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Run tests&quot;</span><span class="p">,</span> <span class="s2">&quot;⏳ Running&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="progress-bar">
+<h2>Progress Bar<a class="headerlink" href="#progress-bar" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">vg</span><span class="o">.</span><span class="n">progress_bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Processing&quot;</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="color-palette">
+<h2>Color Palette<a class="headerlink" href="#color-palette" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="s2">&quot;complementary&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">preview_palette</span><span class="p">(</span><span class="n">colors</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="complete-example">
+<h2>Complete Example<a class="headerlink" href="#complete-example" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1"># Setup theme</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
+
+<span class="c1"># Display header</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;&lt;cyan&gt;=== System Status ===&lt;/cyan&gt;&lt;/bold&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create table</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Services&quot;</span><span class="p">,</span> <span class="n">border_style</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Service&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Status&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;API Server&quot;</span><span class="p">,</span> <span class="s2">&quot;✓ Running&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;Database&quot;</span><span class="p">,</span> <span class="s2">&quot;✓ Running&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+
+<span class="c1"># Show progress</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">vg</span><span class="o">.</span><span class="n">progress_bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Checks&quot;</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;success&gt;✓ All tasks completed!&lt;/success&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="core-concepts.html"><span class="std std-doc">Core Concepts</span></a> - Understand key concepts</p></li>
+<li><p><a class="reference internal" href="#tag-syntax.md"><span class="xref myst">Tag Syntax</span></a> - Master markup syntax</p></li>
+<li><p><a class="reference internal" href="#../user-guide/text-styling.md"><span class="xref myst">User Guide</span></a> - Detailed guides</p></li>
+<li><p><a class="reference internal" href="#../examples/index.md"><span class="xref myst">Examples</span></a> - More examples</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sivaprasad Murali.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

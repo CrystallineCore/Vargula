@@ -1,0 +1,238 @@
+# Core Concepts
+
+Understanding Vargula's fundamental concepts.
+
+## Three Styling Approaches
+
+### 1. Direct Styling with `style()`
+
+Best for one-off styling and dynamic colors:
+
+```python
+import vargula as vg
+
+styled = vg.style("Hello", color="red", bg="white", look="bold")
+print(styled)
+
+# Dynamic styling
+color = "green" if success else "red"
+print(vg.style("Status", color=color))
+```
+
+### 2. Markup Tags with `format()`
+
+Best for inline styling and mixed styles:
+
+```python
+text = vg.format("This is <red>red</red> and <blue>blue</blue>")
+print(text)
+
+# Nested
+text = vg.format("<bold>Bold with <red>red text</red></bold>")
+print(text)
+```
+
+### 3. Custom Styles with `create()`
+
+Best for reusable, semantic styles:
+
+```python
+vg.create("error", color="red", look="bold")
+vg.create("success", color="green", look="bold")
+
+vg.write("<e>Error occurred</e>")
+vg.write("<success>Task completed</success>")
+```
+
+## Color Specification
+
+### Named Colors
+
+```python
+vg.style("Text", color="red")
+vg.style("Text", color="bright_green")
+```
+
+Available: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white`, and `bright_*` variants.
+
+### Hex Colors
+
+```python
+vg.style("Text", color="#FF5733")
+vg.style("Text", color="#F73")  # Short form
+```
+
+### RGB Tuples
+
+```python
+vg.style("Text", color=(255, 87, 51))
+vg.style("Text", bg=(26, 26, 26))
+```
+
+## Text Decorations (Looks)
+
+```python
+vg.style("Bold", look="bold")
+vg.style("Italic", look="italic")
+vg.style("Underline", look="underline")
+
+# Multiple
+vg.style("Fancy", look=["bold", "underline"])
+```
+
+Available: `bold`, `dim`, `italic`, `underline`, `blink`, `reverse`, `hidden`, `strikethrough`
+
+## Tags and Markup
+
+### Predefined Tags
+
+```python
+# Color tags
+vg.write("<red>Red text</red>")
+vg.write("<bright_blue>Bright blue</bright_blue>")
+
+# Background tags
+vg.write("<@yellow>Yellow background</@yellow>")
+vg.write("<@red>Red background</@red>")
+
+# Hex tags
+vg.write("<#FF5733>Custom color</#FF5733>")
+vg.write("<@#000080>Navy background</@#000080>")
+
+# Look tags
+vg.write("<bold>Bold text</bold>")
+vg.write("<italic>Italic text</italic>")
+```
+
+### Custom Tags
+
+```python
+vg.create("error", color="red", look="bold")
+vg.create("highlight", bg="yellow", color="black")
+
+vg.write("An <e>error</e> occurred")
+vg.write("<highlight>Important</highlight>")
+```
+
+### Tag Nesting
+
+```python
+vg.write("<bold>Bold with <red>red text</red></bold>")
+vg.write("<green><bold><underline>Triple</underline></bold></green>")
+```
+
+## Themes
+
+### Built-in Themes
+
+```python
+vg.set_theme("dark")
+vg.write("<e>Error</e> <success>Success</success>")
+
+vg.set_theme("light")
+vg.write("<warning>Warning</warning> <info>Info</info>")
+```
+
+Theme styles: `error`, `success`, `warning`, `info`, `debug`, `critical`
+
+### Custom Themes
+
+```python
+my_theme = {
+    "error": {"color": "red", "look": "bold"},
+    "success": {"color": "green", "look": "bold"},
+    "title": {"color": "cyan", "look": ["bold", "underline"]}
+}
+vg.set_theme(my_theme)
+```
+
+### Generated Themes
+
+```python
+theme = vg.generate_theme_palette("complementary", "#3498db")
+vg.apply_palette_theme(theme)
+
+vg.write("<primary>Primary</primary>")
+vg.write("<e>Error</e>")
+```
+
+## Global Control
+
+### Enable/Disable
+
+```python
+vg.disable()
+print(vg.style("No color", color="red"))  # Plain text
+
+vg.enable()
+print(vg.style("Has color", color="red"))  # Colored
+```
+
+### Environment Variables
+
+- `NO_COLOR` - Respects standard NO_COLOR
+- `FORCE_COLOR` - Force colors even when not TTY
+
+```bash
+NO_COLOR=1 python script.py
+FORCE_COLOR=1 python script.py | less -R
+```
+
+## Text Manipulation
+
+### Strip Markup
+
+```python
+text = "<red>Hello</red> <blue>World</blue>"
+plain = vg.strip(text)  # "Hello World"
+```
+
+### Clean ANSI Codes
+
+```python
+styled = vg.style("Hello", color="red")
+plain = vg.clean(styled)  # "Hello"
+```
+
+### Calculate Visible Length
+
+```python
+styled = vg.style("Hello", color="red")
+print(len(styled))        # 18 (with ANSI)
+print(vg.length(styled))  # 5 (visible)
+```
+
+## Best Practices
+
+1. **Use Semantic Naming**
+   ```python
+   vg.create("error", color="red", look="bold")  # Good
+   vg.create("red_bold", color="red", look="bold")  # Avoid
+   ```
+
+2. **Consistent Theming**
+   ```python
+   vg.set_theme("dark")
+   # Or
+   theme = vg.generate_theme_palette("analogous", "#e74c3c")
+   vg.apply_palette_theme(theme)
+   ```
+
+3. **Respect User Preferences**
+   ```python
+   import os
+   if os.getenv("NO_COLOR"):
+       vg.disable()
+   ```
+
+4. **Test Accessibility**
+   ```python
+   if not vg.meets_wcag(text_color, bg_color, "AA"):
+       text_color = vg.ensure_contrast(text_color, bg_color)
+   ```
+
+## Next Steps
+
+- [Tag Syntax Guide](tag-syntax.md)
+- [User Guide](../user-guide/text-styling.md)
+- [API Reference](../api/index.md)

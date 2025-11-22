@@ -1,0 +1,24 @@
+{
+  "theme": {
+    "primary": "#88c0d0",
+    "secondary": "#81a1c1",
+    "accent": "#8fbcbb",
+    "success": "#a3be8c",
+    "warning": "#ebcb8b",
+    "error": "#bf616a",
+    "info": "#5e81ac",
+    "background": "#2e3440",
+    "foreground": "#d8dee9",
+    "muted": "#4c566a",
+    "border": "#3b4252"
+  },
+  "metadata": {
+    "name": "Nord Inspired",
+    "description": "Arctic, frost-themed palette with cool, calm colors",
+    "author": "vargula",
+    "version": "1.0.0",
+    "inspiration": "Nord Theme",
+    "tags": ["dark", "cool", "calm", "arctic"],
+    "best_for": ["coding", "long sessions", "minimal distraction"]
+  }
+}

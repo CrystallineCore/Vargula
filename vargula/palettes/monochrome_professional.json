@@ -1,0 +1,19 @@
+{
+  "colors": [
+    "#000000",
+    "#2d3142",
+    "#4f5d75",
+    "#bfc0c0",
+    "#e8e8e8",
+    "#ffffff"
+  ],
+  "metadata": {
+    "name": "Monochrome Professional",
+    "description": "Classic grayscale palette for professional, minimalist designs",
+    "scheme": "monochromatic",
+    "base_color": "#4f5d75",
+    "author": "vargula",
+    "tags": ["professional", "minimal", "classic", "versatile"],
+    "use_cases": ["business apps", "reports", "technical documentation"]
+  }
+}

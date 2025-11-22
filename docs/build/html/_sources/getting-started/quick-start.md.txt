@@ -1,0 +1,107 @@
+# Quick Start Guide
+
+Get started with Vargula in 5 minutes!
+
+## Basic Text Styling
+
+### Using `style()`
+
+```python
+import vargula as vg
+
+# Colors
+print(vg.style("Success!", color="green"))
+print(vg.style("Error!", color="red", look="bold"))
+
+# Backgrounds
+print(vg.style("Highlighted", bg="yellow", color="black"))
+
+# Hex colors
+print(vg.style("Custom", color="#FF5733"))
+```
+
+### Using Markup Tags
+
+```python
+# HTML-like tags
+vg.write("This is <red>red</red> and <blue>blue</blue>")
+vg.write("<bold>Bold text</bold> with <italic>italic</italic>")
+
+# Nested tags
+vg.write("<bold><red>Bold and red!</red></bold>")
+```
+
+## Custom Styles
+
+Create reusable styles:
+
+```python
+# Define once
+vg.create("error", color="red", look="bold")
+vg.create("success", color="green", look="bold")
+
+# Use everywhere
+vg.write("<e>Error occurred</e>")
+vg.write("<success>Task completed</success>")
+```
+
+## Simple Table
+
+```python
+table = vg.Table(title="Task Status")
+table.add_column("Task", style="cyan")
+table.add_column("Status", style="green")
+table.add_row("Compile code", "✓ Done")
+table.add_row("Run tests", "⏳ Running")
+print(table)
+```
+
+## Progress Bar
+
+```python
+import time
+
+for item in vg.progress_bar(range(100), desc="Processing"):
+    time.sleep(0.02)
+```
+
+## Color Palette
+
+```python
+colors = vg.generate_palette("#3498db", "complementary", 5)
+print(vg.preview_palette(colors))
+```
+
+## Complete Example
+
+```python
+import vargula as vg
+import time
+
+# Setup theme
+vg.set_theme("dark")
+
+# Display header
+vg.write("<bold><cyan>=== System Status ===</cyan></bold>\n")
+
+# Create table
+table = vg.Table(title="Services", border_style="cyan")
+table.add_column("Service", style="bold")
+table.add_column("Status", style="green")
+table.add_row("API Server", "✓ Running")
+table.add_row("Database", "✓ Running")
+print(table)
+
+# Show progress
+for _ in vg.progress_bar(range(50), desc="Checks"):
+    time.sleep(0.02)
+
+vg.write("<success>✓ All tasks completed!</success>")
+```
+
+## Next Steps
+
+- [Core Concepts](core-concepts.md) - Understand key concepts
+- [Tag Syntax](tag-syntax.md) - Master markup syntax
+- [User Guide](../user-guide/text-styling.md) - Detailed guides
+- [Examples](../examples/index.md) - More examples

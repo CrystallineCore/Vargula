@@ -1,0 +1,24 @@
+{
+  "theme": {
+    "primary": "#c4a7e7",
+    "secondary": "#ebbcba",
+    "accent": "#9ccfd8",
+    "success": "#9ccfd8",
+    "warning": "#f6c177",
+    "error": "#eb6f92",
+    "info": "#31748f",
+    "background": "#191724",
+    "foreground": "#e0def4",
+    "muted": "#6e6a86",
+    "border": "#26233a"
+  },
+  "metadata": {
+    "name": "Rosé Pine",
+    "description": "Low-contrast theme with muted, natural colors",
+    "author": "vargula",
+    "version": "1.0.0",
+    "inspiration": "Rosé Pine Theme",
+    "tags": ["dark", "low-contrast", "natural", "soft"],
+    "best_for": ["long coding sessions", "focus work", "minimal distraction"]
+  }
+}

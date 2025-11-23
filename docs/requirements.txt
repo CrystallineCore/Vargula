@@ -3,3 +3,4 @@ myst-parser
 sphinx-rtd-theme
 sphinx-autodoc-typehints
 sphinx-sitemap
+linkify-it-py>=2.0.0

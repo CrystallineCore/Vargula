@@ -6,11 +6,13 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Appendix &mdash; Vargula 1.0.4 documentation</title>
+  <title>Appendix &mdash; Vargula 1.0.4 Documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=fe80a0e6" />
 
   
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="canonical" href="https://vargula.readthedocs.io/appendix.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
@@ -20,20 +22,115 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Vargula Quick Reference" href="reference.html" />
-    <link rel="prev" title="Tips &amp; Best Practices" href="tips.html" /> 
+    <link rel="next" title="Quick Reference" href="reference.html" />
+    <link rel="prev" title="Tips &amp; Best Practices" href="tips.html" />
+     
+
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="RA1p_5zP4s9LacW9qE1QYQ6WYLiUcYgPb1DoO91Vl4Q" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Vargula is a lightweight, modern Python library for beautiful terminal text styling, coloring, formatting, and UI elements.">
+    <meta name="keywords" content="vargula, python terminal styling, terminal colors, text formatting, ansi colors, cli ui, python color library, colorama alternative, rich alternative">
+    <meta name="author" content="Sivaprasad Murali">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Vargula – Terminal Text Styling for Python">
+    <meta property="og:description" content="Documentation, tutorials, and API reference for Vargula — a fast and intuitive Python library for terminal text styling and colored outputs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vargula.readthedocs.io/">
+    <meta property="og:image" content="https://vargula.readthedocs.io/en/latest/_static/logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vargula – Terminal Text Styling for Python">
+    <meta name="twitter:description" content="Documentation, tutorials, and API reference for Vargula — a fast and intuitive Python library for terminal text styling and colored outputs.">
+    <meta name="twitter:image" content="https://vargula.readthedocs.io/en/latest/_static/logo.png">
+
+    <!-- JSON-LD Structured Data for Software Application -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Vargula",
+    "description": "Python library for terminal text styling with color palette generation, WCAG accessibility, and colorblind simulation",
+    "url": "https://vargula.readthedocs.io/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": ["Windows", "macOS", "Linux"],
+    "softwareVersion": "1.0.4",
+    "author": {
+        "@type": "Person",
+        "name": "Sivaprasad Murali"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
+    },
+    "programmingLanguage": "Python",
+    "keywords": "terminal styling, color palette, WCAG accessibility, colorblind simulation, CLI, ANSI colors",
+    "screenshot": "https://vargula.readthedocs.io/en/latest/_static/screenshot.png",
+    "softwareHelp": "https://vargula.readthedocs.io/",
+    "downloadUrl": "https://pypi.org/project/vargula/",
+    "codeRepository": "https://github.com/crystallinecore/vargula",
+    "license": "https://opensource.org/licenses/MIT",
+    "inLanguage": "en"
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://vargula.readthedocs.io/"
+    },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Appendix",
+        "item": "https://vargula.readthedocs.io/appendix.html"
+    }]
+    }
+    </script>
+
+    <!-- Organization Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vargula",
+    "url": "https://vargula.readthedocs.io/",
+    "logo": "https://vargula.readthedocs.io/en/latest/_static/logo.png",
+    "sameAs": [
+        "https://github.com/crystallinecore/vargula",
+        "https://pypi.org/project/vargula/"
+    ]
+    }
+    </script>
+
 </head>
 
 <body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
 
           
           
           <a href="index.html" class="icon icon-home">
             Vargula
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -45,15 +142,230 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">Vargula API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">Why Vargula?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#quick-comparison-table">Quick Comparison Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#side-by-side-hello-world-example">Side-by-Side: “Hello World” Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#vargula">Vargula</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#rich">Rich</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#colorama">Colorama</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#termcolor">Termcolor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#pastel">Pastel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#comparison-summary">Comparison Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#code-clarity-best-to-worst">Code Clarity (Best to Worst)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#readability-score">Readability Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#character-count-comparison">Character Count Comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#complex-nesting-example">Complex Nesting Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="comparison.html#id1">Vargula</a></li>
+<li class="toctree-l4"><a class="reference internal" href="comparison.html#id2">Rich</a></li>
+<li class="toctree-l4"><a class="reference internal" href="comparison.html#id3">Pastel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="comparison.html#id4">Termcolor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="comparison.html#id5">Colorama</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#winner-by-category">Winner by Category</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#vs-rich">vs. Rich</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#where-rich-excels">Where Rich Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#where-vargula-excels">Where Vargula Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#when-to-choose-each">When to Choose Each</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#example-comparison">Example Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#vs-colorama">vs. Colorama</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#where-colorama-excels">Where Colorama Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id6">Where Vargula Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id7">When to Choose Each</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id8">Example Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#vs-termcolor">vs. Termcolor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#where-termcolor-excels">Where Termcolor Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id9">Where Vargula Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id10">When to Choose Each</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id11">Example Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#vs-pastel">vs. Pastel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#where-pastel-excels">Where Pastel Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id12">Where Vargula Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id13">When to Choose Each</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id14">Example Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#vargulas-unique-strengths">Vargula’s Unique Strengths</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#color-theory-integration">1. <strong>Color Theory Integration</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#accessibility-first">2. <strong>Accessibility First</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#intuitive-background-color-syntax">3. <strong>Intuitive Background Color Syntax</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#complete-color-manipulation-toolkit">4. <strong>Complete Color Manipulation Toolkit</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#palette-persistence">5. <strong>Palette Persistence</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#when-to-choose-vargula">When to Choose Vargula</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#perfect-for">Perfect For:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#may-not-be-ideal-for">May Not Be Ideal For:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#complementary-usage">Complementary Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#maturity-community">Maturity &amp; Community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#real-world-complex-example">Real-World Complex Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id15">Vargula</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id16">Rich</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id17">Termcolor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#id18">Colorama</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#the-verdict">The Verdict</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#choose-rich-if-you-need">Choose <strong>Rich</strong> if you need:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#choose-colorama-if-you-need">Choose <strong>Colorama</strong> if you need:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#choose-termcolor-if-you-need">Choose <strong>Termcolor</strong> if you need:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#choose-pastel-if-you-need">Choose <strong>Pastel</strong> if you need:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison.html#choose-vargula-if-you-need">Choose <strong>Vargula</strong> if you need:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-from-pypi">Install from PyPI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#upgrade-to-latest-version">Upgrade to Latest Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#install-specific-version">Install Specific Version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-from-source">Install from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verify-installation">Verify Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#platform-specific-notes">Platform-Specific Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#macos">macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#virtual-environment-recommended">Virtual Environment (Recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#development-installation">Development Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#uninstallation">Uninstallation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#colors-not-showing">Colors Not Showing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#windows-ansi-issues">Windows ANSI Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#import-errors">Import Errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#tag-format-rules">Tag Format Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#available-named-colors">Available Named Colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Vargula API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#core-styling-functions">Core Styling Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#style">style()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#format">format()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#create">create()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#delete">delete()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#write">write()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#strip">strip()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#clean">clean()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#length">length()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#enable-disable">enable() / disable()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#temporary">temporary()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#theme-functions">Theme Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#set-theme">set_theme()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#tables">Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#table">Table()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#table-add-column">Table.add_column()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#table-add-row">Table.add_row()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#progress-bars">Progress Bars</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#progressbar">ProgressBar()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#progressbar-update">ProgressBar.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#progressbar-close">ProgressBar.close()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#progress-bar">progress_bar()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#multiprogress">MultiProgress()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#multiprogress-add-task">MultiProgress.add_task()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#multiprogress-update">MultiProgress.update()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#color-palette-generation">Color Palette Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#generate-palette">generate_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#generate-theme-palette">generate_theme_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#generate-accessible-theme">generate_accessible_theme()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#preview-palette">preview_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#apply-palette-theme">apply_palette_theme()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#color-manipulation">Color Manipulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#lighten">lighten()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#darken">darken()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#saturate">saturate()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#desaturate">desaturate()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#shift-hue">shift_hue()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#invert">invert()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#mix">mix()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#accessibility-functions">Accessibility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#calculate-contrast-ratio">calculate_contrast_ratio()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#meets-wcag">meets_wcag()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#ensure-contrast">ensure_contrast()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#color-blindness-functions">Color Blindness Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#simulate-colorblindness">simulate_colorblindness()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#validate-colorblind-safety">validate_colorblind_safety()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#persistence-functions">Persistence Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#save-palette">save_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#load-palette">load_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#save-theme">save_theme()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#load-theme">load_theme()</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="inbuilt.html">In-built Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="color_scheme.html">Color Scheme Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_scheme.html">Color Scheme Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#monochromatic">Monochromatic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#analogous">Analogous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#complementary">Complementary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#split-complementary">Split Complementary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#triadic">Triadic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#tetradic">Tetradic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#square">Square</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="wcag.html">WCAG Contrast Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="env_var.html">Environment Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips &amp; Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-1-color-palette-explorer">Example 1: Color Palette Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-2-themed-cli-application">Example 2: Themed CLI Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-3-accessible-theme-generator">Example 3: Accessible Theme Generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-4-data-table-with-styling">Example 4: Data Table with Styling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-5-multi-progress-task-manager">Example 5: Multi-Progress Task Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-6-color-manipulation">Example 6: Color Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-7-colorblind-simulation">Example 7: Colorblind Simulation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips &amp; Best Practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#use-themes-for-consistency">1. Use Themes for Consistency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#test-accessibility-early">2. Test Accessibility Early</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#validate-for-colorblindness">3. Validate for Colorblindness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#save-and-reuse-palettes">4. Save and Reuse Palettes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#nest-styles-for-complex-formatting">5. Nest Styles for Complex Formatting</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Appendix</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#quick-reference">Quick Reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#color-name-cheat-sheet">Color Name Cheat Sheet</a></li>
@@ -115,26 +427,90 @@
 <li class="toctree-l2"><a class="reference internal" href="#version-compatibility">Version Compatibility</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">Vargula Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Quick Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#core-styling-functions">Core Styling Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#theme-functions">Theme Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#table-functions">Table Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#progress-bar-functions">Progress Bar Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#color-palette-generation">Color Palette Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#color-manipulation-functions">Color Manipulation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#accessibility-functions">Accessibility Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#color-blindness-functions">Color Blindness Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#persistence-functions">Persistence Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#function-categories">Function Categories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#by-use-case">By Use Case</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#alphabetical-index">Alphabetical Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#common-workflows">Common Workflows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#basic-text-styling">Basic Text Styling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#custom-style-system">Custom Style System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#theme-creation">Theme Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#accessible-design">Accessible Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#data-visualization">Data Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#progress-tracking">Progress Tracking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#quick-start-examples">Quick Start Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#styling-text">Styling Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#creating-tables">Creating Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#progress-bars">Progress Bars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#color-palettes">Color Palettes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#parameter-quick-reference">Parameter Quick Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#common-parameters">Common Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#return-type-quick-reference">Return Type Quick Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#installation-setup">Installation &amp; Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-how-do-i-install-vargula"><strong>Q: How do I install Vargula?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-what-python-versions-are-supported"><strong>Q: What Python versions are supported?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-does-vargula-work-on-windows"><strong>Q: Does Vargula work on Windows?</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#color-styling">Color &amp; Styling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-how-do-i-create-accessible-color-palettes"><strong>Q: How do I create accessible color palettes?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-can-i-validate-colors-for-colorblind-users"><strong>Q: Can I validate colors for colorblind users?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-what-color-schemes-are-available"><strong>Q: What color schemes are available?</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#comparison-with-other-libraries">Comparison with Other Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-how-is-vargula-different-from-rich"><strong>Q: How is Vargula different from Rich?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-should-i-use-vargula-or-colorama"><strong>Q: Should I use Vargula or Colorama?</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-colors-arent-showing-in-my-terminal"><strong>Q: Colors aren’t showing in my terminal</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-how-do-i-disable-colors-temporarily"><strong>Q: How do I disable colors temporarily?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-my-custom-theme-isnt-working"><strong>Q: My custom theme isn’t working</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#more-questions">More Questions?</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Vargula</a>
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Appendix</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/appendix.md.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/crystallinecore/vargula/blob/main/docs/source/appendix.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -880,13 +1256,15 @@ Green ─────┼───── Red
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="tips.html" class="btn btn-neutral float-left" title="Tips &amp; Best Practices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="reference.html" class="btn btn-neutral float-right" title="Vargula Quick Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="reference.html" class="btn btn-neutral float-right" title="Quick Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, Sivaprasad Murali.</p>
+    <p>&#169; Copyright 2025, Sivaprasad Murali.
+      <span class="lastupdated">Last updated on Nov 23, 2025.
+      </span></p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

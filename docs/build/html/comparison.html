@@ -1,0 +1,1552 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Vargula? &mdash; Vargula 1.0.4 Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=fe80a0e6" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="canonical" href="https://vargula.readthedocs.io/comparison.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=71272d9f"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Vargula Documentation" href="index.html" />
+     
+
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="RA1p_5zP4s9LacW9qE1QYQ6WYLiUcYgPb1DoO91Vl4Q" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Vargula is a lightweight, modern Python library for beautiful terminal text styling, coloring, formatting, and UI elements.">
+    <meta name="keywords" content="vargula, python terminal styling, terminal colors, text formatting, ansi colors, cli ui, python color library, colorama alternative, rich alternative">
+    <meta name="author" content="Sivaprasad Murali">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Vargula – Terminal Text Styling for Python">
+    <meta property="og:description" content="Documentation, tutorials, and API reference for Vargula — a fast and intuitive Python library for terminal text styling and colored outputs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vargula.readthedocs.io/">
+    <meta property="og:image" content="https://vargula.readthedocs.io/en/latest/_static/logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vargula – Terminal Text Styling for Python">
+    <meta name="twitter:description" content="Documentation, tutorials, and API reference for Vargula — a fast and intuitive Python library for terminal text styling and colored outputs.">
+    <meta name="twitter:image" content="https://vargula.readthedocs.io/en/latest/_static/logo.png">
+
+    <!-- JSON-LD Structured Data for Software Application -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Vargula",
+    "description": "Python library for terminal text styling with color palette generation, WCAG accessibility, and colorblind simulation",
+    "url": "https://vargula.readthedocs.io/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": ["Windows", "macOS", "Linux"],
+    "softwareVersion": "1.0.4",
+    "author": {
+        "@type": "Person",
+        "name": "Sivaprasad Murali"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
+    },
+    "programmingLanguage": "Python",
+    "keywords": "terminal styling, color palette, WCAG accessibility, colorblind simulation, CLI, ANSI colors",
+    "screenshot": "https://vargula.readthedocs.io/en/latest/_static/screenshot.png",
+    "softwareHelp": "https://vargula.readthedocs.io/",
+    "downloadUrl": "https://pypi.org/project/vargula/",
+    "codeRepository": "https://github.com/crystallinecore/vargula",
+    "license": "https://opensource.org/licenses/MIT",
+    "inLanguage": "en"
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://vargula.readthedocs.io/"
+    },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Why Vargula?",
+        "item": "https://vargula.readthedocs.io/comparison.html"
+    }]
+    }
+    </script>
+
+    <!-- Organization Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vargula",
+    "url": "https://vargula.readthedocs.io/",
+    "logo": "https://vargula.readthedocs.io/en/latest/_static/logo.png",
+    "sameAs": [
+        "https://github.com/crystallinecore/vargula",
+        "https://pypi.org/project/vargula/"
+    ]
+    }
+    </script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Vargula
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Why Vargula?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-comparison-table">Quick Comparison Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#side-by-side-hello-world-example">Side-by-Side: “Hello World” Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vargula">Vargula</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rich">Rich</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#colorama">Colorama</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#termcolor">Termcolor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pastel">Pastel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#comparison-summary">Comparison Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#code-clarity-best-to-worst">Code Clarity (Best to Worst)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#readability-score">Readability Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#character-count-comparison">Character Count Comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#complex-nesting-example">Complex Nesting Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Vargula</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Rich</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Pastel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Termcolor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Colorama</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#winner-by-category">Winner by Category</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vs-rich">vs. Rich</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#where-rich-excels">Where Rich Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#where-vargula-excels">Where Vargula Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#when-to-choose-each">When to Choose Each</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-comparison">Example Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vs-colorama">vs. Colorama</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#where-colorama-excels">Where Colorama Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Where Vargula Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">When to Choose Each</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Example Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vs-termcolor">vs. Termcolor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#where-termcolor-excels">Where Termcolor Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Where Vargula Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">When to Choose Each</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Example Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vs-pastel">vs. Pastel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#where-pastel-excels">Where Pastel Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Where Vargula Excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">When to Choose Each</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Example Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vargulas-unique-strengths">Vargula’s Unique Strengths</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#color-theory-integration">1. <strong>Color Theory Integration</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accessibility-first">2. <strong>Accessibility First</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intuitive-background-color-syntax">3. <strong>Intuitive Background Color Syntax</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#complete-color-manipulation-toolkit">4. <strong>Complete Color Manipulation Toolkit</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#palette-persistence">5. <strong>Palette Persistence</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#when-to-choose-vargula">When to Choose Vargula</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#perfect-for">Perfect For:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#may-not-be-ideal-for">May Not Be Ideal For:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#complementary-usage">Complementary Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maturity-community">Maturity &amp; Community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#real-world-complex-example">Real-World Complex Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Vargula</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">Rich</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Termcolor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Colorama</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-verdict">The Verdict</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#choose-rich-if-you-need">Choose <strong>Rich</strong> if you need:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choose-colorama-if-you-need">Choose <strong>Colorama</strong> if you need:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choose-termcolor-if-you-need">Choose <strong>Termcolor</strong> if you need:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choose-pastel-if-you-need">Choose <strong>Pastel</strong> if you need:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choose-vargula-if-you-need">Choose <strong>Vargula</strong> if you need:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-from-pypi">Install from PyPI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#upgrade-to-latest-version">Upgrade to Latest Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#install-specific-version">Install Specific Version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-from-source">Install from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verify-installation">Verify Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#platform-specific-notes">Platform-Specific Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#macos">macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#virtual-environment-recommended">Virtual Environment (Recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#development-installation">Development Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#uninstallation">Uninstallation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#colors-not-showing">Colors Not Showing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#windows-ansi-issues">Windows ANSI Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#import-errors">Import Errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#tag-format-rules">Tag Format Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#available-named-colors">Available Named Colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Vargula API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#core-styling-functions">Core Styling Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#style">style()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#format">format()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#create">create()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#delete">delete()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#write">write()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#strip">strip()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#clean">clean()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#length">length()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#enable-disable">enable() / disable()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#temporary">temporary()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#theme-functions">Theme Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#set-theme">set_theme()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#tables">Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#table">Table()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#table-add-column">Table.add_column()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#table-add-row">Table.add_row()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#progress-bars">Progress Bars</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#progressbar">ProgressBar()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#progressbar-update">ProgressBar.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#progressbar-close">ProgressBar.close()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#progress-bar">progress_bar()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#multiprogress">MultiProgress()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#multiprogress-add-task">MultiProgress.add_task()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#multiprogress-update">MultiProgress.update()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#color-palette-generation">Color Palette Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#generate-palette">generate_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#generate-theme-palette">generate_theme_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#generate-accessible-theme">generate_accessible_theme()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#preview-palette">preview_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#apply-palette-theme">apply_palette_theme()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#color-manipulation">Color Manipulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#lighten">lighten()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#darken">darken()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#saturate">saturate()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#desaturate">desaturate()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#shift-hue">shift_hue()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#invert">invert()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#mix">mix()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#accessibility-functions">Accessibility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#calculate-contrast-ratio">calculate_contrast_ratio()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#meets-wcag">meets_wcag()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#ensure-contrast">ensure_contrast()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#color-blindness-functions">Color Blindness Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#simulate-colorblindness">simulate_colorblindness()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#validate-colorblind-safety">validate_colorblind_safety()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#persistence-functions">Persistence Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#save-palette">save_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#load-palette">load_palette()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#save-theme">save_theme()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#load-theme">load_theme()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inbuilt.html">In-built Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_scheme.html">Color Scheme Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#monochromatic">Monochromatic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#analogous">Analogous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#complementary">Complementary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#split-complementary">Split Complementary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#triadic">Triadic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#tetradic">Tetradic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color_scheme.html#square">Square</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wcag.html">WCAG Contrast Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="env_var.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-1-color-palette-explorer">Example 1: Color Palette Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-2-themed-cli-application">Example 2: Themed CLI Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-3-accessible-theme-generator">Example 3: Accessible Theme Generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-4-data-table-with-styling">Example 4: Data Table with Styling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-5-multi-progress-task-manager">Example 5: Multi-Progress Task Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-6-color-manipulation">Example 6: Color Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#example-7-colorblind-simulation">Example 7: Colorblind Simulation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips &amp; Best Practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#use-themes-for-consistency">1. Use Themes for Consistency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#test-accessibility-early">2. Test Accessibility Early</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#validate-for-colorblindness">3. Validate for Colorblindness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#save-and-reuse-palettes">4. Save and Reuse Palettes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#nest-styles-for-complex-formatting">5. Nest Styles for Complex Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#quick-reference">Quick Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#color-name-cheat-sheet">Color Name Cheat Sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#text-decoration-cheat-sheet">Text Decoration Cheat Sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#box-style-cheat-sheet">Box Style Cheat Sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#color-harmony-schemes">Color Harmony Schemes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#color-theory-guide">Color Theory Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#understanding-color-spaces">Understanding Color Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#color-wheel-relationships">Color Wheel Relationships</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#practical-color-selection">Practical Color Selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#wcag-compliance-guide">WCAG Compliance Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#contrast-ratio-requirements">Contrast Ratio Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#testing-color-combinations">Testing Color Combinations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#automatic-compliance">Automatic Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#color-blindness-considerations">Color Blindness Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#common-patterns">Common Patterns</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#building-a-custom-logger">Building a Custom Logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#progress-with-multiple-steps">Progress with Multiple Steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#interactive-menu-system">Interactive Menu System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#styled-table-reports">Styled Table Reports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#theme-switcher">Theme Switcher</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#performance-tips">Performance Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#minimize-redundant-formatting">Minimize Redundant Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#batch-operations">Batch Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#disable-styling-when-not-needed">Disable Styling When Not Needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#efficient-progress-bars">Efficient Progress Bars</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#colors-not-displaying">Colors Not Displaying</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#layout-issues-with-tables">Layout Issues with Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#progress-bar-flickering">Progress Bar Flickering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#memory-issues-with-large-outputs">Memory Issues with Large Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#style-conflicts">Style Conflicts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#migration-guide">Migration Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#from-print-statements">From Print Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#from-manual-ansi-codes">From Manual ANSI Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#from-other-styling-libraries">From Other Styling Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#best-practices-for-migration">Best Practices for Migration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#additional-resources">Additional Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#example-projects">Example Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#color-palette-generators">Color Palette Generators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#community-themes">Community Themes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#keyboard-shortcuts-reference">Keyboard Shortcuts Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#version-compatibility">Version Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Quick Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#core-styling-functions">Core Styling Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#theme-functions">Theme Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#table-functions">Table Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#progress-bar-functions">Progress Bar Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#color-palette-generation">Color Palette Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#color-manipulation-functions">Color Manipulation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#accessibility-functions">Accessibility Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#color-blindness-functions">Color Blindness Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#persistence-functions">Persistence Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#function-categories">Function Categories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#by-use-case">By Use Case</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#alphabetical-index">Alphabetical Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#common-workflows">Common Workflows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#basic-text-styling">Basic Text Styling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#custom-style-system">Custom Style System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#theme-creation">Theme Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#accessible-design">Accessible Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#data-visualization">Data Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#progress-tracking">Progress Tracking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#quick-start-examples">Quick Start Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#styling-text">Styling Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#creating-tables">Creating Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#progress-bars">Progress Bars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#color-palettes">Color Palettes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#parameter-quick-reference">Parameter Quick Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#common-parameters">Common Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#return-type-quick-reference">Return Type Quick Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#installation-setup">Installation &amp; Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-how-do-i-install-vargula"><strong>Q: How do I install Vargula?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-what-python-versions-are-supported"><strong>Q: What Python versions are supported?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-does-vargula-work-on-windows"><strong>Q: Does Vargula work on Windows?</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#color-styling">Color &amp; Styling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-how-do-i-create-accessible-color-palettes"><strong>Q: How do I create accessible color palettes?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-can-i-validate-colors-for-colorblind-users"><strong>Q: Can I validate colors for colorblind users?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-what-color-schemes-are-available"><strong>Q: What color schemes are available?</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#comparison-with-other-libraries">Comparison with Other Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-how-is-vargula-different-from-rich"><strong>Q: How is Vargula different from Rich?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-should-i-use-vargula-or-colorama"><strong>Q: Should I use Vargula or Colorama?</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-colors-arent-showing-in-my-terminal"><strong>Q: Colors aren’t showing in my terminal</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-how-do-i-disable-colors-temporarily"><strong>Q: How do I disable colors temporarily?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#q-my-custom-theme-isnt-working"><strong>Q: My custom theme isn’t working</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#more-questions">More Questions?</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vargula</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Why Vargula?</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/crystallinecore/vargula/blob/main/docs/source/comparison.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="why-vargula">
+<h1>Why Vargula?<a class="headerlink" href="#why-vargula" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This document provides an honest comparison between Vargula and popular Python terminal styling libraries. Each library has its strengths, and the best choice depends on your specific needs.</p>
+</section>
+<hr class="docutils" />
+<section id="quick-comparison-table">
+<h2>Quick Comparison Table<a class="headerlink" href="#quick-comparison-table" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Vargula</p></th>
+<th class="head"><p>Rich</p></th>
+<th class="head"><p>Colorama</p></th>
+<th class="head"><p>Termcolor</p></th>
+<th class="head"><p>Pastel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Basic Text Styling</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Markup/Tag Syntax</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Background Color Tags</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>⚠️</p></td>
+<td><p>⚠️</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tables</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Progress Bars</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Color Palette Generation</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>⚠️</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Color Theory Schemes</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>WCAG Accessibility</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Colorblind Simulation</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Color Manipulation</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✔</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Theme Support</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Cross-platform</strong></p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Panels/Layout</strong></p></td>
+<td><p>✗</p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Syntax Highlighting</strong></p></td>
+<td><p>✗</p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Markdown Rendering</strong></p></td>
+<td><p>✗</p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tree Views</strong></p></td>
+<td><p>✗</p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Live Display</strong></p></td>
+<td><p>⚠️</p></td>
+<td><p>✔</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+<td><p>✗</p></td>
+</tr>
+</tbody>
+</table>
+<p>✔ Full support</p>
+<p>⚠️ Partial/basic support</p>
+<p>✗ Not available</p>
+</section>
+<hr class="docutils" />
+<section id="side-by-side-hello-world-example">
+<h2>Side-by-Side: “Hello World” Example<a class="headerlink" href="#side-by-side-hello-world-example" title="Link to this heading"></a></h2>
+<p>Let’s compare how each library handles a simple task: <strong>bold red “Hello”</strong> and <strong>italic blue “World”</strong> on the same line.</p>
+<section id="vargula">
+<h3>Vargula<a class="headerlink" href="#vargula" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="c1"># Method 1: Using markup tags (most intuitive)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;&lt;red&gt;Hello&lt;/red&gt;&lt;/bold&gt; &lt;italic&gt;&lt;blue&gt;World&lt;/blue&gt;&lt;/italic&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Method 2: Using format()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;&lt;red&gt;Hello&lt;/red&gt;&lt;/bold&gt; &lt;italic&gt;&lt;blue&gt;World&lt;/blue&gt;&lt;/italic&gt;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Method 3: Using style() function</span>
+<span class="n">hello</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;italic&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hello</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">world</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Method 4: Custom styles (reusable)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;hello_style&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;world_style&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;italic&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;hello_style&gt;Hello&lt;/hello_style&gt; &lt;world_style&gt;World&lt;/world_style&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Lines of code</strong>: 1 line (markup) to 3 lines (custom styling)<br />
+<strong>Readability</strong>: ⭐⭐⭐⭐⭐ Excellent (HTML-like tags are intuitive)<br />
+<strong>Reusability</strong>: ⭐⭐⭐⭐⭐ Excellent (custom styles, themes)</p>
+</section>
+<hr class="docutils" />
+<section id="rich">
+<h3>Rich<a class="headerlink" href="#rich" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rich</span><span class="w"> </span><span class="kn">import</span> <span class="nb">print</span>
+
+<span class="c1"># Method 1: Using markup tags</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[bold red]Hello[/bold red] [italic blue]World[/italic blue]&quot;</span><span class="p">)</span>
+
+<span class="c1"># Method 2: Using style strings</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[bold red]Hello[/] [italic blue]World[/]&quot;</span><span class="p">)</span>
+
+<span class="c1"># Method 3: Using Text objects</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">Text</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">()</span>
+<span class="n">text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;bold red&quot;</span><span class="p">)</span>
+<span class="n">text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;italic blue&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># Method 4: Using Console with style</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.console</span><span class="w"> </span><span class="kn">import</span> <span class="n">Console</span>
+<span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">()</span>
+<span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;bold red&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;italic blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Lines of code</strong>: 1 line (markup) to 6 lines (Text objects)<br />
+<strong>Readability</strong>: ⭐⭐⭐⭐ Very Good (bracket syntax is clear)<br />
+<strong>Reusability</strong>: ⭐⭐⭐⭐⭐ Excellent (themes, styles, Text objects)</p>
+</section>
+<hr class="docutils" />
+<section id="colorama">
+<h3>Colorama<a class="headerlink" href="#colorama" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">colorama</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fore</span><span class="p">,</span> <span class="n">Style</span><span class="p">,</span> <span class="n">init</span>
+<span class="n">init</span><span class="p">()</span>
+
+<span class="c1"># Method 1: Manual concatenation (only way)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Style</span><span class="o">.</span><span class="n">BRIGHT</span> <span class="o">+</span> <span class="n">Fore</span><span class="o">.</span><span class="n">RED</span> <span class="o">+</span> <span class="s2">&quot;Hello&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> 
+      <span class="n">Style</span><span class="o">.</span><span class="n">DIM</span> <span class="o">+</span> <span class="n">Fore</span><span class="o">.</span><span class="n">BLUE</span> <span class="o">+</span> <span class="s2">&quot;World&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+
+<span class="c1"># Method 2: With variables (cleaner)</span>
+<span class="n">hello</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Style</span><span class="o">.</span><span class="n">BRIGHT</span><span class="si">}{</span><span class="n">Fore</span><span class="o">.</span><span class="n">RED</span><span class="si">}</span><span class="s2">Hello</span><span class="si">{</span><span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">world</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Style</span><span class="o">.</span><span class="n">DIM</span><span class="si">}{</span><span class="n">Fore</span><span class="o">.</span><span class="n">BLUE</span><span class="si">}</span><span class="s2">World</span><span class="si">{</span><span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hello</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">world</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Note: Colorama doesn&#39;t have italic support on all platforms</span>
+<span class="c1"># Using DIM as closest alternative</span>
+</pre></div>
+</div>
+<p><strong>Lines of code</strong>: 2-3 lines<br />
+<strong>Readability</strong>: ⭐⭐ Fair (lots of constants, manual reset)<br />
+<strong>Reusability</strong>: ⭐⭐ Fair (need to define each combination)<br />
+<strong>Issue</strong>: No italic support, must use alternatives</p>
+</section>
+<hr class="docutils" />
+<section id="termcolor">
+<h3>Termcolor<a class="headerlink" href="#termcolor" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">termcolor</span><span class="w"> </span><span class="kn">import</span> <span class="n">colored</span>
+
+<span class="c1"># Method 1: Function calls</span>
+<span class="n">hello</span> <span class="o">=</span> <span class="n">colored</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">])</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">colored</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;italic&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hello</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">world</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Method 2: Inline (less readable)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">colored</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> 
+      <span class="n">colored</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;italic&quot;</span><span class="p">]))</span>
+
+<span class="c1"># Method 3: ANSI codes directly (not recommended)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">termcolor</span><span class="w"> </span><span class="kn">import</span> <span class="n">COLORS</span><span class="p">,</span> <span class="n">ATTRIBUTES</span>
+<span class="c1"># More complex, not shown for brevity</span>
+</pre></div>
+</div>
+<p><strong>Lines of code</strong>: 2-3 lines<br />
+<strong>Readability</strong>: ⭐⭐⭐ Good (function calls are clear)<br />
+<strong>Reusability</strong>: ⭐⭐ Fair (need wrapper functions for common styles)</p>
+</section>
+<hr class="docutils" />
+<section id="pastel">
+<h3>Pastel<a class="headerlink" href="#pastel" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pastel</span><span class="w"> </span><span class="kn">import</span> <span class="n">colorize</span>
+
+<span class="c1"># Method 1: Using tags</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">colorize</span><span class="p">(</span><span class="s1">&#39;&lt;fg=red;options=bold&gt;Hello&lt;/&gt; &lt;fg=blue;options=italic&gt;World&lt;/&gt;&#39;</span><span class="p">))</span>
+
+<span class="c1"># Method 2: Multiple colorize calls</span>
+<span class="n">hello</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="s1">&#39;&lt;fg=red;options=bold&gt;Hello&lt;/&gt;&#39;</span><span class="p">)</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="s1">&#39;&lt;fg=blue;options=italic&gt;World&lt;/&gt;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hello</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">world</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Method 3: Using style definitions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pastel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pastel</span>
+<span class="n">pastel</span> <span class="o">=</span> <span class="n">Pastel</span><span class="p">()</span>
+<span class="n">pastel</span><span class="o">.</span><span class="n">add_style</span><span class="p">(</span><span class="s1">&#39;hello_style&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bold&#39;</span><span class="p">])</span>
+<span class="n">pastel</span><span class="o">.</span><span class="n">add_style</span><span class="p">(</span><span class="s1">&#39;world_style&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;italic&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pastel</span><span class="o">.</span><span class="n">colorize</span><span class="p">(</span><span class="s1">&#39;&lt;hello_style&gt;Hello&lt;/&gt; &lt;world_style&gt;World&lt;/&gt;&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Lines of code</strong>: 1-4 lines<br />
+<strong>Readability</strong>: ⭐⭐⭐ Good (XML-like tags with attributes)<br />
+<strong>Reusability</strong>: ⭐⭐⭐⭐ Very Good (style definitions)</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="comparison-summary">
+<h2>Comparison Summary<a class="headerlink" href="#comparison-summary" title="Link to this heading"></a></h2>
+<section id="code-clarity-best-to-worst">
+<h3>Code Clarity (Best to Worst)<a class="headerlink" href="#code-clarity-best-to-worst" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Vargula</strong>: <code class="docutils literal notranslate"><span class="pre">&lt;bold&gt;&lt;red&gt;Hello&lt;/red&gt;&lt;/bold&gt;</span> <span class="pre">&lt;italic&gt;&lt;blue&gt;World&lt;/blue&gt;&lt;/italic&gt;</span></code></p>
+<ul class="simple">
+<li><p>Nested tags are intuitive, mirrors HTML</p></li>
+</ul>
+</li>
+<li><p><strong>Rich</strong>: <code class="docutils literal notranslate"><span class="pre">[bold</span> <span class="pre">red]Hello[/]</span> <span class="pre">[italic</span> <span class="pre">blue]World[/]</span></code></p>
+<ul class="simple">
+<li><p>Compact bracket syntax, space-separated attributes</p></li>
+</ul>
+</li>
+<li><p><strong>Pastel</strong>: <code class="docutils literal notranslate"><span class="pre">&lt;fg=red;options=bold&gt;Hello&lt;/&gt;</span> <span class="pre">&lt;fg=blue;options=italic&gt;World&lt;/&gt;</span></code></p>
+<ul class="simple">
+<li><p>XML-like with attributes, slightly verbose</p></li>
+</ul>
+</li>
+<li><p><strong>Termcolor</strong>: <code class="docutils literal notranslate"><span class="pre">colored(&quot;Hello&quot;,</span> <span class="pre">&quot;red&quot;,</span> <span class="pre">attrs=[&quot;bold&quot;])</span> <span class="pre">+</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">colored(&quot;World&quot;,</span> <span class="pre">&quot;blue&quot;,</span> <span class="pre">attrs=[&quot;italic&quot;])</span></code></p>
+<ul class="simple">
+<li><p>Function-based, explicit but verbose for complex styles</p></li>
+</ul>
+</li>
+<li><p><strong>Colorama</strong>: <code class="docutils literal notranslate"><span class="pre">Style.BRIGHT</span> <span class="pre">+</span> <span class="pre">Fore.RED</span> <span class="pre">+</span> <span class="pre">&quot;Hello&quot;</span> <span class="pre">+</span> <span class="pre">Style.RESET_ALL</span> <span class="pre">+</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">Style.DIM</span> <span class="pre">+</span> <span class="pre">Fore.BLUE</span> <span class="pre">+</span> <span class="pre">&quot;World&quot;</span> <span class="pre">+</span> <span class="pre">Style.RESET_ALL</span></code></p>
+<ul class="simple">
+<li><p>Manual ANSI code management, most verbose</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="readability-score">
+<h3>Readability Score<a class="headerlink" href="#readability-score" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Library</p></th>
+<th class="head"><p>Single Line</p></th>
+<th class="head"><p>Multi-Style</p></th>
+<th class="head"><p>Nested Styles</p></th>
+<th class="head"><p>Reusability</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Vargula</strong></p></td>
+<td><p>⭐⭐⭐⭐⭐</p></td>
+<td><p>⭐⭐⭐⭐⭐</p></td>
+<td><p>⭐⭐⭐⭐⭐</p></td>
+<td><p>⭐⭐⭐⭐⭐</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rich</strong></p></td>
+<td><p>⭐⭐⭐⭐⭐</p></td>
+<td><p>⭐⭐⭐⭐</p></td>
+<td><p>⭐⭐⭐⭐</p></td>
+<td><p>⭐⭐⭐⭐⭐</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Pastel</strong></p></td>
+<td><p>⭐⭐⭐⭐</p></td>
+<td><p>⭐⭐⭐</p></td>
+<td><p>⭐⭐⭐</p></td>
+<td><p>⭐⭐⭐⭐</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Termcolor</strong></p></td>
+<td><p>⭐⭐⭐</p></td>
+<td><p>⭐⭐⭐</p></td>
+<td><p>⭐⭐</p></td>
+<td><p>⭐⭐</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Colorama</strong></p></td>
+<td><p>⭐⭐</p></td>
+<td><p>⭐⭐</p></td>
+<td><p>⭐</p></td>
+<td><p>⭐⭐</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="character-count-comparison">
+<h3>Character Count Comparison<a class="headerlink" href="#character-count-comparison" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Vargula</span><span class="p">:</span>     <span class="mi">66</span> <span class="n">chars</span>  <span class="o">|</span>  <span class="o">&lt;</span><span class="n">bold</span><span class="o">&gt;&lt;</span><span class="n">red</span><span class="o">&gt;</span><span class="n">Hello</span><span class="o">&lt;/</span><span class="n">red</span><span class="o">&gt;&lt;/</span><span class="n">bold</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">italic</span><span class="o">&gt;&lt;</span><span class="n">blue</span><span class="o">&gt;</span><span class="n">World</span><span class="o">&lt;/</span><span class="n">blue</span><span class="o">&gt;&lt;/</span><span class="n">italic</span><span class="o">&gt;</span>
+<span class="n">Rich</span><span class="p">:</span>        <span class="mi">50</span> <span class="n">chars</span>  <span class="o">|</span>  <span class="p">[</span><span class="n">bold</span> <span class="n">red</span><span class="p">]</span><span class="n">Hello</span><span class="p">[</span><span class="o">/</span><span class="p">]</span> <span class="p">[</span><span class="n">italic</span> <span class="n">blue</span><span class="p">]</span><span class="n">World</span><span class="p">[</span><span class="o">/</span><span class="p">]</span>
+<span class="n">Pastel</span><span class="p">:</span>      <span class="mi">75</span> <span class="n">chars</span>  <span class="o">|</span>  <span class="o">&lt;</span><span class="n">fg</span><span class="o">=</span><span class="n">red</span><span class="p">;</span><span class="n">options</span><span class="o">=</span><span class="n">bold</span><span class="o">&gt;</span><span class="n">Hello</span><span class="o">&lt;/&gt;</span> <span class="o">&lt;</span><span class="n">fg</span><span class="o">=</span><span class="n">blue</span><span class="p">;</span><span class="n">options</span><span class="o">=</span><span class="n">italic</span><span class="o">&gt;</span><span class="n">World</span><span class="o">&lt;/&gt;</span>
+<span class="n">Termcolor</span><span class="p">:</span>   <span class="mi">93</span> <span class="n">chars</span>  <span class="o">|</span>  <span class="n">colored</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">])</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">colored</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;italic&quot;</span><span class="p">])</span>
+<span class="n">Colorama</span><span class="p">:</span>   <span class="mi">109</span> <span class="n">chars</span>  <span class="o">|</span>  <span class="n">Style</span><span class="o">.</span><span class="n">BRIGHT</span><span class="o">+</span><span class="n">Fore</span><span class="o">.</span><span class="n">RED</span><span class="o">+</span><span class="s2">&quot;Hello&quot;</span><span class="o">+</span><span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">Style</span><span class="o">.</span><span class="n">DIM</span><span class="o">+</span><span class="n">Fore</span><span class="o">.</span><span class="n">BLUE</span><span class="o">+</span><span class="s2">&quot;World&quot;</span><span class="o">+</span><span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span>
+</pre></div>
+</div>
+<p><strong>Rich wins for brevity</strong>, but <strong>Vargula’s nested structure is more intuitive</strong> for complex styling.</p>
+</section>
+<hr class="docutils" />
+<section id="complex-nesting-example">
+<h3>Complex Nesting Example<a class="headerlink" href="#complex-nesting-example" title="Link to this heading"></a></h3>
+<p>What if we want: <strong>Bold red “Hello” with underlined “World”</strong> all in italic?</p>
+<section id="id1">
+<h4>Vargula<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;italic&gt;&lt;bold&gt;&lt;red&gt;Hello&lt;/red&gt;&lt;/bold&gt; &lt;underline&gt;World&lt;/underline&gt;&lt;/italic&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>✔ <strong>Natural nesting</strong>, clear hierarchy</p>
+</section>
+<section id="id2">
+<h4>Rich<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[italic][bold red]Hello[/] [underline]World[/][/]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>✔ <strong>Works well</strong>, though closing tags can stack</p>
+</section>
+<section id="id3">
+<h4>Pastel<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">colorize</span><span class="p">(</span><span class="s1">&#39;&lt;options=italic&gt;&lt;fg=red;options=bold&gt;Hello&lt;/&gt; &lt;options=underline&gt;World&lt;/&gt;&lt;/options=italic&gt;&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>⚠️ <strong>Gets complex</strong> with multiple option combinations</p>
+</section>
+<section id="id4">
+<h4>Termcolor<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="o">=</span> <span class="n">colored</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;italic&quot;</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">])</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">colored</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;italic&quot;</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hello</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">world</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>⚠️ <strong>Loses nesting context</strong>, must repeat “italic” on both</p>
+</section>
+<section id="id5">
+<h4>Colorama<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Style</span><span class="o">.</span><span class="n">BRIGHT</span> <span class="o">+</span> <span class="n">Fore</span><span class="o">.</span><span class="n">RED</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\x1b</span><span class="s2">[3m&quot;</span> <span class="o">+</span> <span class="s2">&quot;Hello&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span> <span class="o">+</span> 
+      <span class="s2">&quot;</span><span class="se">\x1b</span><span class="s2">[3m</span><span class="se">\x1b</span><span class="s2">[4m&quot;</span> <span class="o">+</span> <span class="s2">&quot;World&quot;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>✗ <strong>Very difficult</strong>, need manual ANSI codes for italic</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="winner-by-category">
+<h3>Winner by Category<a class="headerlink" href="#winner-by-category" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>Winner</p></th>
+<th class="head"><p>Reason</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Simplicity</strong></p></td>
+<td><p>Vargula</p></td>
+<td><p>Fewest concepts to learn</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Brevity</strong></p></td>
+<td><p>Rich</p></td>
+<td><p>Shortest syntax for common cases</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Nesting</strong></p></td>
+<td><p>Vargula</p></td>
+<td><p>Most intuitive nested structure</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Readability</strong></p></td>
+<td><p>Vargula / Rich</p></td>
+<td><p>Both use clear markup</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Flexibility</strong></p></td>
+<td><p>Rich</p></td>
+<td><p>Most features overall</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Color Focus</strong></p></td>
+<td><p>Vargula</p></td>
+<td><p>Best color manipulation tools</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<hr class="docutils" />
+<section id="vs-rich">
+<h2>vs. Rich<a class="headerlink" href="#vs-rich" title="Link to this heading"></a></h2>
+<p><strong>Rich</strong> is the most feature-rich terminal library with exceptional layout and formatting capabilities.</p>
+<section id="where-rich-excels">
+<h3>Where Rich Excels<a class="headerlink" href="#where-rich-excels" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Advanced Layout</strong>: Panels, columns, complex nested layouts</p></li>
+<li><p><strong>Syntax Highlighting</strong>: Built-in code highlighting for 300+ languages</p></li>
+<li><p><strong>Markdown Rendering</strong>: Full markdown support with formatting</p></li>
+<li><p><strong>Tree Views</strong>: File trees and hierarchical data display</p></li>
+<li><p><strong>Logging</strong>: Deep integration with Python logging</p></li>
+<li><p><strong>Inspect/Pretty Print</strong>: Beautiful object inspection</p></li>
+<li><p><strong>Live Display</strong>: Real-time updating displays</p></li>
+<li><p><strong>Console API</strong>: Comprehensive console management</p></li>
+<li><p><strong>Maturity</strong>: Battle-tested, widely adopted (40K+ GitHub stars)</p></li>
+</ul>
+</section>
+<section id="where-vargula-excels">
+<h3>Where Vargula Excels<a class="headerlink" href="#where-vargula-excels" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Color Theory</strong>: Built-in palette generation with 7 harmony schemes</p></li>
+<li><p><strong>Accessibility Focus</strong>: WCAG contrast checking and colorblind simulation</p></li>
+<li><p><strong>Color Manipulation</strong>: Lighten, darken, saturate, shift hue, mix colors</p></li>
+<li><p><strong>Simpler API</strong>: Lighter learning curve for basic styling</p></li>
+<li><p><strong>Background Tag Syntax</strong>: Intuitive <code class="docutils literal notranslate"><span class="pre">&lt;&#64;color&gt;</span></code> convention for backgrounds</p></li>
+<li><p><strong>Accessible Theme Generation</strong>: Automatic WCAG-compliant themes</p></li>
+<li><p><strong>Palette Persistence</strong>: Save/load color schemes as JSON</p></li>
+<li><p><strong>Smaller Footprint</strong>: Fewer dependencies, lighter weight</p></li>
+</ul>
+</section>
+<section id="when-to-choose-each">
+<h3>When to Choose Each<a class="headerlink" href="#when-to-choose-each" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Choose Rich if</strong>: You need advanced layouts, syntax highlighting, markdown rendering, or comprehensive terminal UI features</p></li>
+<li><p><strong>Choose Vargula if</strong>: You prioritize color design, accessibility, palette generation, or need a simpler API for styling</p></li>
+</ul>
+</section>
+<section id="example-comparison">
+<h3>Example Comparison<a class="headerlink" href="#example-comparison" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rich - Advanced layout</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.console</span><span class="w"> </span><span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.panel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Panel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.columns</span><span class="w"> </span><span class="kn">import</span> <span class="n">Columns</span>
+
+<span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">()</span>
+<span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">Panel</span><span class="p">(</span><span class="s2">&quot;Content&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Title&quot;</span><span class="p">))</span>
+<span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">Columns</span><span class="p">([</span><span class="n">Panel</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="n">Panel</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)]))</span>
+
+<span class="c1"># Vargula - Color-focused design</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="c1"># Generate accessible theme</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_accessible_theme</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="n">wcag_level</span><span class="o">=</span><span class="s2">&quot;AA&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">apply_palette_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">)</span>
+
+<span class="c1"># Validate for colorblindness</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="s2">&quot;triadic&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">is_safe</span><span class="p">,</span> <span class="n">problems</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">validate_colorblind_safety</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="vs-colorama">
+<h2>vs. Colorama<a class="headerlink" href="#vs-colorama" title="Link to this heading"></a></h2>
+<p><strong>Colorama</strong> is a minimalist library focused on cross-platform ANSI color support.</p>
+<section id="where-colorama-excels">
+<h3>Where Colorama Excels<a class="headerlink" href="#where-colorama-excels" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Windows Support</strong>: Primary focus on making ANSI work on Windows</p></li>
+<li><p><strong>Stability</strong>: Mature, stable, rarely changes</p></li>
+<li><p><strong>Wide Adoption</strong>: Used by many major projects</p></li>
+<li><p><strong>No Dependencies</strong>: Pure Python, minimal footprint</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Where Vargula Excels<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Rich Styling</strong>: Tables, progress bars, markup syntax</p></li>
+<li><p><strong>Color Theory</strong>: Palette generation and color harmonies</p></li>
+<li><p><strong>Accessibility</strong>: WCAG and colorblind support</p></li>
+<li><p><strong>Color Manipulation</strong>: Full color transformation toolkit</p></li>
+<li><p><strong>Modern API</strong>: Tag syntax, themes, custom styles</p></li>
+<li><p><strong>Advanced Features</strong>: Multi-progress, color mixing, contrast checking</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>When to Choose Each<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Choose Colorama if</strong>: You only need basic ANSI support with minimal overhead</p></li>
+<li><p><strong>Choose Vargula if</strong>: You want modern styling features, color design tools, or accessibility support</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Example Comparison<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Colorama - Basic styling</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">colorama</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fore</span><span class="p">,</span> <span class="n">Back</span><span class="p">,</span> <span class="n">Style</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">RED</span> <span class="o">+</span> <span class="s1">&#39;Error!&#39;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Back</span><span class="o">.</span><span class="n">GREEN</span> <span class="o">+</span> <span class="n">Fore</span><span class="o">.</span><span class="n">BLACK</span> <span class="o">+</span> <span class="s1">&#39;Success&#39;</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+
+<span class="c1"># Vargula - Modern markup + color theory</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;red&gt;Error!&lt;/red&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@green&gt;&lt;black&gt;Success&lt;/black&gt;&lt;/@green&gt;&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="vs-termcolor">
+<h2>vs. Termcolor<a class="headerlink" href="#vs-termcolor" title="Link to this heading"></a></h2>
+<p><strong>Termcolor</strong> provides simple colored text output with attribute support.</p>
+<section id="where-termcolor-excels">
+<h3>Where Termcolor Excels<a class="headerlink" href="#where-termcolor-excels" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Attributes</strong>: Easy bold, underline, blink combinations</p></li>
+<li><p><strong>Lightweight</strong>: Very small codebase</p></li>
+<li><p><strong>Established</strong>: Long history, stable API</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>Where Vargula Excels<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Markup Syntax</strong>: HTML-like tags vs function calls</p></li>
+<li><p><strong>Tables &amp; Progress</strong>: Built-in rich components</p></li>
+<li><p><strong>Color Theory</strong>: Palette generation and harmonies</p></li>
+<li><p><strong>Hex Colors</strong>: Direct hex color support</p></li>
+<li><p><strong>Accessibility</strong>: WCAG and colorblind tools</p></li>
+<li><p><strong>Themes</strong>: Reusable style definitions</p></li>
+<li><p><strong>Color Manipulation</strong>: Transform colors programmatically</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>When to Choose Each<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Choose Termcolor if</strong>: You need a simple drop-in solution for colored output</p></li>
+<li><p><strong>Choose Vargula if</strong>: You want markup syntax, advanced color features, or accessibility tools</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>Example Comparison<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Termcolor - Function-based</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">termcolor</span><span class="w"> </span><span class="kn">import</span> <span class="n">colored</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">colored</span><span class="p">(</span><span class="s1">&#39;Error!&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bold&#39;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">colored</span><span class="p">(</span><span class="s1">&#39;Warning&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;on_red&#39;</span><span class="p">))</span>
+
+<span class="c1"># Vargula - Markup-based</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;&lt;red&gt;Error!&lt;/red&gt;&lt;/bold&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@red&gt;&lt;yellow&gt;Warning&lt;/yellow&gt;&lt;/@red&gt;&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="vs-pastel">
+<h2>vs. Pastel<a class="headerlink" href="#vs-pastel" title="Link to this heading"></a></h2>
+<p><strong>Pastel</strong> focuses on color manipulation and styling with a fluent API.</p>
+<section id="where-pastel-excels">
+<h3>Where Pastel Excels<a class="headerlink" href="#where-pastel-excels" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Color Manipulation</strong>: Core strength in color transformations</p></li>
+<li><p><strong>Fluent API</strong>: Chainable color operations</p></li>
+<li><p><strong>HSL Support</strong>: Direct HSL color handling</p></li>
+<li><p><strong>Poetry Integration</strong>: From the Poetry project author</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3>Where Vargula Excels<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Palette Generation</strong>: 7 color harmony schemes</p></li>
+<li><p><strong>Accessibility</strong>: WCAG contrast and colorblind simulation</p></li>
+<li><p><strong>Rich Components</strong>: Tables and progress bars</p></li>
+<li><p><strong>Markup Syntax</strong>: Tag-based formatting</p></li>
+<li><p><strong>Theme System</strong>: Complete theme management</p></li>
+<li><p><strong>Validation</strong>: Colorblind safety checking</p></li>
+<li><p><strong>More Schemes</strong>: Triadic, tetradic, square, split-complementary</p></li>
+</ul>
+</section>
+<section id="id13">
+<h3>When to Choose Each<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Choose Pastel if</strong>: You primarily need color manipulation with a fluent API</p></li>
+<li><p><strong>Choose Vargula if</strong>: You need color generation, accessibility validation, or rich terminal components</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>Example Comparison<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pastel - Fluent color manipulation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pastel</span><span class="w"> </span><span class="kn">import</span> <span class="n">colorize</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">colorize</span><span class="p">(</span><span class="s1">&#39;&lt;fg=red;options=bold&gt;Error!&lt;/&gt;&#39;</span><span class="p">))</span>
+
+<span class="c1"># Vargula - Color theory + accessibility</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="c1"># Generate accessible, colorblind-safe theme</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_accessible_theme</span><span class="p">(</span>
+    <span class="s2">&quot;#3498db&quot;</span><span class="p">,</span>
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;triadic&quot;</span><span class="p">,</span>
+    <span class="n">wcag_level</span><span class="o">=</span><span class="s2">&quot;AA&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Validate for colorblindness</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">theme</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">is_safe</span><span class="p">,</span> <span class="n">problems</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">validate_colorblind_safety</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="s2">&quot;deuteranopia&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">is_safe</span><span class="p">:</span>
+    <span class="n">vg</span><span class="o">.</span><span class="n">apply_palette_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">)</span>
+    <span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;primary&gt;Accessible colors!&lt;/primary&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="vargulas-unique-strengths">
+<h2>Vargula’s Unique Strengths<a class="headerlink" href="#vargulas-unique-strengths" title="Link to this heading"></a></h2>
+<section id="color-theory-integration">
+<h3>1. <strong>Color Theory Integration</strong><a class="headerlink" href="#color-theory-integration" title="Link to this heading"></a></h3>
+<p>Vargula is the <strong>only</strong> library with built-in color theory schemes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+
+<span class="c1"># Seven harmony schemes</span>
+<span class="n">schemes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;monochromatic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;analogous&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;complementary&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;split_complementary&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;triadic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tetradic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;square&quot;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">scheme</span> <span class="ow">in</span> <span class="n">schemes</span><span class="p">:</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">scheme</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vg</span><span class="o">.</span><span class="n">preview_palette</span><span class="p">(</span><span class="n">colors</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Use case</strong>: Design consistent, harmonious color schemes for your CLI without color theory knowledge.</p>
+</section>
+<hr class="docutils" />
+<section id="accessibility-first">
+<h3>2. <strong>Accessibility First</strong><a class="headerlink" href="#accessibility-first" title="Link to this heading"></a></h3>
+<p>Only Vargula provides comprehensive accessibility tools:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># WCAG contrast checking</span>
+<span class="n">ratio</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">calculate_contrast_ratio</span><span class="p">(</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="s2">&quot;#000000&quot;</span><span class="p">)</span>
+<span class="n">meets_aa</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">meets_wcag</span><span class="p">(</span><span class="n">text_color</span><span class="p">,</span> <span class="n">bg_color</span><span class="p">,</span> <span class="s2">&quot;AA&quot;</span><span class="p">)</span>
+
+<span class="c1"># Automatic contrast fixing</span>
+<span class="n">accessible</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">ensure_contrast</span><span class="p">(</span><span class="n">text_color</span><span class="p">,</span> <span class="n">bg_color</span><span class="p">,</span> <span class="n">min_ratio</span><span class="o">=</span><span class="mf">4.5</span><span class="p">)</span>
+
+<span class="c1"># Generate WCAG-compliant themes</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_accessible_theme</span><span class="p">(</span>
+    <span class="s2">&quot;#3498db&quot;</span><span class="p">,</span>
+    <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span>
+    <span class="n">wcag_level</span><span class="o">=</span><span class="s2">&quot;AAA&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Colorblind simulation</span>
+<span class="n">simulated</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">simulate_colorblindness</span><span class="p">(</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="s2">&quot;deuteranopia&quot;</span><span class="p">)</span>
+
+<span class="c1"># Validate entire palettes</span>
+<span class="n">is_safe</span><span class="p">,</span> <span class="n">problems</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">validate_colorblind_safety</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Use case</strong>: Build CLIs that are accessible to users with visual impairments or color blindness.</p>
+</section>
+<hr class="docutils" />
+<section id="intuitive-background-color-syntax">
+<h3>3. <strong>Intuitive Background Color Syntax</strong><a class="headerlink" href="#intuitive-background-color-syntax" title="Link to this heading"></a></h3>
+<p>Vargula’s <code class="docutils literal notranslate"><span class="pre">&lt;&#64;color&gt;</span></code> syntax is cleaner and more intuitive:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vargula - symmetric, intuitive</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;red&gt;foreground&lt;/red&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@red&gt;background&lt;/@red&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;#FF0000&gt;hex foreground&lt;/#FF0000&gt;&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;@#FF0000&gt;hex background&lt;/@#FF0000&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Rich - different approaches</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich</span><span class="w"> </span><span class="kn">import</span> <span class="nb">print</span> <span class="k">as</span> <span class="n">rprint</span>
+<span class="n">rprint</span><span class="p">(</span><span class="s2">&quot;[red]foreground[/red]&quot;</span><span class="p">)</span>
+<span class="n">rprint</span><span class="p">(</span><span class="s2">&quot;[on red]background[/on red]&quot;</span><span class="p">)</span>  <span class="c1"># Different syntax</span>
+</pre></div>
+</div>
+<p><strong>Use case</strong>: Consistent, predictable syntax for both foreground and background colors.</p>
+</section>
+<hr class="docutils" />
+<section id="complete-color-manipulation-toolkit">
+<h3>4. <strong>Complete Color Manipulation Toolkit</strong><a class="headerlink" href="#complete-color-manipulation-toolkit" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;#3498db&quot;</span>
+
+<span class="c1"># Lightness</span>
+<span class="n">lighter</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">lighten</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">darker</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">darken</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># Saturation</span>
+<span class="n">saturated</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">saturate</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+<span class="n">desaturated</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">desaturate</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Hue</span>
+<span class="n">shifted</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">shift_hue</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>  <span class="c1"># Blue → Green</span>
+<span class="n">inverted</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+
+<span class="c1"># Mixing</span>
+<span class="n">mixed</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="s2">&quot;#0000FF&quot;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># Purple</span>
+</pre></div>
+</div>
+<p><strong>Use case</strong>: Programmatically adjust colors for different states (hover, active, disabled).</p>
+</section>
+<hr class="docutils" />
+<section id="palette-persistence">
+<h3>5. <strong>Palette Persistence</strong><a class="headerlink" href="#palette-persistence" title="Link to this heading"></a></h3>
+<p>Save and share color schemes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate and save</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_palette</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="s2">&quot;triadic&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">save_palette</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="s2">&quot;brand_colors.json&quot;</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Brand Colors&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-11-22&quot;</span>
+<span class="p">})</span>
+
+<span class="c1"># Load and use</span>
+<span class="n">colors</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">load_palette</span><span class="p">(</span><span class="s2">&quot;brand_colors.json&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">apply_palette_theme</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Use case</strong>: Share consistent color schemes across team projects or tools.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="when-to-choose-vargula">
+<h2>When to Choose Vargula<a class="headerlink" href="#when-to-choose-vargula" title="Link to this heading"></a></h2>
+<section id="perfect-for">
+<h3>Perfect For:<a class="headerlink" href="#perfect-for" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>✔ Developers who want simple markup syntax</p></li>
+<li><p>✔ CLIs requiring accessible, WCAG-compliant colors</p></li>
+<li><p>✔ Projects needing harmonious color palette generation</p></li>
+<li><p>✔ Tools targeting colorblind users</p></li>
+<li><p>✔ Apps requiring consistent color themes</p></li>
+<li><p>✔ Projects where color design is a priority</p></li>
+</ul>
+</section>
+<section id="may-not-be-ideal-for">
+<h3>May Not Be Ideal For:<a class="headerlink" href="#may-not-be-ideal-for" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>✗ Complex terminal layouts (use Rich)</p></li>
+<li><p>✗ Syntax highlighting code (use Rich)</p></li>
+<li><p>✗ Markdown rendering (use Rich)</p></li>
+<li><p>✗ Tree/hierarchical displays (use Rich)</p></li>
+<li><p>✗ Projects needing absolute minimal dependencies (use Colorama)</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="complementary-usage">
+<h2>Complementary Usage<a class="headerlink" href="#complementary-usage" title="Link to this heading"></a></h2>
+<p>Vargula and other libraries can work together:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vg</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.console</span><span class="w"> </span><span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.panel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Panel</span>
+
+<span class="c1"># Generate accessible colors with Vargula</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">generate_accessible_theme</span><span class="p">(</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span> <span class="n">wcag_level</span><span class="o">=</span><span class="s2">&quot;AA&quot;</span><span class="p">)</span>
+
+<span class="c1"># Use Rich for layout with Vargula&#39;s colors</span>
+<span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">()</span>
+<span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">Panel</span><span class="p">(</span>
+    <span class="n">vg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">theme</span><span class="p">[</span><span class="s1">&#39;primary&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&gt;Content&lt;/#</span><span class="si">{</span><span class="n">theme</span><span class="p">[</span><span class="s1">&#39;primary&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&gt;&quot;</span><span class="p">),</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;My Panel&quot;</span>
+<span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="maturity-community">
+<h2>Maturity &amp; Community<a class="headerlink" href="#maturity-community" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Library</p></th>
+<th class="head"><p>GitHub Stars</p></th>
+<th class="head"><p>First Release</p></th>
+<th class="head"><p>Maintainer</p></th>
+<th class="head"><p>Community</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rich</p></td>
+<td><p>40K+</p></td>
+<td><p>2019</p></td>
+<td><p>Textualize</p></td>
+<td><p>Very Large</p></td>
+</tr>
+<tr class="row-odd"><td><p>Colorama</p></td>
+<td><p>3.5K+</p></td>
+<td><p>2010</p></td>
+<td><p>Jonathan Hartley</p></td>
+<td><p>Large</p></td>
+</tr>
+<tr class="row-even"><td><p>Termcolor</p></td>
+<td><p>600+</p></td>
+<td><p>2008</p></td>
+<td><p>Konstantin Lepa</p></td>
+<td><p>Medium</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pastel</p></td>
+<td><p>300+</p></td>
+<td><p>2018</p></td>
+<td><p>Sébastien Eustace</p></td>
+<td><p>Small</p></td>
+</tr>
+<tr class="row-even"><td><p>Vargula</p></td>
+<td><p>New</p></td>
+<td><p>2024</p></td>
+<td><p>Sivaprasad Murali</p></td>
+<td><p>Growing</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Vargula is newer</strong> but actively developed with a focus on color theory and accessibility.</p>
+</section>
+<hr class="docutils" />
+<section id="real-world-complex-example">
+<h2>Real-World Complex Example<a class="headerlink" href="#real-world-complex-example" title="Link to this heading"></a></h2>
+<p>Let’s style a log message: <strong><code class="docutils literal notranslate"><span class="pre">[ERROR]</span></code></strong> in bold red background, <strong>timestamp</strong> in dim gray, <strong>message</strong> in white with <strong>file path</strong> highlighted in cyan.</p>
+<section id="id15">
+<h3>Vargula<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;error_label&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;bright_black&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;dim&quot;</span><span class="p">)</span>
+<span class="n">vg</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;filepath&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="n">look</span><span class="o">=</span><span class="s2">&quot;underline&quot;</span><span class="p">)</span>
+
+<span class="n">vg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+    <span class="s2">&quot;&lt;error_label&gt;[ERROR]&lt;/error_label&gt; &quot;</span>
+    <span class="s2">&quot;&lt;timestamp&gt;2024-11-22 10:30:45&lt;/timestamp&gt; &quot;</span>
+    <span class="s2">&quot;Failed to load &lt;filepath&gt;config.yaml&lt;/filepath&gt;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id16">
+<h3>Rich<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rich</span><span class="w"> </span><span class="kn">import</span> <span class="nb">print</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;[bold white on red][ERROR][/] &quot;</span>
+    <span class="s2">&quot;[dim bright_black]2024-11-22 10:30:45[/] &quot;</span>
+    <span class="s2">&quot;Failed to load [cyan underline]config.yaml[/]&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id17">
+<h3>Termcolor<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">termcolor</span><span class="w"> </span><span class="kn">import</span> <span class="n">colored</span>
+
+<span class="n">error</span> <span class="o">=</span> <span class="n">colored</span><span class="p">(</span><span class="s2">&quot;[ERROR]&quot;</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="s2">&quot;on_red&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">])</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">colored</span><span class="p">(</span><span class="s2">&quot;2024-11-22 10:30:45&quot;</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dark&quot;</span><span class="p">])</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">colored</span><span class="p">(</span><span class="s2">&quot;config.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;underline&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s2"> Failed to load </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id18">
+<h3>Colorama<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">colorama</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fore</span><span class="p">,</span> <span class="n">Back</span><span class="p">,</span> <span class="n">Style</span>
+
+<span class="n">error</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Style</span><span class="o">.</span><span class="n">BRIGHT</span><span class="si">}{</span><span class="n">Fore</span><span class="o">.</span><span class="n">WHITE</span><span class="si">}{</span><span class="n">Back</span><span class="o">.</span><span class="n">RED</span><span class="si">}</span><span class="s2">[ERROR]</span><span class="si">{</span><span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">time</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Style</span><span class="o">.</span><span class="n">DIM</span><span class="si">}{</span><span class="n">Fore</span><span class="o">.</span><span class="n">WHITE</span><span class="si">}</span><span class="s2">2024-11-22 10:30:45</span><span class="si">{</span><span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Fore</span><span class="o">.</span><span class="n">CYAN</span><span class="si">}</span><span class="se">\x1b</span><span class="s2">[4mconfig.yaml</span><span class="si">{</span><span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s2"> Failed to load </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Verdict</strong>: Vargula and Rich tie for readability with reusable styles. Rich is more concise inline, Vargula excels with custom style definitions.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="the-verdict">
+<h2>The Verdict<a class="headerlink" href="#the-verdict" title="Link to this heading"></a></h2>
+<section id="choose-rich-if-you-need">
+<h3>Choose <strong>Rich</strong> if you need:<a class="headerlink" href="#choose-rich-if-you-need" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Advanced terminal UI components</p></li>
+<li><p>Syntax highlighting</p></li>
+<li><p>Markdown rendering</p></li>
+<li><p>Complex layouts</p></li>
+<li><p>Maximum features</p></li>
+</ul>
+</section>
+<section id="choose-colorama-if-you-need">
+<h3>Choose <strong>Colorama</strong> if you need:<a class="headerlink" href="#choose-colorama-if-you-need" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Minimal, stable ANSI support</p></li>
+<li><p>Windows compatibility focus</p></li>
+<li><p>Zero learning curve</p></li>
+<li><p>Absolute smallest footprint</p></li>
+</ul>
+</section>
+<section id="choose-termcolor-if-you-need">
+<h3>Choose <strong>Termcolor</strong> if you need:<a class="headerlink" href="#choose-termcolor-if-you-need" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Simple colored output</p></li>
+<li><p>Lightweight solution</p></li>
+<li><p>Established, stable API</p></li>
+</ul>
+</section>
+<section id="choose-pastel-if-you-need">
+<h3>Choose <strong>Pastel</strong> if you need:<a class="headerlink" href="#choose-pastel-if-you-need" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fluent color manipulation</p></li>
+<li><p>HSL color operations</p></li>
+<li><p>From Poetry ecosystem</p></li>
+</ul>
+</section>
+<section id="choose-vargula-if-you-need">
+<h3>Choose <strong>Vargula</strong> if you need:<a class="headerlink" href="#choose-vargula-if-you-need" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>✨ <strong>Color palette generation</strong></p></li>
+<li><p>✨ <strong>Accessibility (WCAG/colorblind)</strong></p></li>
+<li><p>✨ <strong>Color theory schemes</strong></p></li>
+<li><p>✨ <strong>Intuitive markup syntax</strong></p></li>
+<li><p>✨ <strong>Color manipulation toolkit</strong></p></li>
+<li><p>✨ <strong>Theme management</strong></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>Vargula doesn’t try to replace Rich’s comprehensive terminal UI capabilities. Instead, it focuses on being the <strong>best tool for color design and accessibility</strong> in terminal applications.</p>
+<p>If you’re building a CLI where:</p>
+<ul class="simple">
+<li><p>Color choice matters</p></li>
+<li><p>Accessibility is important</p></li>
+<li><p>You want harmonious palettes</p></li>
+<li><p>You need to validate for colorblindness</p></li>
+<li><p>You want simpler markup syntax</p></li>
+</ul>
+<p><strong>Then Vargula is your best choice.</strong></p>
+<p>For complex layouts, syntax highlighting, or markdown rendering, Rich remains unmatched. But for color-focused terminal design with accessibility baked in, Vargula offers unique capabilities no other library provides.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Vargula Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sivaprasad Murali.
+      <span class="lastupdated">Last updated on Nov 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

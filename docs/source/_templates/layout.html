@@ -4,7 +4,7 @@
     {{ super() }}
 
     <!-- Google Search Console -->
-    <meta name="google-site-verification" content="RA1p_5zP4s9LacW9qE1QYQ6WYLiUcYgPb1DoO91Vl4Q" />
+    <meta name="google-site-verification" content="22G4D8fVRIvJJg67tK5fHXdhOjKv4yjXBF_E2jeATGk" />
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Vargula is a lightweight, modern Python library for beautiful terminal text styling, coloring, formatting, and UI elements.">
@@ -24,4 +24,74 @@
     <meta name="twitter:title" content="Vargula – Terminal Text Styling for Python">
     <meta name="twitter:description" content="Documentation, tutorials, and API reference for Vargula — a fast and intuitive Python library for terminal text styling and colored outputs.">
     <meta name="twitter:image" content="https://vargula.readthedocs.io/en/latest/_static/logo.png">
+
+    <!-- JSON-LD Structured Data for Software Application -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Vargula",
+    "description": "Python library for terminal text styling with color palette generation, WCAG accessibility, and colorblind simulation",
+    "url": "https://vargula.readthedocs.io/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": ["Windows", "macOS", "Linux"],
+    "softwareVersion": "{{ release }}",
+    "author": {
+        "@type": "Person",
+        "name": "Sivaprasad Murali"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
+    },
+    "programmingLanguage": "Python",
+    "keywords": "terminal styling, color palette, WCAG accessibility, colorblind simulation, CLI, ANSI colors",
+    "screenshot": "https://vargula.readthedocs.io/en/latest/_static/screenshot.png",
+    "softwareHelp": "https://vargula.readthedocs.io/",
+    "downloadUrl": "https://pypi.org/project/vargula/",
+    "codeRepository": "https://github.com/crystallinecore/vargula",
+    "license": "https://opensource.org/licenses/MIT",
+    "inLanguage": "en"
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://vargula.readthedocs.io/"
+    },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ title }}",
+        "item": "{{ pageurl }}"
+    }]
+    }
+    </script>
+
+    <!-- Organization Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vargula",
+    "url": "https://vargula.readthedocs.io/",
+    "logo": "https://vargula.readthedocs.io/en/latest/_static/logo.png",
+    "sameAs": [
+        "https://github.com/crystallinecore/vargula",
+        "https://pypi.org/project/vargula/"
+    ]
+    }
+    </script>
 {% endblock %}

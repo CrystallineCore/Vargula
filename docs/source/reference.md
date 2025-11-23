@@ -1,4 +1,4 @@
-# Vargula Quick Reference
+# Quick Reference
 
 A comprehensive index of all functions, methods, and classes in the Vargula library. Click any item to jump to its full documentation in the API reference.
 

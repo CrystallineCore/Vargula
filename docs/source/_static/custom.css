@@ -1,0 +1,52 @@
+/* Improve readability and SEO */
+
+/* Better heading hierarchy */
+h1 {
+    font-size: 2.2em;
+    margin-top: 0.8em;
+    margin-bottom: 0.6em;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin-top: 0.7em;
+    margin-bottom: 0.4em;
+}
+
+/* Better code block styling */
+.highlight {
+    border-radius: 4px;
+    margin: 1em 0;
+}
+
+/* Improve link visibility */
+a.reference.external::after {
+    content: " ↗";
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* Better table styling */
+table.docutils {
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+table.docutils th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* Mobile optimization */
+@media screen and (max-width: 768px) {
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.3em; }
+}

@@ -7,6 +7,7 @@ Welcome to the official documentation for Vargula.
 :maxdepth: 2
 :caption: Contents:
 
+comparison
 installation
 conventions
 api
@@ -18,6 +19,7 @@ examples
 tips
 appendix
 reference
+faq
 ```
 
 ## What is Vargula?

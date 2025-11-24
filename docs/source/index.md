@@ -33,18 +33,12 @@ Try [this](https://pastebin.com/BpGDZkfu) Vargula's code snippet to run this:
 
 ## What's new?
 
-### Added
-- **Background color tag syntax**: New `<@color>` tag convention for inline background styling
-  - Hex background colors: `<@#FF0000>text</@#FF0000>`, `<@#F00>text</@#F00>`
-  - Named background colors: `<@red>text</@red>`, `<@yellow>text</@yellow>`
-  - Full symmetry with foreground color tags
+- **Escape sequences**: Support for literal tag display
+  - Use `r'\<'` to show literal `<` in tags
+  - Use `r'\>'` to show literal `>` in tags
+  - Enables documentation and tutorial content with visible markup syntax
 
-### Enhanced
-- **`format()` function**: Enhanced tag parsing to support background color syntax
-  - Proper validation of hex color codes (3 or 6 characters)
-  - Maintains full backward compatibility with existing tags
-
-Refer the *Tag Syntax Conventions* section to know more.
+Refer the *Conventions* section to know more.
 
 ##  Features
 

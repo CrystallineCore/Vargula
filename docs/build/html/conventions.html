@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conventions &mdash; Vargula 1.0.4 Documentation</title>
+  <title>Conventions &mdash; Vargula 1.1.0 Documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=fe80a0e6" />
@@ -16,7 +16,7 @@
     <link rel="canonical" href="https://vargula.readthedocs.io/conventions.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=71272d9f"></script>
+      <script src="_static/documentation_options.js?v=fc837d61"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -27,7 +27,7 @@
      
 
     <!-- Google Search Console -->
-    <meta name="google-site-verification" content="RA1p_5zP4s9LacW9qE1QYQ6WYLiUcYgPb1DoO91Vl4Q" />
+    <meta name="google-site-verification" content="22G4D8fVRIvJJg67tK5fHXdhOjKv4yjXBF_E2jeATGk" />
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Vargula is a lightweight, modern Python library for beautiful terminal text styling, coloring, formatting, and UI elements.">
@@ -58,7 +58,7 @@
     "url": "https://vargula.readthedocs.io/",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": ["Windows", "macOS", "Linux"],
-    "softwareVersion": "1.0.4",
+    "softwareVersion": "1.1.0",
     "author": {
         "@type": "Person",
         "name": "Sivaprasad Murali"
@@ -528,6 +528,8 @@
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;&#64;colorname&gt;</span></code></strong> - Apply named background color (e.g., <code class="docutils literal notranslate"><span class="pre">&lt;&#64;red&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&#64;yellow&gt;</span></code>)</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;lookname&gt;</span></code></strong> - Apply text style (e.g., <code class="docutils literal notranslate"><span class="pre">bold</span></code>, <code class="docutils literal notranslate"><span class="pre">italic</span></code>, <code class="docutils literal notranslate"><span class="pre">underline</span></code>)</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;customname&gt;</span></code></strong> - Apply custom styles created with <code class="docutils literal notranslate"><span class="pre">create()</span></code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">\\&lt;tag&gt;</span></code></strong> - Ignores the tag and prints as is. <span style="color:red"><b>[new]</b></span></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">\&lt;tag&gt;</span></code></strong> - Ignores the tag and prints as is, if used as a raw string. (i.e. <code class="docutils literal notranslate"><span class="pre">r&quot;\&lt;tag&gt;&quot;</span></code>) <span style="color:red"><b>[new]</b></span></p></li>
 </ul>
 <section id="tag-format-rules">
 <h2>Tag Format Rules<a class="headerlink" href="#tag-format-rules" title="Link to this heading"></a></h2>
@@ -538,6 +540,7 @@
 <li><p><strong>Tags are case-insensitive</strong> for named colors: <code class="docutils literal notranslate"><span class="pre">&lt;red&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;RED&gt;</span></code> work the same</p></li>
 <li><p><strong>Closing tags</strong> must match opening tags exactly: <code class="docutils literal notranslate"><span class="pre">&lt;&#64;yellow&gt;...&lt;/&#64;yellow&gt;</span></code></p></li>
 <li><p><strong>Tags can be nested</strong> arbitrarily deep for complex styling</p></li>
+<li><p><strong>Use <code class="docutils literal notranslate"><span class="pre">\</span></code> or <code class="docutils literal notranslate"><span class="pre">\\</span></code></strong> for escaping sequences</p></li>
 </ul>
 </section>
 <section id="available-named-colors">
@@ -548,7 +551,7 @@
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="kn">import</span> <span class="n">write</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">vargula</span><span class="w"> </span><span class="kn">import</span> <span class="n">write</span><span class="p">,</span> <span class="n">create</span>
 
 <span class="c1"># Named foreground colors</span>
 <span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;red&gt;Red text&lt;/red&gt;&quot;</span><span class="p">)</span>
@@ -581,10 +584,15 @@
 
 <span class="c1"># Complex nesting</span>
 <span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;bold&gt;&lt;red&gt;Bold &lt;italic&gt;and italic&lt;/italic&gt; red text&lt;/red&gt;&lt;/bold&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1">#Escape sequences</span>
+<span class="n">write</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Use \&lt;red&gt;text\&lt;/red&gt; to make text red&quot;</span><span class="p">)</span>
+<span class="n">create</span><span class="p">(</span><span class="s2">&quot;syntax&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Tag syntax: \&lt;syntax&gt;highlighted code\&lt;/syntax&gt; becomes &lt;syntax&gt;highlighted code&lt;/syntax&gt;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Output:</strong></p>
-<p><a class="reference external" href="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2022-53-32.png?raw=true"><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2022-53-32.png?raw=true" /></a></p>
+<p><a class="reference external" href="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-24%2017-30-24.png?raw=true"><img alt="Demo" src="https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-24%2017-30-24.png?raw=true" /></a></p>
 </section>
 </section>
 
@@ -600,7 +608,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2025, Sivaprasad Murali.
-      <span class="lastupdated">Last updated on Nov 23, 2025.
+      <span class="lastupdated">Last updated on Nov 24, 2025.
       </span></p>
   </div>
 

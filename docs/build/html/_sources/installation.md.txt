@@ -26,7 +26,7 @@ pip install --upgrade vargula
 To install a specific version:
 
 ```bash
-pip install vargula==1.0.4
+pip install vargula==1.1.0
 ```
 
 ## Install from Source
@@ -48,7 +48,7 @@ Check that Vargula is installed correctly:
 ```python
 import vargula as vg
 print(vg.__version__)
-# Output: 1.0.4
+# Output: 1.1.0
 ```
 
 Test basic functionality:

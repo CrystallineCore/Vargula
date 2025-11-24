@@ -722,4 +722,4 @@ key = get_key()
 ---
 
 **Last Updated:** 2025-11-23  
-**Library Version:** 1.0.4
+**Library Version:** 1.1.0

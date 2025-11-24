@@ -363,4 +363,4 @@ vg.apply_palette_theme(theme)
 ---
 
 **Last Updated:** 2025-11-23  
-**Library Version:** 1.0.4
+**Library Version:** 1.1.0

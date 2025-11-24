@@ -8,6 +8,8 @@ Vargula supports inline color styling using intuitive tag syntax:
 - **`<@colorname>`** - Apply named background color (e.g., `<@red>`, `<@yellow>`)
 - **`<lookname>`** - Apply text style (e.g., `bold`, `italic`, `underline`)
 - **`<customname>`** - Apply custom styles created with `create()`
+- **`\\<tag>`** - Ignores the tag and prints as is. <span style="color:red"><b>[new]</b></span>
+- **`\<tag>`** - Ignores the tag and prints as is, if used as a raw string. (i.e. `r"\<tag>"`) <span style="color:red"><b>[new]</b></span>
 
 ## Tag Format Rules
 
@@ -17,6 +19,7 @@ Vargula supports inline color styling using intuitive tag syntax:
 - **Tags are case-insensitive** for named colors: `<red>` and `<RED>` work the same
 - **Closing tags** must match opening tags exactly: `<@yellow>...</@yellow>`
 - **Tags can be nested** arbitrarily deep for complex styling
+- **Use `\` or `\\`** for escaping sequences
 
 ## Available Named Colors
 
@@ -29,7 +32,7 @@ Vargula supports inline color styling using intuitive tag syntax:
 ## Examples
 
 ```py
-from vargula import write
+from vargula import write, create
 
 # Named foreground colors
 write("<red>Red text</red>")
@@ -62,9 +65,14 @@ write("<@#FF0000>Hex red <@yellow>named yellow</@yellow> back to hex</@#FF0000>"
 
 # Complex nesting
 write("<bold><red>Bold <italic>and italic</italic> red text</red></bold>")
+
+#Escape sequences
+write(r"Use \<red>text\</red> to make text red")
+create("syntax", color="yellow")
+write(r"Tag syntax: \<syntax>highlighted code\</syntax> becomes <syntax>highlighted code</syntax>")
 ```
 
 **Output:**
 
-[![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2022-53-32.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2022-53-32.png?raw=true)
+[![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-24%2017-30-24.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-24%2017-30-24.png?raw=true)
 

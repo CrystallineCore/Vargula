@@ -5,6 +5,34 @@ All notable changes to the vargula project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2024-11-24
+
+### Added
+- **Escape sequences**: Support for literal tag display
+  - Use `r'\<'` to show literal `<` in tags
+  - Use `r'\>'` to show literal `>` in tags
+  - Enables documentation and tutorial content with visible markup syntax
+  - Works in both global API and instance methods
+
+### Examples
+
+#### Escape Sequences
+```python
+import vargula as vg
+
+# Show literal tags in documentation
+vg.write(r"Use \<red>text\</red> to make text red")
+# Output: Use <red>text</red> to make text red
+
+# Mix literal and styled tags
+vg.write(r"Example: \<bold>syntax\</bold> creates <bold>bold</bold> text")
+# Output: Example: <bold>syntax</bold> creates [bold]bold[/bold] text
+
+# Tutorial content
+vg.create("syntax", color="yellow")
+vg.write(r"Tag syntax: \<syntax>highlighted code\</syntax> becomes <syntax>highlighted code</syntax>")
+```
+
 ## [1.0.4] - 2024-11-22
 
 ### Added

@@ -13,8 +13,8 @@ sys.path.insert(0, os.path.abspath('../../'))
 project = 'Vargula'
 copyright = '2025, Sivaprasad Murali'
 author = 'Sivaprasad Murali'
-release = '1.0.4'
-version = '1.0.4'  # Add version for better tracking
+release = '1.1.0'
+version = '1.1.0'  # Add version for better tracking
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

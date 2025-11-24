@@ -14,7 +14,7 @@ Example:
     >>> vg.apply_palette_theme(theme)
 """
 
-__version__ = "1.0.4"
+__version__ = "1.1.0"
 
 import sys
 import os
@@ -287,144 +287,159 @@ def temporary(name, color=None, bg=None, look=None):
         delete(name)
 
 def format(text):
-    """Format text with markup-style tags.
-    
-    Supports:
-    - Named styles: <red>text</red>, <bold>text</bold>
-    - Hex foreground: <#FF5733>text</#FF5733>
-    - Hex background: <@#FF5733>text</@#FF5733>
-    - Named background: <@red>text</@red>
-    - Combined: <#FFFFFF><@#000000>text</@#000000></#FFFFFF>
-    """
-    if not _Config.enabled:
-        return strip(text)
-    
-    all_styles = {**_predefined_styles, **_current_theme, **_custom_styles}
-    
-    def find_close_tag(text, start_pos, tag_name):
-        """Find matching closing tag position, accounting for nesting."""
-        open_tag = f"<{tag_name}>"
-        close_tag = f"</{tag_name}>"
-        depth = 1
-        i = start_pos
+        """Format text with markup-style tags, handling escape sequences.
         
-        while i < len(text) and depth > 0:
-            if text[i:i + len(open_tag)] == open_tag:
-                depth += 1
-                i += len(open_tag)
-            elif text[i:i + len(close_tag)] == close_tag:
-                depth -= 1
-                if depth == 0:
-                    return i
-                i += len(close_tag)
-            else:
-                i += 1
+        Escape sequences: Use \\\\< to show literal < character
+        Example: "\\\\<red>not a tag\\\\</red>" -> "<red>not a tag</red>"
         
-        return -1
-    
-    def collect_style_codes(color=None, bg=None, look=None):
-        """Collect ANSI codes without wrapping text."""
-        codes = []
+        Supports:
+        - Named styles: <red>text</red>, <bold>text</bold>
+        - Hex foreground: <#FF5733>text</#FF5733>
+        - Hex background: <@#FF5733>text</@#FF5733>
+        - Named background: <@red>text</@red>
+        - Combined: <#FFFFFF><@#000000>text</@#000000></#FFFFFF>
+        """
+        if not _Config.enabled:
+            return strip(text)
         
-        fg_code = _parse_color(color, background=False)
-        if fg_code:
-            codes.append(fg_code)
+        # First, handle escape sequences by replacing \< with a placeholder
+        ESCAPE_PLACEHOLDER = "\x00ESCAPED_LT\x00"
+        ESCAPE_GT_PLACEHOLDER = "\x00ESCAPED_GT\x00"
+        text = text.replace(r'\<', ESCAPE_PLACEHOLDER)
+        text = text.replace(r'\>', ESCAPE_GT_PLACEHOLDER)
         
-        bg_code = _parse_color(bg, background=True)
-        if bg_code:
-            codes.append(bg_code)
+        all_styles = {**_predefined_styles, **_current_theme, **_custom_styles}
         
-        if look:
-            if isinstance(look, str) and look in LOOKS:
-                codes.append(str(LOOKS[look]))
-            elif isinstance(look, (list, tuple)):
-                for l in look:
-                    if l in LOOKS:
-                        codes.append(str(LOOKS[l]))
-        
-        return codes
-    
-    def process_text(text, inherited_codes=None):
-        """Process text and handle nested tags with inherited styles."""
-        if inherited_codes is None:
-            inherited_codes = []
-        
-        result = []
-        i = 0
-        
-        while i < len(text):
-            # Look for opening tag
-            if text[i] == '<' and i + 1 < len(text) and text[i + 1] != '/':
-                # Try to match an opening tag
-                # Pattern matches: <#hex>, <@#hex>, <@name>, <name>
-                match = re.match(r'<(@?#?[\w_#-]+)>', text[i:])
-                if match:
-                    tag_name = match.group(1)
-                    content_start = i + match.end()
-                    
-                    # Find matching closing tag
-                    close_pos = find_close_tag(text, content_start, tag_name)
-                    
-                    # Determine tag type
-                    is_hex_fg = tag_name.startswith('#')
-                    is_hex_bg = tag_name.startswith('@#')
-                    is_named_bg = tag_name.startswith('@') and not is_hex_bg
-                    is_named_style = tag_name in all_styles
-                    
-                    if close_pos != -1 and (is_hex_fg or is_hex_bg or is_named_bg or is_named_style):
-                        # Get style codes for this tag
-                        if is_hex_fg:
-                            # Hex foreground color: <#FF5733>
-                            new_codes = collect_style_codes(color=tag_name)
-                        elif is_hex_bg:
-                            # Hex background color: <@#FF5733>
-                            # Strip @# and use as background hex
-                            bg_color = '#' + tag_name[2:]
-                            new_codes = collect_style_codes(bg=bg_color)
-                        elif is_named_bg:
-                            # Named background color: <@red>, <@yellow>
-                            color_name = tag_name[1:]  # Strip @ prefix
-                            new_codes = collect_style_codes(bg=color_name)
-                        else:
-                            # Named style
-                            style_def = all_styles[tag_name]
-                            new_codes = collect_style_codes(
-                                color=style_def.get("color"),
-                                bg=style_def.get("bg"),
-                                look=style_def.get("look")
-                            )
-                        
-                        # Combine with inherited codes
-                        combined_codes = inherited_codes + new_codes
-                        
-                        # Extract inner content
-                        inner_text = text[content_start:close_pos]
-                        
-                        # Recursively process with combined codes
-                        processed_inner = process_text(inner_text, combined_codes)
-                        
-                        # Apply combined styling to the processed content
-                        if combined_codes:
-                            styled = f"\033[{';'.join(combined_codes)}m{processed_inner}\033[0m"
-                            # Reapply inherited codes after reset for following content
-                            if inherited_codes:
-                                styled += f"\033[{';'.join(inherited_codes)}m"
-                        else:
-                            styled = processed_inner
-                        
-                        result.append(styled)
-                        
-                        # Skip past the closing tag
-                        i = close_pos + len(f"</{tag_name}>")
-                        continue
+        def find_close_tag(text, start_pos, tag_name):
+            """Find matching closing tag position, accounting for nesting."""
+            open_tag = f"<{tag_name}>"
+            close_tag = f"</{tag_name}>"
+            depth = 1
+            i = start_pos
             
-            # Regular character or unmatched/unknown tag
-            result.append(text[i])
-            i += 1
+            while i < len(text) and depth > 0:
+                if text[i:i + len(open_tag)] == open_tag:
+                    depth += 1
+                    i += len(open_tag)
+                elif text[i:i + len(close_tag)] == close_tag:
+                    depth -= 1
+                    if depth == 0:
+                        return i
+                    i += len(close_tag)
+                else:
+                    i += 1
+            
+            return -1
         
-        return ''.join(result)
-    
-    return process_text(text)
+        def collect_style_codes(color=None, bg=None, look=None):
+            """Collect ANSI codes without wrapping text."""
+            codes = []
+            
+            fg_code = _parse_color(color, background=False)
+            if fg_code:
+                codes.append(fg_code)
+            
+            bg_code = _parse_color(bg, background=True)
+            if bg_code:
+                codes.append(bg_code)
+            
+            if look:
+                if isinstance(look, str) and look in LOOKS:
+                    codes.append(str(LOOKS[look]))
+                elif isinstance(look, (list, tuple)):
+                    for l in look:
+                        if l in LOOKS:
+                            codes.append(str(LOOKS[l]))
+            
+            return codes
+        
+        def process_text(text, inherited_codes=None):
+            """Process text and handle nested tags with inherited styles."""
+            if inherited_codes is None:
+                inherited_codes = []
+            
+            result = []
+            i = 0
+            
+            while i < len(text):
+                # Look for opening tag
+                if text[i] == '<' and i + 1 < len(text) and text[i + 1] != '/':
+                    # Try to match an opening tag
+                    # Pattern matches: <#hex>, <@#hex>, <@name>, <name>
+                    match = re.match(r'<(@?#?[\w_#-]+)>', text[i:])
+                    if match:
+                        tag_name = match.group(1)
+                        content_start = i + match.end()
+                        
+                        # Find matching closing tag
+                        close_pos = find_close_tag(text, content_start, tag_name)
+                        
+                        # Determine tag type
+                        is_hex_fg = tag_name.startswith('#')
+                        is_hex_bg = tag_name.startswith('@#')
+                        is_named_bg = tag_name.startswith('@') and not is_hex_bg
+                        is_named_style = tag_name in all_styles
+                        
+                        if close_pos != -1 and (is_hex_fg or is_hex_bg or is_named_bg or is_named_style):
+                            # Get style codes for this tag
+                            if is_hex_fg:
+                                # Hex foreground color: <#FF5733>
+                                new_codes = collect_style_codes(color=tag_name)
+                            elif is_hex_bg:
+                                # Hex background color: <@#FF5733>
+                                # Strip @# and use as background hex
+                                bg_color = '#' + tag_name[2:]
+                                new_codes = collect_style_codes(bg=bg_color)
+                            elif is_named_bg:
+                                # Named background color: <@red>, <@yellow>
+                                color_name = tag_name[1:]  # Strip @ prefix
+                                new_codes = collect_style_codes(bg=color_name)
+                            else:
+                                # Named style
+                                style_def = all_styles[tag_name]
+                                new_codes = collect_style_codes(
+                                    color=style_def.get("color"),
+                                    bg=style_def.get("bg"),
+                                    look=style_def.get("look")
+                                )
+                            
+                            # Combine with inherited codes
+                            combined_codes = inherited_codes + new_codes
+                            
+                            # Extract inner content
+                            inner_text = text[content_start:close_pos]
+                            
+                            # Recursively process with combined codes
+                            processed_inner = process_text(inner_text, combined_codes)
+                            
+                            # Apply combined styling to the processed content
+                            if combined_codes:
+                                styled = f"\033[{';'.join(combined_codes)}m{processed_inner}\033[0m"
+                                # Reapply inherited codes after reset for following content
+                                if inherited_codes:
+                                    styled += f"\033[{';'.join(inherited_codes)}m"
+                            else:
+                                styled = processed_inner
+                            
+                            result.append(styled)
+                            
+                            # Skip past the closing tag
+                            i = close_pos + len(f"</{tag_name}>")
+                            continue
+                
+                # Regular character or unmatched/unknown tag
+                result.append(text[i])
+                i += 1
+            
+            return ''.join(result)
+        
+        formatted = process_text(text)
+        
+        # Restore escaped characters
+        formatted = formatted.replace(ESCAPE_PLACEHOLDER, '<')
+        formatted = formatted.replace(ESCAPE_GT_PLACEHOLDER, '>')
+        
+        return formatted
 
 def write(*args, sep=" ", end="\n", file=None, flush=False):
     """Print formatted text with markup-style tags (works like built-in print()).

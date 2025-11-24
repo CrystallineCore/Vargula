@@ -75,6 +75,3 @@ build-backend = "setuptools.build_meta"
 
 [project.scripts]
 vargula = "vargula.__main__:main"
-
-[tool.setuptools]
-exclude-package-data = {"" = ["docs/**"]}

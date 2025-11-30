@@ -255,79 +255,90 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="conventions.html#tag-format-rules">Tag Format Rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conventions.html#available-named-colors">Available Named Colors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conventions.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#tag-syntax-conventions">Tag Syntax Conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#tag-format-rules">Tag Format Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conventions.html#available-named-colors">Available Named Colors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Vargula API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#core-styling-functions">Core Styling Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#style">style()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#format">format()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#create">create()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#delete">delete()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#write">write()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#strip">strip()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#clean">clean()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#length">length()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#enable-disable">enable() / disable()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#temporary">temporary()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#api-reference">API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#creating-instances">Creating Instances</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#instance-based-api-recommended-for-applications">Instance-Based API (Recommended for Applications)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#thread-safe-operations">Thread-Safe Operations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#theme-functions">Theme Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#set-theme">set_theme()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#core-styling-functions">Core Styling Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#style-text-color-none-bg-none-look-none"><code class="docutils literal notranslate"><span class="pre">style(text,</span> <span class="pre">color=None,</span> <span class="pre">bg=None,</span> <span class="pre">look=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#format-text"><code class="docutils literal notranslate"><span class="pre">format(text)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#create-name-color-none-bg-none-look-none"><code class="docutils literal notranslate"><span class="pre">create(name,</span> <span class="pre">color=None,</span> <span class="pre">bg=None,</span> <span class="pre">look=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#delete-name"><code class="docutils literal notranslate"><span class="pre">delete(name)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#write-args-sep-end-n-file-none-flush-false"><code class="docutils literal notranslate"><span class="pre">write(*args,</span> <span class="pre">sep=&quot;</span> <span class="pre">&quot;,</span> <span class="pre">end=&quot;\n&quot;,</span> <span class="pre">file=None,</span> <span class="pre">flush=False)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#strip-text"><code class="docutils literal notranslate"><span class="pre">strip(text)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#clean-text"><code class="docutils literal notranslate"><span class="pre">clean(text)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#length-text"><code class="docutils literal notranslate"><span class="pre">length(text)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#enable-disable"><code class="docutils literal notranslate"><span class="pre">enable()</span></code> / <code class="docutils literal notranslate"><span class="pre">disable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#temporary-name-color-none-bg-none-look-none"><code class="docutils literal notranslate"><span class="pre">temporary(name,</span> <span class="pre">color=None,</span> <span class="pre">bg=None,</span> <span class="pre">look=None)</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#tables">Tables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#table">Table()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#table-add-column">Table.add_column()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#table-add-row">Table.add_row()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#theme-functions">Theme Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#set-theme-theme"><code class="docutils literal notranslate"><span class="pre">set_theme(theme)</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#progress-bars">Progress Bars</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#progressbar">ProgressBar()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#progressbar-update">ProgressBar.update()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#progressbar-close">ProgressBar.close()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#progress-bar">progress_bar()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#multiprogress">MultiProgress()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#multiprogress-add-task">MultiProgress.add_task()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#multiprogress-update">MultiProgress.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#tables">Tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#table-title-none-caption-none"><code class="docutils literal notranslate"><span class="pre">Table(title=None,</span> <span class="pre">caption=None,</span> <span class="pre">...)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#table-add-column-header-style-none-justify-left"><code class="docutils literal notranslate"><span class="pre">Table.add_column(header,</span> <span class="pre">style=None,</span> <span class="pre">justify=&quot;left&quot;,</span> <span class="pre">...)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#table-add-row-cells-style-none"><code class="docutils literal notranslate"><span class="pre">Table.add_row(*cells,</span> <span class="pre">style=None)</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#color-palette-generation">Color Palette Generation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#generate-palette">generate_palette()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#generate-theme-palette">generate_theme_palette()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#generate-accessible-theme">generate_accessible_theme()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#preview-palette">preview_palette()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#apply-palette-theme">apply_palette_theme()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#progress-bars">Progress Bars</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#progressbar-total-100-desc"><code class="docutils literal notranslate"><span class="pre">ProgressBar(total=100,</span> <span class="pre">desc=&quot;&quot;,</span> <span class="pre">...)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#progressbar-update-n-1"><code class="docutils literal notranslate"><span class="pre">ProgressBar.update(n=1)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#progressbar-close"><code class="docutils literal notranslate"><span class="pre">ProgressBar.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#progress-bar-iterable-total-none-desc-kwargs"><code class="docutils literal notranslate"><span class="pre">progress_bar(iterable,</span> <span class="pre">total=None,</span> <span class="pre">desc=&quot;&quot;,</span> <span class="pre">**kwargs)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#multiprogress"><code class="docutils literal notranslate"><span class="pre">MultiProgress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#multiprogress-add-task-desc-total-100-kwargs"><code class="docutils literal notranslate"><span class="pre">MultiProgress.add_task(desc,</span> <span class="pre">total=100,</span> <span class="pre">**kwargs)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#multiprogress-update-task-id-n-1"><code class="docutils literal notranslate"><span class="pre">MultiProgress.update(task_id,</span> <span class="pre">n=1)</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#color-manipulation">Color Manipulation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#lighten">lighten()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#darken">darken()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#saturate">saturate()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#desaturate">desaturate()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#shift-hue">shift_hue()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#invert">invert()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#mix">mix()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#color-palette-generation">Color Palette Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#generate-palette-base-color-none-scheme-random-count-5"><code class="docutils literal notranslate"><span class="pre">generate_palette(base_color=None,</span> <span class="pre">scheme=&quot;random&quot;,</span> <span class="pre">count=5,</span> <span class="pre">...)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#generate-theme-palette-scheme-random-base-color-none"><code class="docutils literal notranslate"><span class="pre">generate_theme_palette(scheme=&quot;random&quot;,</span> <span class="pre">base_color=None,</span> <span class="pre">...)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#generate-accessible-theme-base-color-scheme-complementary"><code class="docutils literal notranslate"><span class="pre">generate_accessible_theme(base_color,</span> <span class="pre">scheme=&quot;complementary&quot;,</span> <span class="pre">...)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#preview-palette-colors-width-40-show-info-true"><code class="docutils literal notranslate"><span class="pre">preview_palette(colors,</span> <span class="pre">width=40,</span> <span class="pre">show_info=True)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#apply-palette-theme-palette-register-styles-true"><code class="docutils literal notranslate"><span class="pre">apply_palette_theme(palette,</span> <span class="pre">register_styles=True)</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#accessibility-functions">Accessibility Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#calculate-contrast-ratio">calculate_contrast_ratio()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#meets-wcag">meets_wcag()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#ensure-contrast">ensure_contrast()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#color-manipulation">Color Manipulation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#lighten-color-amount-0-1"><code class="docutils literal notranslate"><span class="pre">lighten(color,</span> <span class="pre">amount=0.1)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#darken-color-amount-0-1"><code class="docutils literal notranslate"><span class="pre">darken(color,</span> <span class="pre">amount=0.1)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#saturate-color-amount-0-1"><code class="docutils literal notranslate"><span class="pre">saturate(color,</span> <span class="pre">amount=0.1)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#desaturate-color-amount-0-1"><code class="docutils literal notranslate"><span class="pre">desaturate(color,</span> <span class="pre">amount=0.1)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#shift-hue-color-degrees"><code class="docutils literal notranslate"><span class="pre">shift_hue(color,</span> <span class="pre">degrees)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#invert-color"><code class="docutils literal notranslate"><span class="pre">invert(color)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#mix-color1-color2-weight-0-5"><code class="docutils literal notranslate"><span class="pre">mix(color1,</span> <span class="pre">color2,</span> <span class="pre">weight=0.5)</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#color-blindness-functions">Color Blindness Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#simulate-colorblindness">simulate_colorblindness()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#validate-colorblind-safety">validate_colorblind_safety()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#accessibility-functions">Accessibility Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#calculate-contrast-ratio-color1-color2"><code class="docutils literal notranslate"><span class="pre">calculate_contrast_ratio(color1,</span> <span class="pre">color2)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#meets-wcag-color1-color2-level-aa-large-text-false"><code class="docutils literal notranslate"><span class="pre">meets_wcag(color1,</span> <span class="pre">color2,</span> <span class="pre">level=&quot;AA&quot;,</span> <span class="pre">large_text=False)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#ensure-contrast-foreground-background-min-ratio-4-5-max-iterations-20"><code class="docutils literal notranslate"><span class="pre">ensure_contrast(foreground,</span> <span class="pre">background,</span> <span class="pre">min_ratio=4.5,</span> <span class="pre">max_iterations=20)</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#persistence-functions">Persistence Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#save-palette">save_palette()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#load-palette">load_palette()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#save-theme">save_theme()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#load-theme">load_theme()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#color-blindness-functions">Color Blindness Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#simulate-colorblindness-hex-color-cb-type"><code class="docutils literal notranslate"><span class="pre">simulate_colorblindness(hex_color,</span> <span class="pre">cb_type)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#validate-colorblind-safety-colors-cb-type-deuteranopia-min-difference-30"><code class="docutils literal notranslate"><span class="pre">validate_colorblind_safety(colors,</span> <span class="pre">cb_type=&quot;deuteranopia&quot;,</span> <span class="pre">min_difference=30)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#persistence-functions">Persistence Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#save-palette-colors-filename-metadata-none"><code class="docutils literal notranslate"><span class="pre">save_palette(colors,</span> <span class="pre">filename,</span> <span class="pre">metadata=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#load-palette-filename"><code class="docutils literal notranslate"><span class="pre">load_palette(filename)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#save-theme-theme-filename-metadata-none"><code class="docutils literal notranslate"><span class="pre">save_theme(theme,</span> <span class="pre">filename,</span> <span class="pre">metadata=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#load-theme-filename"><code class="docutils literal notranslate"><span class="pre">load_theme(filename)</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -384,14 +395,6 @@
 <li class="toctree-l3"><a class="reference internal" href="appendix.html#color-blindness-considerations">Color Blindness Considerations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="appendix.html#common-patterns">Common Patterns</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="appendix.html#building-a-custom-logger">Building a Custom Logger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="appendix.html#progress-with-multiple-steps">Progress with Multiple Steps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="appendix.html#interactive-menu-system">Interactive Menu System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="appendix.html#styled-table-reports">Styled Table Reports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="appendix.html#theme-switcher">Theme Switcher</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="appendix.html#performance-tips">Performance Tips</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="appendix.html#minimize-redundant-formatting">Minimize Redundant Formatting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="appendix.html#batch-operations">Batch Operations</a></li>
@@ -420,11 +423,11 @@
 <li class="toctree-l3"><a class="reference internal" href="appendix.html#community-themes">Community Themes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="appendix.html#keyboard-shortcuts-reference">Keyboard Shortcuts Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix.html#version-compatibility">Version Compatibility</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Quick Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#instance-creation">Instance Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#core-styling-functions">Core Styling Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#theme-functions">Theme Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#table-functions">Table Functions</a></li>
@@ -531,7 +534,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2025, Sivaprasad Murali.
-      <span class="lastupdated">Last updated on Nov 24, 2025.
+      <span class="lastupdated">Last updated on Nov 30, 2025.
       </span></p>
   </div>
 

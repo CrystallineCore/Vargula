@@ -4,7 +4,14 @@ A comprehensive index of all functions, methods, and classes in the Vargula libr
 
 ---
 
+## Instance Creation
+
+| Function | Description |
+|----------|-------------|
+| [Vargula()](api.md#vargula) | Create an instance of Vargula to access its methods |
+
 ## Core Styling Functions
+
 
 | Function | Description |
 |----------|-------------|
@@ -113,6 +120,9 @@ A comprehensive index of all functions, methods, and classes in the Vargula libr
 ## Function Categories
 
 ### By Use Case
+
+**Instance Creation:**
+- [Vargula()](api.md#vargula) - Creating an instance of Vargula
 
 **Text Styling:**
 - [style()](api.md#style) - Direct styling
@@ -225,7 +235,8 @@ A comprehensive index of all functions, methods, and classes in the Vargula libr
 
 ### Styling Text
 ```python
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 
 # Direct styling
 print(vg.style("Error", color="red", look="bold"))
@@ -356,11 +367,9 @@ vg.apply_palette_theme(theme)
 | [load_theme()](api.md#load_theme) | `tuple` - (theme dict, metadata dict) |
 | [MultiProgress.add_task()](api.md#multiprogressadd_task) | `int` - Task ID |
 
----
 
-**Note:** All function links in this document point to their corresponding sections in the main API reference document (api.md). Make sure both documents are in the same directory or adjust the links accordingly.
 
 ---
 
-**Last Updated:** 2025-11-23  
-**Library Version:** 1.1.0
+**Last Updated:** 2025-11-30  
+**Library Version:** 2.0.0

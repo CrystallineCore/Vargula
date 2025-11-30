@@ -121,9 +121,6 @@ print(vg.style("Fancy", color="cyan", look=["bold", "underline"]))
 - `bold`, `dim`, `italic`, `underline`, `blink`, `reverse`, `hidden`, `strikethrough`
 
 
-
-##
-
 #### `format(text)`
 
 Format text using HTML-like markup tags.
@@ -154,8 +151,6 @@ print(vg.format("<bold><underline><cyan>Triple style</cyan></underline></bold>")
 
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-46-26.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-46-26.png?raw=true)
 
-##
-
 #### `create(name, color=None, bg=None, look=None)`
 
 Create a custom reusable style tag.
@@ -184,8 +179,6 @@ print(vg.format("<highlight>Important</highlight>"))
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-48-45.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-48-45.png?raw=true)
 
 
-##
-
 #### `delete(name)`
 
 Delete a custom style tag.
@@ -201,8 +194,6 @@ vg.create("temp", color="blue")
 vg.delete("temp")  # Returns True
 vg.delete("temp")  # Returns False (already deleted)
 ```
-
-##
 
 #### `write(*args, sep=" ", end="\n", file=None, flush=False)`
 
@@ -238,7 +229,6 @@ vg.write("<green>Done!</green>")
 ```
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2016-35-49.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2016-35-49.png?raw=true)
 
-##
 
 #### `strip(text)`
 
@@ -255,7 +245,6 @@ text = "Hello <red>world</red>!"
 plain = vg.strip(text)  # "Hello world!"
 ```
 
-##
 
 #### `clean(text)`
 
@@ -272,7 +261,6 @@ styled = vg.style("Colored", color="red")
 plain = vg.clean(styled)  # "Colored" (no ANSI codes)
 ```
 
-##
 
 #### `length(text)`
 
@@ -290,7 +278,6 @@ print(len(styled))        # 18 (includes ANSI codes)
 print(vg.length(styled))  # 5 (visible length)
 ```
 
-##
 
 #### `enable()` / `disable()`
 
@@ -309,7 +296,6 @@ vg.enable()
 print(vg.style("Has color", color="red"))  # Prints colored text
 ```
 
-##
 
 #### `temporary(name, color=None, bg=None, look=None)`
 
@@ -327,7 +313,6 @@ with vg.temporary("temp", color="cyan", look="bold"):
 ```
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-51-49.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-51-49.png?raw=true)
 
-##
 
 ### Theme Functions
 
@@ -363,7 +348,6 @@ vg.set_theme(custom)
 **Built-in Theme Styles:**
 - `error`, `success`, `warning`, `info`, `debug`, `critical`
 
-##
 
 ###  Tables
 
@@ -419,7 +403,7 @@ print(table)
 **Output:**
 
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-54-28.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-54-28.png?raw=true)
-##
+
 
 #### `Table.add_column(header, style=None, justify="left", ...)`
 
@@ -444,7 +428,6 @@ table.add_column("Status", justify="center")
 
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-54-47.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-54-47.png?raw=true)
 
-##
 
 #### `Table.add_row(*cells, style=None)`
 
@@ -460,7 +443,6 @@ table.add_row("Alice", "95", "Active")
 table.add_row("Bob", "87", "Active", style="dim")  # Dimmed row
 ```
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-55-08.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2007-55-08.png?raw=true)
-##
 
 ### Progress Bars
 
@@ -509,8 +491,6 @@ progress.close()
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2007-57-51.gif?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2007-57-51.gif?raw=true)
 
 
-##
-
 #### `ProgressBar.update(n=1)`
 
 Update progress by n steps.
@@ -525,7 +505,6 @@ pbar.update(1)   # Advance by 1
 pbar.update(10)  # Advance by 10
 ```
 
-##
 
 #### `ProgressBar.close()`
 
@@ -538,7 +517,6 @@ pbar = vg.ProgressBar(total=100)
 pbar.close()  # Ensures final state is displayed
 ```
 
-##
 
 #### `progress_bar(iterable, total=None, desc="", **kwargs)`
 
@@ -565,7 +543,6 @@ for item in vg.progress_bar(range(100), desc="Processing"):
 
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2008-00-53.gif?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2008-00-53.gif?raw=true)
 
-##
 
 #### `MultiProgress()`
 
@@ -591,7 +568,6 @@ with vg.MultiProgress() as mp:
 
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2008-03-51.gif?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screencast%20from%202025-11-22%2008-03-51.gif?raw=true)
 
-##
 
 #### `MultiProgress.add_task(desc, total=100, **kwargs)`
 
@@ -604,7 +580,6 @@ Add a new progress task.
 
 **Returns:** int - Task ID for updating
 
-##
 
 #### `MultiProgress.update(task_id, n=1)`
 
@@ -613,8 +588,6 @@ Update a specific task.
 **Parameters:**
 - `task_id` (int): ID returned from add_task()
 - `n` (int): Steps to advance
-
-##
 
 ###  Color Palette Generation
 
@@ -661,8 +634,6 @@ colors = vg.generate_palette(
 )
 ```
 
-##
-
 #### `generate_theme_palette(scheme="random", base_color=None, ...)`
 
 Generate a complete theme with semantic colors.
@@ -694,7 +665,6 @@ vg.apply_palette_theme(theme)
 print(vg.format("<primary>Primary</primary> <error>Error</error>"))
 ```
 
-##
 
 #### `generate_accessible_theme(base_color, scheme="complementary", ...)`
 
@@ -720,7 +690,6 @@ theme = vg.generate_accessible_theme(
 )
 ```
 
-##
 
 #### `preview_palette(colors, width=40, show_info=True)`
 
@@ -743,7 +712,6 @@ print(vg.preview_palette(colors))
 
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-06-53.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-06-53.png?raw=true)
 
-##
 
 #### `apply_palette_theme(palette, register_styles=True)`
 
@@ -764,7 +732,6 @@ print(vg.format("<error>Error</error>"))
 ```
 
 [![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-07-44.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-22%2008-07-44.png?raw=true)
-##
 
 ###  Color Manipulation
 
@@ -783,7 +750,6 @@ Increase brightness of a color.
 lighter = vg.lighten("#3498db", 0.2)  # '#3cb0ff'
 ```
 
-##
 
 #### `darken(color, amount=0.1)`
 
@@ -800,7 +766,6 @@ Decrease brightness of a color.
 darker = vg.darken("#3498db", 0.2)  # '#2774a7'
 ```
 
-##
 
 #### `saturate(color, amount=0.1)`
 
@@ -817,7 +782,6 @@ Increase saturation of a color.
 more_saturated = vg.saturate("#80a0c0", 0.3)  # '#5a9ad8'
 ```
 
-##
 
 #### `desaturate(color, amount=0.1)`
 
@@ -834,7 +798,6 @@ Decrease saturation of a color.
 less_saturated = vg.desaturate("#3498db", 0.3)  # '#4683c0'
 ```
 
-##
 
 #### `shift_hue(color, degrees)`
 
@@ -851,7 +814,6 @@ Rotate hue by specified degrees.
 shifted = vg.shift_hue("#FF0000", 120)  # '#00ff00' (Red → Green)
 ```
 
-##
 
 #### `invert(color)`
 
@@ -867,7 +829,6 @@ Invert a color.
 inverted = vg.invert("#FF0000")  # '#00ffff' (Red → Cyan)
 ```
 
-##
 
 #### `mix(color1, color2, weight=0.5)`
 
@@ -886,7 +847,6 @@ mixed = vg.mix("#FF0000", "#0000FF", 0.5)  # '#7f007f' (Purple)
 mixed = vg.mix("#FF0000", "#0000FF", 0.8)  # More red
 ```
 
-##
 
 ###  Accessibility Functions
 
@@ -906,7 +866,6 @@ ratio = vg.calculate_contrast_ratio("#FFFFFF", "#000000")  # 21.0
 ratio = vg.calculate_contrast_ratio("#3498db", "#1a1a1a")  # ~5.2
 ```
 
-##
 
 #### `meets_wcag(color1, color2, level="AA", large_text=False)`
 
@@ -935,7 +894,6 @@ if not vg.meets_wcag("#777777", "#888888", "AA"):
     print("Insufficient contrast for normal text")
 ```
 
-##
 
 #### `ensure_contrast(foreground, background, min_ratio=4.5, max_iterations=20)`
 
@@ -956,7 +914,6 @@ adjusted = vg.ensure_contrast("#888888", "#999999", min_ratio=4.5)
 # Returns darkened/lightened color that meets contrast requirement
 ```
 
-##
 
 ###  Color Blindness Functions
 
@@ -990,7 +947,6 @@ for color in palette:
     print(f"{color} → {sim}")
 ```
 
-##
 
 #### `validate_colorblind_safety(colors, cb_type="deuteranopia", min_difference=30)`
 
@@ -1013,7 +969,6 @@ if not is_safe:
         print(f"Colors {i} and {j} are too similar: {colors[i]} vs {colors[j]}")
 ```
 
-##
 
 ### Persistence Functions
 
@@ -1036,7 +991,6 @@ vg.save_palette(
 )
 ```
 
-##
 
 #### `load_palette(filename)`
 
@@ -1054,7 +1008,6 @@ print(f"Loaded: {metadata['name']}")
 print(vg.preview_palette(colors))
 ```
 
-##
 
 #### `save_theme(theme, filename, metadata=None)`
 
@@ -1074,8 +1027,6 @@ vg.save_theme(
     metadata={"name": "Purple Rain", "author": "Me"}
 )
 ```
-
-##
 
 #### `load_theme(filename)`
 

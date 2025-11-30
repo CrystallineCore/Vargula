@@ -160,7 +160,9 @@ info = "#3498db"     # Blue
 ### Testing Color Combinations
 
 ```python
-import vargula as vg
+import vargula
+
+vg = vargula.Vargula()
 
 # Test a color combination
 fg = "#3498db"
@@ -217,152 +219,6 @@ if not is_safe:
 
 ---
 
-## Common Patterns
-
-### Building a Custom Logger
-
-```python
-import vargula as vg
-
-# Create logging styles
-vg.create("debug", color="bright_black", look="dim")
-vg.create("info", color="cyan")
-vg.create("success", color="green", look="bold")
-vg.create("warning", color="yellow", look="bold")
-vg.create("error", color="red", look="bold")
-vg.create("critical", color="red", bg="white", look="bold")
-
-def log(level, message):
-    vg.write(f"[<{level}>{level.upper()}</{level}>] {message}")
-
-# Usage
-log("info", "Application started")
-log("warning", "Cache miss")
-log("error", "Connection failed")
-```
-
-### Progress with Multiple Steps
-
-```python
-import vargula as vg
-import time
-
-steps = [
-    ("Downloading", 100),
-    ("Extracting", 50),
-    ("Installing", 75),
-    ("Configuring", 25)
-]
-
-for desc, total in steps:
-    print(vg.format(f"\n<bold>{desc}...</bold>"))
-    for i in vg.progress_bar(range(total), desc=desc):
-        time.sleep(0.01)
-    print(vg.format("<green>✓ Complete</green>"))
-```
-
-### Interactive Menu System
-
-```python
-import vargula as vg
-
-vg.create("option", color="cyan")
-vg.create("selected", color="green", look="bold")
-
-def show_menu(options, title="Menu"):
-    print(vg.format(f"\n<bold>{title}</bold>"))
-    print("─" * 40)
-    
-    for i, option in enumerate(options, 1):
-        print(vg.format(f"  <option>{i}.</option> {option}"))
-    
-    print("─" * 40)
-
-options = ["New Project", "Open Project", "Settings", "Exit"]
-show_menu(options, "Main Menu")
-```
-
-### Styled Table Reports
-
-```python
-import vargula as vg
-
-def create_report(title, data, headers):
-    table = vg.Table(
-        title=title,
-        title_style="bold cyan",
-        border_style="blue",
-        show_lines=True,
-        box="rounded"
-    )
-    
-    # Add columns
-    table.add_column(headers[0], style="bold", justify="left")
-    for header in headers[1:]:
-        table.add_column(header, justify="right")
-    
-    # Add data rows
-    for row in data:
-        table.add_row(*row)
-    
-    return table
-
-# Usage
-data = [
-    ("Q1", "$1.2M", "+15%"),
-    ("Q2", "$1.5M", "+22%"),
-    ("Q3", "$1.3M", "+8%"),
-]
-print(create_report("Quarterly Revenue", data, ["Quarter", "Revenue", "Growth"]))
-```
-
-### Theme Switcher
-
-```python
-import vargula as vg
-
-class ThemeManager:
-    def __init__(self):
-        self.themes = {
-            "dark": {
-                "primary": "#61afef",
-                "success": "#98c379",
-                "warning": "#e5c07b",
-                "error": "#e06c75",
-                "info": "#56b6c2"
-            },
-            "light": {
-                "primary": "#0184bc",
-                "success": "#50a14f",
-                "warning": "#c18401",
-                "error": "#e45649",
-                "info": "#0997b3"
-            }
-        }
-        self.current = "dark"
-    
-    def set(self, theme_name):
-        if theme_name in self.themes:
-            self.current = theme_name
-            vg.apply_palette_theme(self.themes[theme_name])
-            return True
-        return False
-    
-    def toggle(self):
-        new_theme = "light" if self.current == "dark" else "dark"
-        self.set(new_theme)
-        return self.current
-
-# Usage
-theme = ThemeManager()
-print(vg.format("<primary>Dark theme active</primary>"))
-
-theme.toggle()
-print(vg.format("<primary>Light theme active</primary>"))
-```
-
----
-
 ## Performance Tips
 
 ### Minimize Redundant Formatting
@@ -401,8 +257,10 @@ print(output)
 ### Disable Styling When Not Needed
 
 ```python
-import vargula as vg
+from vargula import Vargula
 import sys
+
+vg = Vargula()
 
 # Disable for non-TTY output (pipes, files)
 if not sys.stdout.isatty():
@@ -415,7 +273,9 @@ print(vg.style("Text", color="red"))  # Plain text if disabled
 ### Efficient Progress Bars
 
 ```python
-import vargula as vg
+from vargula import Vargula
+
+vg = Vargula()
 
 # Set appropriate refresh rate
 pbar = vg.ProgressBar(
@@ -452,7 +312,8 @@ for i in range(10000):
 
 3. **Force enable in IDE:**
    ```python
-   import vargula as vg
+   from vargula import Vargula
+   vg = Vargula()
    vg.enable()  # Force styling even if auto-detection fails
    ```
 
@@ -533,6 +394,7 @@ print("Success: File saved")
 
 **After:**
 ```python
+vg = Vargula()
 vg.write("<error>Error:</error> Connection failed")
 vg.write("<success>Success:</success> File saved")
 ```
@@ -548,7 +410,8 @@ print(f"{RED}Error{RESET}")
 
 **After:**
 ```python
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 print(vg.style("Error", color="red"))
 # Or
 print(vg.format("<red>Error</red>"))
@@ -563,7 +426,8 @@ from colorama import Fore, Style
 print(Fore.RED + "Error" + Style.RESET_ALL)
 
 # After (vargula)
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 print(vg.style("Error", color="red"))
 ```
 
@@ -574,7 +438,8 @@ from termcolor import colored
 print(colored("Error", "red", attrs=["bold"]))
 
 # After (vargula)
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 print(vg.style("Error", color="red", look="bold"))
 ```
 
@@ -585,7 +450,8 @@ from rich import print as rprint
 rprint("[red bold]Error[/red bold]")
 
 # After (vargula)
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 vg.write("<red><bold>Error</bold></red>")
 ```
 
@@ -642,8 +508,9 @@ vg.write("<red><bold>Error</bold></red>")
 
 ```python
 # Generate and preview palettes
-import vargula as vg
+from vargula import Vargula
 
+vg = Vargula()
 # Try different schemes
 schemes = ["analogous", "complementary", "triadic", "tetradic"]
 base = "#3498db"
@@ -675,34 +542,6 @@ vg.apply_palette_theme(theme)
 
 ---
 
-## Keyboard Shortcuts Reference
-
-When building interactive applications:
-
-```python
-# Common patterns for keyboard input
-import sys
-import tty
-import termios
-
-def get_key():
-    """Get single keypress"""
-    fd = sys.stdin.fileno()
-    old_settings = termios.tcgetattr(fd)
-    try:
-        tty.setraw(fd)
-        ch = sys.stdin.read(1)
-    finally:
-        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-    return ch
-
-# Use with vargula for interactive menus
-print(vg.format("<bold>Press any key to continue...</bold>"))
-key = get_key()
-```
-
----
-
 ## Version Compatibility
 
 **Python Requirements:**
@@ -721,5 +560,5 @@ key = get_key()
 
 ---
 
-**Last Updated:** 2025-11-23  
-**Library Version:** 1.1.0
+**Last Updated:** 2025-11-30  
+**Library Version:** 2.0.0

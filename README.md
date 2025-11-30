@@ -1,10 +1,27 @@
 
-#  Vargula
+<h1>
+  Vargula
+  <span style="float:right;">
+    <a href="https://github.com/CrystallineCore/Vargula">
+      <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
+    </a>
+    <a href="https://pypi.org/project/vargula/">
+      <img src="https://img.shields.io/badge/pypi-%23ececec.svg?style=for-the-badge&logo=pypi&logoColor=1f73b7">
+    </a>
+    <a href="https://vargula.readthedocs.io/">
+      <img src="https://img.shields.io/badge/Read%20the%20Docs-%23000000?style=for-the-badge&logo=readthedocs&logoColor=white">
+    </a>
+  </span>
+</h1>
+
 
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/vargula?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/vargula)
 ![PyPI - Version](https://img.shields.io/pypi/v/vargula)
 [![Documentation Status](https://readthedocs.org/projects/vargula/badge/?version=latest)](https://vargula.readthedocs.io/en/latest/?badge=latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+
 
 
 **Simple cross-platform terminal text styling library with advanced color palette generation**
@@ -17,12 +34,13 @@ Try [this](https://pastebin.com/BpGDZkfu) Vargula's code snippet to run this:
 
 ## What's new?
 
-- **Escape sequences**: Support for literal tag display
-  - Use `r'\<'` to show literal `<` in tags
-  - Use `r'\>'` to show literal `>` in tags
-  - Enables documentation and tutorial content with visible markup syntax
+### BREAKING CHANGES
+- **API Restructured to Class-Based Design**: Major refactoring for better organization and thread-safety
+  - All functionality now accessed through `Vargula` class instances
+  - Removed module-level global functions (global state eliminated)
+  - Each instance maintains independent state for thread-safe operations
 
-Refer the *Tag Syntax Conventions* section to know more.
+Refer the *API Reference* section to know more.
 
 ##  Features
 
@@ -49,7 +67,9 @@ Or clone from Github repository: [Vargula](https://github.com/crystallinecore/va
 ## Quick Start
 
 ```python
-import vargula as vg
+from vargula import Vargula
+
+vg = Vargula()
 
 vg.create("added", color="#00ff88", bg="#003322")
 vg.create("removed", color="#ff4444", bg="#330000")
@@ -88,50 +108,51 @@ Vargula supports inline color styling using intuitive tag syntax:
 - **`<@colorname>`** - Apply named background color (e.g., `<@red>`, `<@yellow>`)
 - **`<lookname>`** - Apply text style (e.g., `bold`, `italic`, `underline`)
 - **`<customname>`** - Apply custom styles created with `create()`
-- **`\\<tag>`** - Ignores the tag and prints as is. <span style="color:red"><b>[new]</b></span>
-- **`\<tag>`** - Ignores the tag and prints as is, if used as a raw string. (i.e. `r"\<tag>"`) <span style="color:red"><b>[new]</b></span>
+- **`\\<tag>`** - Ignores the tag and prints as is. 
+- **`\<tag>`** - Ignores the tag and prints as is, if used as a raw string. (i.e. `r"\<tag>"`) 
 
 ### Examples
 
 ```py
-from vargula import write, create
+from vargula import Vargula
+vg = Vargula()
 
 # Named foreground colors
-write("<red>Red text</red>")
-write("<bright_blue>Bright blue text</bright_blue>")
+vg.write("<red>Red text</red>")
+vg.write("<bright_blue>Bright blue text</bright_blue>")
 
 # Named background colors
-write("<@yellow>Yellow background</@yellow>")
-write("<@red>Red background</@red>")
-write("<@bright_black>Dark background</@bright_black>")
+vg.write("<@yellow>Yellow background</@yellow>")
+vg.write("<@red>Red background</@red>")
+vg.write("<@bright_black>Dark background</@bright_black>")
 
 # Hex foreground color
-write("<#FF5733>Orange text</#FF5733>")
-write("<#3498db>Blue text</#3498db>")
+vg.write("<#FF5733>Orange text</#FF5733>")
+vg.write("<#3498db>Blue text</#3498db>")
 
 # Hex background color
-write("<@#FF0000>Red background</@#FF0000>")
-write("<@#F00>Short hex red background</@#F00>")
+vg.write("<@#FF0000>Red background</@#FF0000>")
+vg.write("<@#F00>Short hex red background</@#F00>")
 
 # Foreground + background combination
-write("<#FFFFFF><@#000000>White text on black</@#000000></#FFFFFF>")
-write("<green><@black>Green on black</@black></green>")
+vg.write("<#FFFFFF><@#000000>White text on black</@#000000></#FFFFFF>")
+vg.write("<green><@black>Green on black</@black></green>")
 
 # Mix with text styles
-write("<bold><#00FF00><@#000080>Bold green on navy</@#000080></#00FF00></bold>")
-write("<italic><@yellow>Italic on yellow</@yellow></italic>")
+vg.write("<bold><#00FF00><@#000080>Bold green on navy</@#000080></#00FF00></bold>")
+vg.write("<italic><@yellow>Italic on yellow</@yellow></italic>")
 
 # Nested backgrounds
-write("<@yellow>Yellow <@red>then red</@red> back to yellow</@yellow>")
-write("<@#FF0000>Hex red <@yellow>named yellow</@yellow> back to hex</@#FF0000>")
+vg.write("<@yellow>Yellow <@red>then red</@red> back to yellow</@yellow>")
+vg.write("<@#FF0000>Hex red <@yellow>named yellow</@yellow> back to hex</@#FF0000>")
 
 # Complex nesting
-write("<bold><red>Bold <italic>and italic</italic> red text</red></bold>")
+vg.write("<bold><red>Bold <italic>and italic</italic> red text</red></bold>")
 
 #Escape sequences
-write(r"Use \<red>text\</red> to make text red")
-create("syntax", color="yellow")
-write(r"Tag syntax: \<syntax>highlighted code\</syntax> becomes <syntax>highlighted code</syntax>")
+vg.write(r"Use \<red>text\</red> to make text red")
+vg.create("syntax", color="yellow")
+vg.write(r"Tag syntax: \<syntax>highlighted code\</syntax> becomes <syntax>highlighted code</syntax>")
 ```
 
 **Output:**
@@ -158,10 +179,86 @@ write(r"Tag syntax: \<syntax>highlighted code\</syntax> becomes <syntax>highligh
 
 ##
 
-##  API Reference
+## API Reference
+### Creating Instances
+
+#### Instance-Based API (Recommended for Applications)
+
+For applications requiring multiple themes, thread-safety, or isolated state, create custom `Vargula` instances:
+```python
+from vargula import Vargula
+
+# Create independent instances
+vg_dark = Vargula()
+vg_light = Vargula()
+
+# Create custom styles per instance
+vg_dark.create("error", color="bright_red", look="bold")
+vg_light.create("error", color="cyan", look="underline")
+
+# Use independently without interference
+vg_dark.write("<error>Error in theme one</error>")
+vg_light.write("<error>Error in theme two</error>")
+```
+**Output:**
+
+[![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-30%2015-43-47.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-30%2015-43-47.png?raw=true)
+
+**Benefits of instance-based approach:**
+- Each instance has completely isolated state (styles, themes, settings)
+- Multiple themes can coexist in the same application
+- Perfect for multi-component applications
+- Enables true thread-safe operations
+
+#### Thread-Safe Operations
+
+Each `Vargula` instance maintains its own state, making them inherently thread-safe when used independently. This is essential for concurrent applications:
+```python
+from vargula import Vargula
+import threading
+import time
+
+def process_with_theme(theme_name: str, task_id: int):
+    """Each thread creates its own instance for complete isolation"""
+    # Create a dedicated instance for this thread
+    vg = Vargula()
+    vg.set_theme(theme_name)
+    
+    # Do work with isolated styling
+    for i in range(3):
+        vg.write(f"[Task {task_id}] Step {i+1} processing...")
+        time.sleep(0.5)
+    
+    vg.write(f"[Task {task_id}] <green>Complete!</green>")
+
+# Create threads with different themes
+threads = [
+    threading.Thread(target=process_with_theme, args=("dark", 1)),
+    threading.Thread(target=process_with_theme, args=("light", 2)),
+    threading.Thread(target=process_with_theme, args=("dark", 3))
+]
+
+# Start all threads - no style interference between them
+for thread in threads:
+    thread.start()
+
+# Wait for completion
+for thread in threads:
+    thread.join()
+```
+**Output:**
+
+[![Demo](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-30%2015-36-01.png?raw=true)](https://github.com/CrystallineCore/assets/blob/main/vargula/Screenshot%20from%202025-11-30%2015-36-01.png?raw=true)
+
+**Why this matters for threading:**
+- No global state to cause race conditions
+- Each thread can have its own theme
+- Styles set in one thread don't affect others
+- Safe for use in thread pools and async contexts
+
+
 
 ### Core Styling Functions
-
 #### `style(text, color=None, bg=None, look=None)`
 
 Apply styling to text directly.
@@ -1178,7 +1275,9 @@ print(vg.format("<primary>Using loaded theme!</primary>"))
 ### Example 1: Color Palette Explorer
 
 ```python
-import vargula as vg
+import vargula
+
+vg = vargula.Vargula()
 
 # Generate and preview different color schemes
 schemes = ["analogous", "complementary", "triadic", "tetradic"]
@@ -1202,8 +1301,10 @@ for scheme in schemes:
 ### Example 2: Themed CLI Application
 
 ```python
-import vargula as vg
+import vargula
 import time
+
+vg = vargula.Vargula()
 
 # Generate and apply theme
 theme = vg.generate_theme_palette("analogous", "#e74c3c")
@@ -1238,7 +1339,9 @@ with vg.ProgressBar(
 ### Example 3: Accessible Theme Generator
 
 ```python
-import vargula as vg
+import vargula
+
+vg = vargula.Vargula()
 
 # Generate accessible theme for light background
 theme = vg.generate_accessible_theme(
@@ -1276,7 +1379,9 @@ error        #d82b2b  Ratio: 4.88  AA ✓
 ### Example 4: Data Table with Styling
 
 ```python
-import vargula as vg
+import vargula
+
+vg = vargula.Vargula()
 
 # Create styled table
 table = vg.Table(
@@ -1308,9 +1413,11 @@ print(table)
 ### Example 5: Multi-Progress Task Manager
 
 ```python
-import vargula as vg
+import vargula
 import time
 import random
+
+vg = vargula.Vargula()
 
 tasks = [
     ("Downloading files", 150),
@@ -1341,7 +1448,9 @@ with vg.MultiProgress() as mp:
 ### Example 6: Color Manipulation
 
 ```python
-import vargula as vg
+import vargula
+
+vg = vargula.Vargula()
 
 base = "#3498db"
 
@@ -1380,7 +1489,9 @@ for weight in [0, 0.25, 0.5, 0.75, 1.0]:
 ### Example 7: Colorblind Simulation
 
 ```python
-import vargula as vg
+import vargula
+
+vg = vargula.Vargula()
 
 colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF"]
 cb_types = ["protanopia", "deuteranopia", "tritanopia"]
@@ -1540,7 +1651,8 @@ MIT License - see LICENSE file for details
 
 Contributions welcome! Please feel free to submit a Pull Request.
 
-Github repository: [Vargula](https://github.com/crystallinecore/vargula)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CrystallineCore/Vargula)
+
 
 ##
 

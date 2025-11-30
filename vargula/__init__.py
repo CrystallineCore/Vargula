@@ -2,33 +2,19 @@
 # File: vargula/__init__.py
 # ============================================
 """
-vargula - Simple cross-platform terminal text styling library
-
-Example:
-    >>> import vargula as vg
-    >>> print(vg.style("Error", color="red", bg="white", look="bold"))
-    >>> print(vg.style("Custom", color="#FF5733"))
-    >>> vg.create("error", color="red", look="bold")
-    >>> print(vg.format("An <error>error</error> occurred"))
+vargula - Simple cross-platform terminal text styling library with advanced color palette generation
 """
 
-# Import everything from the main module
+# Import main class and types
 from .vargula import (
-    # Main functions
-    style,
-    format,
-    create,
-    delete,
-    strip,
-    clean,
-    length,
-    enable,
-    disable,
-    set_theme,
-    temporary,
-    write,
+    # Main class
+    Vargula,
     
-    # Constanvg
+    # Type definitions
+    PaletteScheme,
+    ColorBlindType,
+    
+    # Constants
     COLORS,
     BG_COLORS,
     LOOKS,
@@ -41,24 +27,26 @@ from .vargula import (
 __author__ = "Sivaprasad Murali"
 __email__ = "sivaprasad.off@example.com"
 __license__ = "MIT"
-__description__ = "Simple cross-platform terminal text styling library"
+__description__ = "Simple cross-platform terminal text styling library with advanced color palette generation"
 __url__ = "https://github.com/crystallinecore/vargula"
+
 __all__ = [
-    "style",
-    "format",
-    "create",
-    "delete",
-    "strip",
-    "clean",
-    "length",
-    "enable",
-    "disable",
-    "set_theme",
-    "temporary",
-    "write",
+    # Main class
+    "Vargula",
+    
+    # Type definitions
+    "PaletteScheme",
+    "ColorBlindType",
+    
+    # Constants
     "COLORS",
     "BG_COLORS",
     "LOOKS",
+    
+    # Helper function
+    "progress_bar",
+    
+    # Metadata
     "__version__",
     "__author__",
     "__email__",

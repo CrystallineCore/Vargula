@@ -1,7 +1,9 @@
-import vargula as vg
+import vargula
 import sys
 import tty
 import termios
+
+vg = vargula.Vargula()
 
 def get_key():
     """Get a single keypress from the user."""

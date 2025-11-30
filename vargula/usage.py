@@ -11,7 +11,9 @@ This file demonstrates all major features:
 - Real-world use cases
 """
 
-import vargula as vg
+import vargula
+
+vg = vargula.Vargula()
 
 
 def divider(title: str):

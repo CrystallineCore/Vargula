@@ -62,7 +62,8 @@ def benchmark_basic_styling():
     print("2. BASIC STYLING BENCHMARK (10,000 iterations)")
     print("=" * 70)
     
-    import vargula as vg
+    import vargula 
+    vg = vargula.Vargula()
     from rich.console import Console
     import colorama
     from colorama import Fore, Style
@@ -101,7 +102,8 @@ def benchmark_markup_parsing():
     print("3. MARKUP PARSING BENCHMARK (5,000 iterations)")
     print("=" * 70)
     
-    import vargula as vg
+    import vargula 
+    vg = vargula.Vargula()
     from rich.console import Console
     
     console = Console(file=StringIO())
@@ -133,7 +135,8 @@ def benchmark_nested_tags():
     print("4. NESTED TAGS BENCHMARK (2,000 iterations)")
     print("=" * 70)
     
-    import vargula as vg
+    import vargula 
+    vg = vargula.Vargula()
     from rich.console import Console
     
     console = Console(file=StringIO())
@@ -165,7 +168,8 @@ def benchmark_hex_colors():
     print("5. HEX COLOR BENCHMARK (5,000 iterations)")
     print("=" * 70)
     
-    import vargula as vg
+    import vargula 
+    vg = vargula.Vargula()
     from rich.console import Console
     
     console = Console(file=StringIO())
@@ -194,7 +198,8 @@ def benchmark_table_creation():
     print("6. TABLE CREATION BENCHMARK (500 iterations)")
     print("=" * 70)
     
-    import vargula as vg
+    import vargula 
+    vg = vargula.Vargula()
     from rich.console import Console
     from rich.table import Table as RichTable
     
@@ -238,7 +243,8 @@ def benchmark_color_manipulation():
     print("7. COLOR MANIPULATION BENCHMARK (5,000 iterations)")
     print("=" * 70)
     
-    import vargula as vg
+    import vargula 
+    vg = vargula.Vargula()
     iterations = 5000
     
     def vg_color_ops():
@@ -263,7 +269,8 @@ def benchmark_palette_generation():
     print("8. PALETTE GENERATION BENCHMARK (1,000 iterations)")
     print("=" * 70)
     
-    import vargula as vg
+    import vargula 
+    vg = vargula.Vargula()
     iterations = 1000
     
     def generate_palettes():
@@ -286,7 +293,8 @@ def benchmark_accessibility():
     print("9. ACCESSIBILITY BENCHMARK (2,000 iterations)")
     print("=" * 70)
     
-    import vargula as vg
+    import vargula 
+    vg = vargula.Vargula()
     iterations = 2000
     
     def accessibility_checks():
@@ -312,7 +320,8 @@ def benchmark_real_world():
     print("(Logging with multiple styled components)")
     print()
     
-    import vargula as vg
+    import vargula 
+    vg = vargula.Vargula()
     from rich.console import Console
     
     console = Console(file=StringIO())

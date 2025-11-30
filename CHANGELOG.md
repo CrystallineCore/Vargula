@@ -5,6 +5,139 @@ All notable changes to the vargula project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2024-11-30
+
+### BREAKING CHANGES
+- **API Restructured to Class-Based Design**: Major refactoring for better organization and thread-safety
+  - All functionality now accessed through `Vargula` class instances
+  - Removed module-level global functions (global state eliminated)
+  - Each instance maintains independent state for thread-safe operations
+
+### Changed
+- **Module API**: Changed from functional to object-oriented
+  ```python
+  # Old (v1.x)
+  import vargula as vg
+  vg.style("text", color="red")
+  vg.create("error", color="red")
+  vg.format("<error>Error</error>")
+  
+  # New (v2.0)
+  from vargula import Vargula
+  vg = Vargula()
+  vg.style("text", color="red")
+  vg.create("error", color="red")
+  vg.format("<error>Error</error>")
+  ```
+
+- **Rich Components API**: Table and ProgressBar now factory methods
+  ```python
+  # Old (v1.x)
+  from vargula import Table, ProgressBar
+  table = Table(title="Users")
+  pbar = ProgressBar(total=100)
+  
+  # New (v2.0)
+  vg = Vargula()
+  table = vg.Table(title="Users")
+  pbar = vg.ProgressBar(total=100)
+  ```
+
+- **Inner Classes**: `Table`, `ProgressBar`, and `MultiProgress` now accessed as factory methods
+  - Cleaner API with implicit Vargula instance
+  - Returns properly typed inner class instances
+
+### Added
+- **Instance-based styling**: Each `Vargula()` instance has independent state
+  - Custom styles isolated per instance
+  - Theme configuration per instance
+  - Multiple instances can coexist without interference
+  
+- **Factory Methods**: Convenient creation of rich components
+  - `vg.Table()`: Create styled tables
+  - `vg.ProgressBar()`: Create progress bars
+  - `vg.MultiProgress()`: Create multi-task progress manager
+
+### Benefits
+- **Thread-Safe**: No global state, instances can be used in concurrent environments
+- **Better Organization**: All functionality logically grouped under instance
+- **Easier Testing**: No global state to manage
+- **Multiple Themes**: Use different themes in different instances simultaneously
+
+### Migration Guide
+
+#### Basic Styling
+```python
+# v1.x
+import vargula as vg
+styled = vg.style("Hello", color="red", look="bold")
+
+# v2.0
+from vargula import Vargula
+vg = Vargula()
+styled = vg.style("Hello", color="red", look="bold")
+```
+
+#### Custom Styles
+```python
+# v1.x
+vg.create("error", color="red", look="bold")
+vg.format("<error>Error occurred</error>")
+
+# v2.0
+vg = Vargula()
+vg.create("error", color="red", look="bold")
+vg.format("<error>Error occurred</error>")
+```
+
+#### Tables
+```python
+# v1.x
+from vargula import Table
+table = Table(title="Users")
+table.add_column("Name")
+table.add_row("Alice")
+
+# v2.0
+vg = Vargula()
+table = vg.Table(title="Users")
+table.add_column("Name")
+table.add_row("Alice")
+```
+
+#### Progress Bars
+```python
+# v1.x
+from vargula import ProgressBar
+with ProgressBar(total=100, desc="Processing") as pbar:
+    for i in range(100):
+        pbar.update(1)
+
+# v2.0
+vg = Vargula()
+with vg.ProgressBar(total=100, desc="Processing") as pbar:
+    for i in range(100):
+        pbar.update(1)
+```
+
+#### Color Palettes
+```python
+# v1.x
+import vargula as vg
+palette = vg.generate_palette("#3498db", "complementary", 5)
+theme = vg.generate_theme_palette("analogous", "#e74c3c")
+
+# v2.0
+vg = Vargula()
+palette = vg.generate_palette("#3498db", "complementary", 5)
+theme = vg.generate_theme_palette("analogous", "#e74c3c")
+```
+
+### Documentation
+- Updated all examples to use class-based API
+- Added instance creation patterns
+- Thread-safety documentation
+
 ## [1.1.0] - 2024-11-24
 
 ### Added

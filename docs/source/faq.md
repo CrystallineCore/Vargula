@@ -32,7 +32,9 @@ A: Yes! Vargula works on **Windows, macOS, and Linux**.
 A: Use the `generate_accessible_theme()` function:
 
 ```python
-import vargula as vg
+from vargula import Vargula
+
+vg = Vargula()
 
 theme = vg.generate_accessible_theme(
     "#3498db",
@@ -102,7 +104,8 @@ A: Check if your terminal supports ANSI colors. Most do.
 Test it:
 
 ```python
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 vg.write("<red>Test</red>")
 ```
 

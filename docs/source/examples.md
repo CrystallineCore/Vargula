@@ -3,7 +3,8 @@
 ## Example 1: Color Palette Explorer
 
 ```python
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 
 # Generate and preview different color schemes
 schemes = ["analogous", "complementary", "triadic", "tetradic"]
@@ -25,8 +26,10 @@ for scheme in schemes:
 ## Example 2: Themed CLI Application
 
 ```python
-import vargula as vg
+from vargula import Vargula
 import time
+
+vg = Vargula()
 
 # Generate and apply theme
 theme = vg.generate_theme_palette("analogous", "#e74c3c")
@@ -60,7 +63,8 @@ with vg.ProgressBar(
 ## Example 3: Accessible Theme Generator
 
 ```python
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 
 # Generate accessible theme for light background
 theme = vg.generate_accessible_theme(
@@ -96,7 +100,8 @@ error        #d82b2b  Ratio: 4.88  AA ✓
 ## Example 4: Data Table with Styling
 
 ```python
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 
 # Create styled table
 table = vg.Table(
@@ -127,9 +132,11 @@ print(table)
 ## Example 5: Multi-Progress Task Manager
 
 ```python
-import vargula as vg
+from vargula import Vargula
 import time
 import random
+
+vg = Vargula()
 
 tasks = [
     ("Downloading files", 150),
@@ -159,7 +166,8 @@ with vg.MultiProgress() as mp:
 ## Example 6: Color Manipulation
 
 ```python
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 
 base = "#3498db"
 
@@ -197,7 +205,8 @@ for weight in [0, 0.25, 0.5, 0.75, 1.0]:
 ## Example 7: Colorblind Simulation
 
 ```python
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 
 colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF"]
 cb_types = ["protanopia", "deuteranopia", "tritanopia"]

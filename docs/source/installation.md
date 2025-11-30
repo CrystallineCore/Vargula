@@ -46,7 +46,8 @@ This allows you to modify the source code and see changes immediately.
 Check that Vargula is installed correctly:
 
 ```python
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 print(vg.__version__)
 # Output: 1.1.0
 ```
@@ -54,7 +55,8 @@ print(vg.__version__)
 Test basic functionality:
 
 ```python
-import vargula as vg
+from vargula import Vargula
+vg = Vargula()
 
 # Test color output
 print(vg.style("Hello, Vargula!", color="cyan", look="bold"))
@@ -81,8 +83,9 @@ Vargula automatically enables ANSI color support on Windows 10 and later. For ol
 
 ```python
 # Vargula handles this automatically
-import vargula as vg
+from vargula import Vargula
 # Colors work out of the box on Windows 10+
+vg = Vargula()
 ```
 
 ### macOS
@@ -202,7 +205,8 @@ If colors don't work on Windows:
 2. Use Windows Terminal instead of cmd.exe
 3. Try forcing ANSI support:
    ```python
-   import vargula as vg
+   from vargula import Vargula
+   vg = Vargula()
    vg.enable()  # Force enable colors
    ```
 
@@ -226,7 +230,6 @@ pip install vargula
 
 Now that Vargula is installed, continue with:
 
-- [Quick Start Guide](quick-start.md) - Learn the basics in 5 minutes
-- [Core Concepts](core-concepts.md) - Understand key concepts
-- [API Reference](../api/index.md) - Browse all functions
-- [Examples](../examples/index.md) - See real-world usage
+- [Quick Start Guide](index.md) - Learn the basics in 5 minutes
+- [API Reference](api.md) - Browse all functions
+- [Examples](examples.md) - See real-world usage

@@ -43,7 +43,9 @@ Let's compare how each library handles a simple task: **bold red "Hello"** and *
 ### Vargula
 
 ```python
-import vargula as vg
+from vargula import Vargula
+
+vg = Vargula()
 
 # Method 1: Using markup tags (most intuitive)
 vg.write("<bold><red>Hello</red></bold> <italic><blue>World</blue></italic>")
@@ -474,7 +476,9 @@ if is_safe:
 Vargula is the **only** library with built-in color theory schemes:
 
 ```python
-import vargula as vg
+from vargula import Vargula
+
+vg = Vargula()
 
 # Seven harmony schemes
 schemes = [
@@ -533,6 +537,8 @@ Vargula's `<@color>` syntax is cleaner and more intuitive:
 
 ```python
 # Vargula - symmetric, intuitive
+from vargula import Vargula
+vg = Vargula()
 vg.write("<red>foreground</red>")
 vg.write("<@red>background</@red>")
 vg.write("<#FF0000>hex foreground</#FF0000>")
@@ -618,17 +624,18 @@ vg.apply_palette_theme(colors)
 Vargula and other libraries can work together:
 
 ```python
-import vargula as vg
+from vargula import Vargula
 from rich.console import Console
 from rich.panel import Panel
 
+vg = Vargula()
 # Generate accessible colors with Vargula
 theme = vg.generate_accessible_theme("#3498db", wcag_level="AA")
 
 # Use Rich for layout with Vargula's colors
 console = Console()
 console.print(Panel(
-    vg.format(f"<{theme['primary']}>Content</#{theme['primary']}>"),
+    vg.format(f"<{theme['primary']}>Content</{theme['primary']}>"),
     title="My Panel"
 ))
 ```
@@ -642,7 +649,7 @@ console.print(Panel(
 | Colorama | 3.5K+ | 2010 | Jonathan Hartley | Large |
 | Termcolor | 600+ | 2008 | Konstantin Lepa | Medium |
 | Pastel | 300+ | 2018 | Sébastien Eustace | Small |
-| Vargula | New | 2024 | Sivaprasad Murali | Growing |
+| Vargula | New | 2025 | Sivaprasad Murali | Growing |
 
 **Vargula is newer** but actively developed with a focus on color theory and accessibility.
 
@@ -738,7 +745,7 @@ print(f"{error} {time} Failed to load {path}")
 
 ## Conclusion
 
-Vargula doesn't try to replace Rich's comprehensive terminal UI capabilities. Instead, it focuses on being the **best tool for color design and accessibility** in terminal applications.
+Vargula doesn't try to replace Rich's comprehensive terminal UI capabilities. Instead, it focuses on being the **best tool for color design and accessibility** in terminal applications while maintaining minimality.
 
 If you're building a CLI where:
 - Color choice matters
